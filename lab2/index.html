@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teclado random</title>
+    <script src="./script.js"></script>
 </head>
-<body>
-    
+<body onload="carga()">
+    <input type="text" id="resultado" readonly>
+    <br><br>
+    <button id="boton1"><div id="1"></div></button>
+    <button id="boton2"><div id="2"><div></button>
+    <button id="boton3"><div id="3"></div></button>
+    <br>
+    <button id="boton4"><div id="4"></div></button>
+    <button id="boton5"><div id="5"></div></button>
+    <button id="boton6"><div id="6"></div></button>
+    <br>
+    <button id="boton7"><div id="7"></div></button>
+    <button id="boton8"><div id="8"></div></button>
+    <button id="boton9"><div id="9"></div></button>
+    <br>
+    <button id="boton0"><div id="0"></div></button>
+    <button onclick="borrar()">Borrar</button>
+
 </body>
 </html>
