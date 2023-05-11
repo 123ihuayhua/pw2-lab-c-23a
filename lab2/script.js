@@ -1,1 +1,5 @@
-// aqui ira el script
+document.getElementById('hola').innerHTML = '0';
+
+
+
+
