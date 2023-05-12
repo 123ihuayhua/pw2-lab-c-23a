@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="./calc.js"></script>
+</head>
+<body onload="carga()">
+    <input type="text" id="resultado" readonly>
+    <br><br>
+    <button id="7" onclick="teclear(7)"></button>
+    <button id="8" onclick="teclear(8)"></button>
+    <button id="9" onclick="teclear(9)"></button>
+    <br>
+    <button id="4" onclick="teclear(4)"></button>
+    <button id="5" onclick="teclear(5)"></button>
+    <button id="6" onclick="teclear(6)"></button>
+    <br>
+    <button id="1" onclick="teclear(1)"></button>
+    <button id="2" onclick="teclear(2)"></button>
+    <button id="3" onclick="teclear(3)"></button>
+    <br>
+    <button id="0" onclick="teclear(0)"></button>
+    <button onclick="borrar()">Borrar</button>
+</body>
+</html>
