@@ -23,3 +23,6 @@ function desorden(arreglo) {
     }
     return arreglo
   }
+  function borrar(){
+  	document.getElementById("resultado").value = ""
+  	}
