@@ -4,5 +4,8 @@ function carga(){
         document.getElementById(i).innerHTML = numeros[i]
     }
 }
-
+function teclear(i){
+    var num =document.getElementById("boton"+i).innerText
+    console.log(num)
+}
 
