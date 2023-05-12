@@ -7,7 +7,7 @@ function carga(){
 }
 function teclear(i){
     var num =document.getElementById("boton"+i).innerText
-    console.log(num)
+    document.getElementById("resultado").value += num
 }
 function desorden(arreglo) {
     var indexActual = arreglo.length;
