@@ -1,4 +1,5 @@
 let memorias = []
+let answer
 let guardando = true
 function carga(){
     for (var i = 0; i < 10; i++) {
@@ -12,7 +13,11 @@ function teclear(i){
 }
 function calcular(){
     let resul = eval(document.getElementById("resultado").value)
+    answer = resul
     document.getElementById("resultado").value = resul
+}
+function ans(){
+    document.getElementById("resultado").value += answer
 }
 function agregar(simbolo){
     var op = document.getElementById("resultado").value
@@ -33,7 +38,7 @@ function limpiar() {
 }
 function memoria(i){
     if(guardando & !memorias[i]){
-        memorias.push(document.getElementById("resultado").value)
+        memorias[i] =document.getElementById("resultado").value
         guardando=false
     }else{
         document.getElementById("resultado").value = memorias[i]
