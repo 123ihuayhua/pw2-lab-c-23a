@@ -8,13 +8,6 @@ function teclear(i){
     var num =document.getElementById(i).innerText
     document.getElementById("resultado").value += num
 }
-function par(i){
-    if(i==0){
-        document.getElementById("resultado").value += "("
-    }else{
-        document.getElementById("resultado").value += ")"
-    }
-}
 function calcular(){
     let resul = eval(document.getElementById("resultado").value)
     document.getElementById("resultado").value = resul
@@ -22,7 +15,9 @@ function calcular(){
 function agregar(simbolo){
     var op = document.getElementById("resultado").value
     if(simbolo=="("|simbolo==")"|simbolo=="*"){
-        document.getElementById("resultado").value += simbolo
+        if(op.substring(op.length-2, op.length)!="**"){
+            document.getElementById("resultado").value += simbolo
+        }
     }else{
         if(op.charAt(op.length-1)!=simbolo){
             document.getElementById("resultado").value += simbolo
