@@ -15,6 +15,10 @@ function par(i){
         document.getElementById("resultado").value += ")"
     }
 }
+function calcular(){
+    let resul = eval(document.getElementById("resultado").value)
+    console.log(resul)
+}
 function del(){
     var op = document.getElementById("resultado").value+""
     console.log(op)
@@ -24,8 +28,8 @@ function del(){
 }
 function mul(){
     var op = document.getElementById("resultado").value
-    if(op.charAt(op.length-1)!='x'){
-        op += "x"
+    if(op.charAt(op.length-1)!='*'){
+        op += "*"
         document.getElementById("resultado").value = op
     }
 }
