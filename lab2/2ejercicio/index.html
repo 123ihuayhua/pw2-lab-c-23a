@@ -11,33 +11,33 @@
     <input type="text" id="resultado" readonly>
     <br><br>
     <button id="del" onclick="del()"></button>
-    <button id="(" onclick="par(0)">(</button>
-    <button id=")" onclick="par(1)">)</button>
+    <button id="(" onclick="agregar('(')">(</button>
+    <button id=")" onclick="agregar(')')">)</button>
     <button id="mod" onclick="mod()">mod</button>
-    <button id="pi" onclick="pi()">Π</button>
+    <button id="pi" onclick="agregar('Π')">Π</button>
     <br>
     <button id="7" onclick="teclear(7)"></button>
     <button id="8" onclick="teclear(8)"></button>
     <button id="9" onclick="teclear(9)"></button>
-    <button id="/" onclick="div()">÷</button>
-    <button id="√" onclick="raiz()">√</button>
+    <button id="/" onclick="agregar('/')">÷</button>
+    <button id="√" onclick="agregar('**(1/2)')">√</button>
     <br>
     <button id="4" onclick="teclear(4)"></button>
     <button id="5" onclick="teclear(5)"></button>
     <button id="6" onclick="teclear(6)"></button>
-    <button id="x" onclick="mul()">x</button>
-    <button id="x²" onclick="cuadrado()">x²</button>
+    <button id="x" onclick="agregar('*')">x</button>
+    <button id="x²" onclick="agregar('**')">x²</button>
     <br>
     <button id="1" onclick="teclear(1)"></button>
     <button id="2" onclick="teclear(2)"></button>
     <button id="3" onclick="teclear(3)"></button>
-    <button id="res" onclick="resta()">-</button>
+    <button id="res" onclick="agregar('-')">-</button>
     <button id="igual" onclick="calcular()">=</button>
     <br>
     <button id="0" onclick="teclear(0)"></button>
-    <button id="," onclick="coma()">,</button>
-    <button id="%" onclick="porcentaje()">%</button>
-    <button id="sum" onclick="suma()">+</button>
+    <button id="," onclick="agregar(',')">,</button>
+    <button id="%" onclick="agregar('%')">%</button>
+    <button id="sum" onclick="agregar('+')">+</button>
     
 </body>
 </html>

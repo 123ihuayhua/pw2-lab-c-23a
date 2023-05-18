@@ -17,7 +17,17 @@ function par(i){
 }
 function calcular(){
     let resul = eval(document.getElementById("resultado").value)
-    console.log(resul)
+    document.getElementById("resultado").value = resul
+}
+function agregar(simbolo){
+    var op = document.getElementById("resultado").value
+    if(simbolo=="("|simbolo==")"|simbolo=="*"){
+        document.getElementById("resultado").value += simbolo
+    }else{
+        if(op.charAt(op.length-1)!=simbolo){
+            document.getElementById("resultado").value += simbolo
+        }
+    }
 }
 function del(){
     var op = document.getElementById("resultado").value+""
@@ -25,11 +35,4 @@ function del(){
     var cadena = op.substring(0,op.length-1)
 
     document.getElementById("resultado").value = cadena
-}
-function mul(){
-    var op = document.getElementById("resultado").value
-    if(op.charAt(op.length-1)!='*'){
-        op += "*"
-        document.getElementById("resultado").value = op
-    }
 }
