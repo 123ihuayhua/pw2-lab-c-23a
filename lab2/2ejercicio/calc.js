@@ -3,6 +3,7 @@ function carga(){
         document.getElementById(i).innerHTML = i
     }
     document.getElementById("del").innerHTML = "<="
+    document.getElementById("x").innerHTML = "x"
 }
 function teclear(i){
     var num =document.getElementById(i).innerText
@@ -14,4 +15,12 @@ function del(){
     var cadena = op.substring(0,op.length-1)
 
     document.getElementById("resultado").value = cadena
+}
+function mul(){
+    var op = document.getElementById("resultado").value
+    console.log(op.charAt(op.length-1))
+    if(op.charAt(op.length-1)!='x'){
+        op += "x"
+        document.getElementById("resultado").value = op
+    }
 }
