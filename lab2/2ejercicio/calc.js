@@ -1,3 +1,5 @@
+let memorias = []
+let guardando = true
 function carga(){
     for (var i = 0; i < 10; i++) {
         document.getElementById(i).innerHTML = i
@@ -24,10 +26,24 @@ function agregar(simbolo){
         }
     }
 }
+function limpiar() {
+    actualInput = "";
+    document.getElementById("resultado").value = "";
+    
+}
+function memoria(i){
+    if(guardando & !memorias[i]){
+        memorias.push(document.getElementById("resultado").value)
+        guardando=false
+    }else{
+        document.getElementById("resultado").value = memorias[i]
+        memorias[i]=null
+        guardando = true
+    }
+}
 function del(){
     var op = document.getElementById("resultado").value+""
     console.log(op)
     var cadena = op.substring(0,op.length-1)
-
     document.getElementById("resultado").value = cadena
 }
