@@ -6,6 +6,12 @@ function carga(){
         document.getElementById(i).innerHTML = i
     }
     document.getElementById("del").innerHTML = "<="
+    document.getElementById("del").setAttribute("style", "background-color: red;")
+    document.getElementById("igual").setAttribute("style", "background-color: green;")
+    document.getElementById("m1").setAttribute("style", "background-color: skyblue;")
+    document.getElementById("m2").setAttribute("style", "background-color: skyblue;")
+    document.getElementById("c").setAttribute("style", "background-color: orange;")
+    document.getElementById("ans").setAttribute("style", "background-color: orange;")
 }
 function teclear(i){
     var num =document.getElementById(i).innerText
