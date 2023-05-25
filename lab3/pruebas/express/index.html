@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Página web con estilo</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script>
+    function recitar() {
+    const url = './recitar'
+    fetch(url).then(
+        response => response.json()
+    ).then(
+        data => {
+            document.querySelector("#poema").innerHTML = data.text
+        }
+    )
+}
+  </script>
+</head>
+
+<body>
+
+<!-- Menú de navegación del sitio -->
+<ul class="navbar">
+  <li><a href="./fotos/BusterYYo.jpg">I love my dog ❤️</a>
+  <li><a href="https://i1.wp.com/www.turismoreligioso.travel/wp-content/uploads/2019/11/arequipa.jpg?fit=1200%2C675&ssl=1">Mi ciudad</a>
+  <li><a href="https://github.com/PauloUNSA">Enlaces</a>
+</ul>
+
+<!-- Contenido principal -->
+<h1>Página con estilo Lab-c-pw2</h1>
+
+<p>¡Bienvenido a mi primera página de prgramacion web2!
+
+<p>SI tiene imágenes, y tambien estilo.<br>
+Me gusta el basquet y la natacion <br>
+Al igual que jugar videojuegos y programar hasta tarde<br>
+Amo la playa y a mi perrito
+</p>
+
+<!-- Firma y fecha de la página, ¡sólo por cortesía! -->
+<address>Creada el 5 de mayo de 2022<br>
+  por Paulo Hidalgo</address>
+  <div id="poema"><p></p></div>
+  <script>recitar()</script>
+</body>
+</html>
