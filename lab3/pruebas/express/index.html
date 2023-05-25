@@ -4,16 +4,35 @@
   <title>Página web con estilo</title>
   <link rel="stylesheet" href="estilo.css">
   <script>
-    function recitar() {
-    const url = './recitar'
-    fetch(url).then(
-        response => response.json()
-    ).then(
-        data => {
-            document.querySelector("#poema").innerHTML = data.text
-        }
+    function recitar(markupText) {
+const url = 'http://localhost:3000/'
+const data = {
+	text: markupText
+}
+console.log(data)
+const request = {
+	method: 'POST', // Podría ser GET
+	headers: {
+		'Content-Type': 'application/json',
+	},
+	body: JSON.stringify(data),
+}
+http = fetch(url, request)
+http.then(
+	response => response.json()
+).then(
+	data => {
+		document.querySelector("#htmlCode").innerHTML = data.text
+	}
     )
 }
+document.addEventListener('DOMContentLoaded', function () {
+    const text = document.querySelector('#markupText')
+    document.querySelector('#markupForm').onsubmit = () => {
+        recitar(text.value)
+        return false;
+    }
+})
   </script>
 </head>
 
@@ -40,7 +59,7 @@ Amo la playa y a mi perrito
 <!-- Firma y fecha de la página, ¡sólo por cortesía! -->
 <address>Creada el 5 de mayo de 2022<br>
   por Paulo Hidalgo</address>
-  <div id="poema"><p></p></div>
-  <script>recitar()</script>
+  <div id="htmlCode"><p></p></div>
+  <script>recitar("#hola")</script>
 </body>
 </html>
