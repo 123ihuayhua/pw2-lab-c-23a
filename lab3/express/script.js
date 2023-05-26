@@ -37,9 +37,9 @@ function enviarDatos(texto){
         console.log(texto)
     }
 
-function mostrar(){
+/*function mostrar(){
     console.log("hola")
-    const url = 'http://localhost:3000/agenda'
+    const url = 'http://localhost:3000/eventos/?'
     fetch(url).then(
         response => response.json()
     ).then(
@@ -48,4 +48,4 @@ function mostrar(){
             document.querySelector("#prueba").innerHTML = data.text
         }
     )
-}
+}*/

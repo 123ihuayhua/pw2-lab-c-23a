@@ -20,23 +20,6 @@ app.listen(3000, () => {
 app.get('/', (request, response) => {
     response.sendFile(path.resolve(__dirname, 'index.html'))
 })
-
-app.get('/agenda', (request, response) => {
-    fs.readFile(path.resolve(__dirname, 'agenda/poema.txt'), 'utf8',
-        (err, data) => {
-            if (err) {
-                console.error(err)
-                response.status(500).json({
-                    error: 'message'
-                })
-                return
-            }
-            response.json({
-                text: data.replace(/\n/g, '<br>')
-            })
-        })
-    //
-})
 const agenda = path.join(__dirname, 'agenda');
 app.post('/eventos/', (request, res) => {
     console.log(request.body)
@@ -82,3 +65,17 @@ function readAgenda() {
     });
     return agendaArr;
   }
+  app.delete('/events/:date/:time', (req, res) => {
+    const { date, time } = req.params;
+    console.log(req.params)
+    const filePath = path.join(agenda, date, `${time}.txt`);
+
+    fs.unlink(filePath, (err) => {
+      if (err) {
+        res.status(500).json({ error: 'Error al borrar evento' });
+      } else {
+        res.sendStatus(200);
+      }
+    });
+  });
+  
