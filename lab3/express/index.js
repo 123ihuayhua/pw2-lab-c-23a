@@ -24,16 +24,35 @@ app.get('/borrar', (request, response) => {
   response.sendFile(path.resolve(__dirname, 'index.html'))
 })
 const agenda = path.join(__dirname, 'agenda');
-app.post('/borrar', (request, res) => {
+app.post('/borrar', (request, response) => {
   console.log(request.body)
   const { date,time } = request.body;
-  const filePath2 = path.join(agenda, date,`${time}.txt`);
+  const diaDir =  path.join(agenda, date);
+  const filePath = path.join(diaDir,`${time}.txt`);
 
-  fs.unlink(filePath2, (err) => {
+  fs.unlink(filePath, (err) => {
     if (err) {
-      res.status(500).json({ error: 'Error al borrar evento' });
+      response.sendFile(path.resolve(__dirname, 'index.html'))
     } else {
-      res.sendStatus(200);
+      response.sendFile(path.resolve(__dirname, 'index.html'))
+    }
+  });
+  fs.readdir(diaDir, (err, files) => {
+    if (err) {
+      console.log(err);
+    } else {
+      if (files||files.length == 0) {
+        console.log('La carpeta está vacía'+files.length);
+        fs.rmdir(diaDir,{ recursive: true }, (err) => {
+          if (err) {
+            console.error(err);
+          } else {
+            console.log('La carpeta ha sido eliminada');
+          }
+        });
+      } else {
+        console.log('La carpeta no está vacía');
+      }
     }
   });
 });

@@ -13,9 +13,7 @@
         <textarea name="desc" cols="30" rows="10"></textarea><br>
         <input type="submit" value="OK">
     </form>
-    
     <input type="submit" value="Ver eventos" onclick="mostrar()">
-    
     <div id="prueba"></div>
     <div id="editar"></div>
 
@@ -26,32 +24,40 @@
             .then(response => response.json())
             .then(data => {
               const agenda = data;
-              let html = '';
-      
+              let html = '';    
               agenda.forEach(item => {
                 html += `<h3>${item.date}</h3>`;
                 html += '<ul>';
                 item.events.forEach(event => {
-                  html += `${event.time} `;//borrar
+                    const salto = event.text.indexOf('\n')
+                    const titulo = event.text.substring(0,salto)
+                    let descrip = event.text.substring(salto+1, event.text.length)
+                    descrip = descrip.replace("\r\n","<br>")
+                  html += `<input type="submit" value="${titulo}" onclick="print('${descrip}')">`;//borrar
                   html += `<form id="form" action="./borrar" method="post">
                     <input type="hidden"  name="date" value="${item.date}">
                     <input type="hidden" name="time" value="${event.time}">
                     <input type= "submit" value="eliminar" >
                 </form>`//editar
-                html += `<input type="submit" value="editar" onclick="editarFun('${item.date}','${event.time}')">`
-                
+                const texto = event.text.replace("\r\n","<br>")
+                html += `<input type="submit" value="editar" 
+                onclick="editarFun('${item.date}','${event.time}','${texto}')"><br>`
                 });
                 html += '</ul>';
               });
               document.querySelector("#prueba").innerHTML = html;
             });
         }
-        function editarFun(date, time){
-            console.log("entra aqui")
+        function print(texto){
+            document.querySelector("#editar").innerHTML = texto;
+        }
+        function editarFun(date, time,texto){
+            //console.log("entra aqui")
+            texto = texto.replace("<br>","\r\n")
             html = `<form id="form" action="./editar" method="post">
                     <input type="hidden"  name="date" value="${date}">
                     <input type="hidden" name="time" value="${time}">
-                    <textarea name="desc" cols="30" rows="10"></textarea><br>
+                    <textarea name="desc" cols="30" rows="10">${texto}</textarea><br>
                     <input type= "submit" value="confirmar" >
                 </form></li>`
                 document.querySelector("#editar").innerHTML = html;
