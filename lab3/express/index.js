@@ -37,7 +37,7 @@ app.post('/borrar', (request, res) => {
     }
   });
 });
-app.post('/editar', (request, res) => {
+app.post('/editar', (request, response) => {
   console.log(request.body)
   const { date,time,desc } = request.body;
   const filePath2 = path.join(agenda, date,`${time}.txt`);
@@ -45,33 +45,39 @@ app.post('/editar', (request, res) => {
   fs.writeFile(filePath2, desc, function (err) {
     if (err) throw err;
     console.log('Replaced!');
+    response.sendFile(path.resolve(__dirname, 'index.html'))
   });
 });
-app.post('/eventos/', (request, res) => {
+app.post('/eventos/', (request, response) => {
     console.log(request.body)
-    const {title,desc,fecha,hora} = request.body
-    const filePath = path.join(agenda, fecha,`${hora}.txt`);
-    const texto = title+"\n\n"+desc
-    console.log(title)
-    console.log(desc)
+    const {desc,fecha,hora} = request.body
+    console.log(hora)
+    //9:9 -9-9
+    const hora2 = hora.replace(':','-')
+    console.log(hora2)
+    const filePath = path.join(agenda, fecha,`${hora2}.txt`);
     fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
-          const content = texto;
+          const content = desc;
           fs.mkdir(path.join(agenda, fecha), { recursive: true }, (err) => {
             if (err) {
-              res.status(500).json({ error: 'Falla al crear evento' });
+              response.sendFile(path.resolve(__dirname, 'index.html'))
+              //res.status(500).json({ error: 'Falla al crear evento' });
             } else {
               fs.writeFile(filePath, content, (err) => {
                 if (err) {
-                  res.status(500).json({ error: 'Falla al crear evento' });
+                  response.sendFile(path.resolve(__dirname, 'index.html'))
+                  //res.status(500).json({ error: 'Falla al crear evento' });
                 } else {
-                  res.sendStatus(200);
+                  response.sendFile(path.resolve(__dirname, 'index.html'))
+                  //res.sendStatus(200);
                 }
               });
             }
           });
         } else {
-          res.status(409).json({ error: 'Evento ya existe' });
+          response.sendFile(path.resolve(__dirname, 'index.html'))
+          //res.status(409).json({ error: 'Evento ya existe' });
         }
       });
 })

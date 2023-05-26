@@ -8,9 +8,8 @@
 </head>
 <body>
     <form id="form" action="./eventos" method="post" >
-        <input type="text" name="title"><br>
-        <input type="text" name="fecha" value="AAAA-MM-DD"><br>
-        <input type="text" name="hora" value="HH-MM"><br>
+        <input type="date" name="fecha" ><br>
+        <input type="time" name="hora" ><br>
         <textarea name="desc" cols="30" rows="10"></textarea><br>
         <input type="submit" value="OK">
     </form>
@@ -33,12 +32,12 @@
                 html += `<h3>${item.date}</h3>`;
                 html += '<ul>';
                 item.events.forEach(event => {
-                  html += `<li>${event.time} `;//borrar
-                  html += `<form id="form" action="./borrar" method="post" >
+                  html += `${event.time} `;//borrar
+                  html += `<form id="form" action="./borrar" method="post">
                     <input type="hidden"  name="date" value="${item.date}">
                     <input type="hidden" name="time" value="${event.time}">
                     <input type= "submit" value="eliminar" >
-                </form></li>`//editar
+                </form>`//editar
                 html += `<input type="submit" value="editar" onclick="editarFun('${item.date}','${event.time}')">`
                 
                 });
@@ -49,7 +48,7 @@
         }
         function editarFun(date, time){
             console.log("entra aqui")
-            html = `<form id="form" action="./editar" method="post" >
+            html = `<form id="form" action="./editar" method="post">
                     <input type="hidden"  name="date" value="${date}">
                     <input type="hidden" name="time" value="${time}">
                     <textarea name="desc" cols="30" rows="10"></textarea><br>
