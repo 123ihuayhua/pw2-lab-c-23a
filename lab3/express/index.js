@@ -21,6 +21,19 @@ app.get('/', (request, response) => {
     response.sendFile(path.resolve(__dirname, 'index.html'))
 })
 const agenda = path.join(__dirname, 'agenda');
+app.post('/borrar', (request, res) => {
+  console.log(request.body)
+  const { date,time } = request.body;
+  const filePath2 = path.join(agenda, date,`${time}.txt`);
+
+  fs.unlink(filePath2, (err) => {
+    if (err) {
+      res.status(500).json({ error: 'Error al borrar evento' });
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 app.post('/eventos/', (request, res) => {
     console.log(request.body)
     const {title,desc,fecha,hora} = request.body
@@ -53,6 +66,9 @@ app.get('/eventos', (req, res) => {
     const agenda = readAgenda();
     res.json(agenda);
   });
+  app.get('/delete', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'index.html'))
+});
 function readAgenda() {
     const agendaArr = [];
     fs.readdirSync(agenda).forEach((date) => {
@@ -65,17 +81,4 @@ function readAgenda() {
     });
     return agendaArr;
   }
-  app.delete('/events/:date/:time', (req, res) => {
-    const { date, time } = req.params;
-    console.log(req.params)
-    const filePath = path.join(agenda, date, `${time}.txt`);
-
-    fs.unlink(filePath, (err) => {
-      if (err) {
-        res.status(500).json({ error: 'Error al borrar evento' });
-      } else {
-        res.sendStatus(200);
-      }
-    });
-  });
   

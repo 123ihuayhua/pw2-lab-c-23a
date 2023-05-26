@@ -7,7 +7,7 @@
     <title>Agenda</title>
 </head>
 <body>
-    <form id="form" action="./eventos" method="post" target="_null">
+    <form id="form" action="./hola" method="post" >
         <input type="text" name="title"><br>
         <input type="text" name="fecha" value="AAAA-MM-DD"><br>
         <input type="text" name="hora" value="HH-MM"><br>
@@ -15,7 +15,7 @@
         <input type="submit" value="OK">
     </form>
     
-        <input type="submit" value="Ver eventos" onclick="mostrar()">
+    <input type="submit" value="Ver eventos" onclick="mostrar()">
     
     <div id="prueba"></div>
     <script>
@@ -32,9 +32,11 @@
                 html += '<ul>';
                 item.events.forEach(event => {
                   html += `<li>${event.time} `;
-                  html += `<input type="hidden" id="date" value="${item.date}">
-                    <input type="hidden" id="time" value="${event.time}">
-                    <input type="submit" value="eliminar" onclick="borrar()">`
+                  html += `<form id="form" action="./borrar" method="post" >
+                    <input type="hidden"  name="date" value="${item.date}">
+                    <input type="hidden" name="time" value="${event.time}">
+                    <input type= "submit" value="eliminar" >
+                </form></li>`
                 });
                 html += '</ul>';
               });
@@ -43,9 +45,66 @@
             });
             //document.querySelector("#prueba").innerHTML = "html";
         }
+        /*document.getElementById('del').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
+
+    // Obtener el valor de la ruta del archivo del formulario
+    const filePath = document.getElementById('date').value+"/"+document.getElementById('time').value;
+
+    // Realizar la solicitud DELETE utilizando Fetch API
+    fetch('/delete-file', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ filePath: filePath })
+    })
+    .then(response => {
+      if (response.ok) {
+        // La solicitud se completó con éxito
+        alert('Archivo eliminado correctamente');
+        // Aquí puedes realizar cualquier otra acción necesaria después de eliminar el archivo
+      } else {
+        // Ocurrió un error al eliminar el archivo
+        alert('Error al eliminar el archivo');
+      }
+    })
+    .catch(error => {
+      // Ocurrió un error en la solicitud
+      alert('Error en la solicitud: ' + error);
+    });
+  });
+        /*document.getElementById('del').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío del formulario por defecto
+
+    // Obtén los valores de fecha y hora del formulario
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+
+    // Realiza la solicitud DELETE utilizando Fetch API
+    fetch(`/events/${date}/${time}`, {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if (response.ok) {
+        // La solicitud se completó con éxito
+        alert('Evento eliminado correctamente');
+        // Aquí puedes realizar cualquier otra acción necesaria después de eliminar el evento
+      } else {
+        // Ocurrió un error al eliminar el evento
+        alert('Error al eliminar el evento');
+      }
+    })
+    .catch(error => {
+      // Ocurrió un error en la solicitud
+      alert('Error en la solicitud: ' + error);
+    });
+  });
         function borrar(){
             const date = document.getElementById("date");
             const time = document.getElementById("time");
+            console.log(date)
+            console.log(time)
             const url = `http://localhost:3000/eventos/${date}/${time}`;
             fetch(url, {
                 method: "DELETE"
@@ -61,7 +120,7 @@
                 .catch(error => {
                     console.error(error);
                 });
-        }
+        }*/
     </script>
 </body>
 </html>
