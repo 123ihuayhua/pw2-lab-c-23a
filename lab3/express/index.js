@@ -44,7 +44,7 @@ app.post('/editar', (request, response) => {
 
   fs.writeFile(filePath2, desc, function (err) {
     if (err) throw err;
-    console.log('Replaced!');
+    console.log('Reemplazo orrecto!');
     response.sendFile(path.resolve(__dirname, 'index.html'))
   });
 });
@@ -91,7 +91,9 @@ function readAgenda() {
       const datePath = path.join(agenda, date);
       const events = fs.readdirSync(datePath).map((file) => {
         const time = path.basename(file, '.txt');
-        return { time };
+        const filePath = path.join(datePath, file);
+        const text = fs.readFileSync(filePath, 'utf8');
+        return { time, text };
       });
       agendaArr.push({ date, events });
     });
