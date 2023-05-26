@@ -42,12 +42,9 @@ app.post('/editar', (request, res) => {
   const { date,time,desc } = request.body;
   const filePath2 = path.join(agenda, date,`${time}.txt`);
 
-  fs.unlink(filePath2, (err) => {
-    if (err) {
-      res.status(500).json({ error: 'Error al borrar evento' });
-    } else {
-      res.sendStatus(200);
-    }
+  fs.writeFile(filePath2, desc, function (err) {
+    if (err) throw err;
+    console.log('Replaced!');
   });
 });
 app.post('/eventos/', (request, res) => {
