@@ -2,13 +2,15 @@ console.log("ingrese a script")
 document.addEventListener('DOMContentLoaded', function () {
     const titulo = document.querySelector('#title')
     const desc = document.querySelector('#desc')
-    document.querySelector('#form').onsubmit = () => {
+    /*document.querySelector('#form').onsubmit = () => {
         enviarDatos(titulo.value)
         enviarDatos(desc.value)
         const title = titulo.value
         const descrip = desc.value
-    const eventData = {title,descrip}
-    fetch('/eventos', {
+      const eventData = {i:title,j:descrip}
+      console.log(eventData)
+      /*fetch('/eventos', {
+        mode:"cors",
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
               console.error(error);
             });
         return false;
-    }
+    }*/
     
 })
 function enviarDatos(texto){
