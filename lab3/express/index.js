@@ -37,24 +37,24 @@ app.get('/agenda', (request, response) => {
         })
     //
 })
-const eventos = path.join(__dirname, 'eventos');
+const agenda = path.join(__dirname, 'agenda');
 app.post('/eventos/', (request, res) => {
     console.log(request.body)
     const {title,desc,fecha,hora} = request.body
-    const filePath = path.join(eventos,fecha, `${hora}.txt`);
+    const filePath = path.join(agenda, fecha,`${hora}.txt`);
     const texto = title+"\n\n"+desc
     console.log(title)
     console.log(desc)
     fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
-          const content = `${title}\n${texto}`;
-          fs.mkdir(path.join(eventos, fecha), { recursive: true }, (err) => {
+          const content = texto;
+          fs.mkdir(path.join(agenda, fecha), { recursive: true }, (err) => {
             if (err) {
-              res.status(500).json({ error: 'Failed to create event.' });
+              res.status(500).json({ error: 'Falla al crear evento' });
             } else {
               fs.writeFile(filePath, content, (err) => {
                 if (err) {
-                  res.status(500).json({ error: 'Failed to create event.' });
+                  res.status(500).json({ error: 'Falla al crear evento' });
                 } else {
                   res.sendStatus(200);
                 }
@@ -62,11 +62,23 @@ app.post('/eventos/', (request, res) => {
             }
           });
         } else {
-          res.status(409).json({ error: 'Event already exists.' });
+          res.status(409).json({ error: 'Evento ya existe' });
         }
       });
-    /*fs.writeFile(filePath, texto, function (err) {
-        if (err) throw err;
-        console.log('Saved!');
-    });*/
 })
+app.get('/eventos', (req, res) => {
+    const agenda = readAgenda();
+    res.json(agenda);
+  });
+function readAgenda() {
+    const agendaArr = [];
+    fs.readdirSync(agenda).forEach((date) => {
+      const datePath = path.join(agenda, date);
+      const events = fs.readdirSync(datePath).map((file) => {
+        const time = path.basename(file, '.txt');
+        return { time };
+      });
+      agendaArr.push({ date, events });
+    });
+    return agendaArr;
+  }

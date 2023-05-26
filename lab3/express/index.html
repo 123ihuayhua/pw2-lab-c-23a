@@ -7,12 +7,15 @@
     <title>Agenda</title>
 </head>
 <body>
-    <form id="form" action="./eventos" method="post">
+    <form id="form" action="./eventos" method="post" target="_null">
         <input type="text" name="title"><br>
         <input type="text" name="fecha" value="AAAA-MM-DD"><br>
         <input type="text" name="hora" value="HH-MM"><br>
         <textarea name="desc" cols="30" rows="10"></textarea><br>
         <input type="submit" value="OK">
+    </form>
+    <form action="./eventos/" method="get">
+        <input type="submit" value="Ver eventos">
     </form>
     <div id="prueba"></div>
     <script src="./script.js"></script>
