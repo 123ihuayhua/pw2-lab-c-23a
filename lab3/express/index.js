@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const express = require('express')
 const app = express()
-app.use(express.static('pub'))
+app.use(express.static('./'))
 
 app.listen(3000, () => {
     console.log("Escuchando en: http://localhost:3000")
@@ -28,9 +28,10 @@ app.get('/agenda', (request, response) => {
         })
     //
 })
-/*
-fs.appendFile('mynewfile1.txt', "global", function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-  });
-  */
+app.post('/eventos', (request, response) => {
+    //const {titulo, desc} = request.body
+    fs.writeFile('mynewfile1.txt', 'desc', function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    });
+})
