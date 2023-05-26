@@ -37,13 +37,35 @@ app.get('/agenda', (request, response) => {
         })
     //
 })
-app.post('/eventos', (request, response) => {
+const eventos = path.join(__dirname, 'eventos');
+app.post('/eventos/', (request, res) => {
     console.log(request.body)
-    const {i, j} = request.body
-    
-    console.log(i)
-    console.log(j)
-    /*fs.writeFile('./eventos/mynewfile1.txt', 'desc', function (err) {
+    const {title,desc,fecha,hora} = request.body
+    const filePath = path.join(eventos,fecha, `${hora}.txt`);
+    const texto = title+"\n\n"+desc
+    console.log(title)
+    console.log(desc)
+    fs.access(filePath, fs.constants.F_OK, (err) => {
+        if (err) {
+          const content = `${title}\n${texto}`;
+          fs.mkdir(path.join(eventos, fecha), { recursive: true }, (err) => {
+            if (err) {
+              res.status(500).json({ error: 'Failed to create event.' });
+            } else {
+              fs.writeFile(filePath, content, (err) => {
+                if (err) {
+                  res.status(500).json({ error: 'Failed to create event.' });
+                } else {
+                  res.sendStatus(200);
+                }
+              });
+            }
+          });
+        } else {
+          res.status(409).json({ error: 'Event already exists.' });
+        }
+      });
+    /*fs.writeFile(filePath, texto, function (err) {
         if (err) throw err;
         console.log('Saved!');
     });*/
