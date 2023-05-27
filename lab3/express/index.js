@@ -41,7 +41,8 @@ app.post('/borrar', (request, response) => {
     if (err) {
       console.log(err);
     } else {
-      if (files||files.length == 0) {
+      console.log(files)
+      if (files==null||files.length == 0) {//si cumple elimina
         console.log('La carpeta está vacía'+files.length);
         fs.rmdir(diaDir,{ recursive: true }, (err) => {
           if (err) {
