@@ -35,8 +35,9 @@
                     if(salto != -1){  titulo = event.text.substring(0,salto)}
                     else{ titulo = event.text}
                     let descrip = event.text.substring(salto+1, event.text.length)
-                    descrip = descrip.replace("\r\n","<br>")
-                    const texto = event.text.replace("\r\n","<br>")
+                    descrip = descrip.replace(/\r\n/g,"<br>")
+                    const texto = event.text.replace(/\r\n/g,"<br>")
+                    console.log(texto)
 
                   html += `<form id="form" action="./borrar" method="post">
                     <input type="button" value="${titulo}" onclick="print('${descrip}')">
@@ -56,7 +57,7 @@
         }
         function editarFun(date, time,texto){
             //console.log("entra aqui")
-            texto = texto.replace("<br>","\r\n")
+            texto = texto.replace(/<br>/g,"\r\n")
             html = `<form id="form" action="./editar" method="post">
                     <input type="hidden"  name="date" value="${date}">
                     <input type="hidden" name="time" value="${time}">

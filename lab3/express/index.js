@@ -30,15 +30,13 @@ app.post('/borrar', (request, response) => {
   const { date,time } = request.body;
   diaDir =  path.join(agenda, date);
   const filePath = path.join(diaDir,`${time}.txt`);
-
   fs.unlink(filePath, (err) => {
     if (err) {
       response.sendFile(path.resolve(__dirname, 'index.html'))
     } else {
       response.sendFile(path.resolve(__dirname, 'index.html'))
     }
-  });
-  eliminar(diaDir)
+  });  
 });
 function eliminar(dir){
   fs.readdir(dir, (err, files) => {
@@ -108,9 +106,11 @@ app.post('/eventos/', (request, response) => {
     }else response.sendFile(path.resolve(__dirname, 'index.html'))
 })
 app.get('/eventos', (req, res) => {
-    const agenda = readAgenda();
-    
-    res.json(agenda);
+  if(diaDir){
+    eliminar(diaDir)
+  }
+  const agenda = readAgenda();
+  res.json(agenda);
   });
 function readAgenda() {
     const agendaArr = [];
