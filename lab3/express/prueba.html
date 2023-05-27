@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+</head>
+<body>
+    <form id="form" action="./eventos" method="post" >
+        <input type="date" name="fecha" required><br>
+        <input type="time" name="hora" required><br>
+        <textarea name="desc" cols="30" rows="10" required></textarea><br>
+        <input type="submit" value="OK">
+    </form>
+    <input type="button" value="Ver eventos" onclick="mostrar()" >
+    <div id="prueba"></div>
+    <div id="editar"></div>
+    <script src="./script.js"></script>
+</body>
+</html>

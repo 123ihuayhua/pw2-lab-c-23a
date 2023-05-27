@@ -1,0 +1,48 @@
+function mostrar() {
+    const url = 'http://localhost:3000/eventos';
+    fetch(url, { mode: 'cors' })
+      .then(response => response.json())
+      .then(data => {
+        const agenda = data;
+        let html = '';    
+        agenda.forEach(item => {
+          html += `<h3>${item.date}</h3>`;
+          html += '<ul>';
+          item.events.forEach(event => {
+              const salto = event.text.indexOf('\n')
+              //console.log(salto)
+              var titulo
+              if(salto != -1){  titulo = event.text.substring(0,salto)}
+              else{ titulo = event.text}
+              let descrip = event.text.substring(salto+1, event.text.length)
+              descrip = descrip.replace(/\r\n/g,"<br>")
+              const texto = event.text.replace(/\r\n/g,"<br>")
+              console.log(texto)
+
+            html += `<form id="form" action="./borrar" method="post">
+              <input type="button" value="${titulo}" onclick="print('${descrip}')">
+              <input type="hidden"  name="date" value="${item.date}">
+              <input type="hidden" name="time" value="${event.time}">
+              <input type="button" value="editar" onclick="editarFun('${item.date}','${event.time}','${texto}')">
+              <input type= "submit" value="eliminar">
+          </form>`//editar
+          });
+          html += '</ul>';
+        });
+        document.querySelector("#prueba").innerHTML = html;
+      });
+  }
+  function print(texto){
+      document.querySelector("#editar").innerHTML = texto;
+  }
+  function editarFun(date, time,texto){
+      //console.log("entra aqui")
+      texto = texto.replace(/<br>/g,"\r\n")
+      html = `<form id="form" action="./editar" method="post">
+              <input type="hidden"  name="date" value="${date}">
+              <input type="hidden" name="time" value="${time}">
+              <textarea name="desc" cols="30" rows="10" required>${texto}</textarea><br>
+              <input type= "submit" value="confirmar" >
+          </form></li>`
+          document.querySelector("#editar").innerHTML = html;
+  }
