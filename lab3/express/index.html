@@ -8,9 +8,9 @@
 </head>
 <body>
     <form id="form" action="./eventos" method="post" >
-        <input type="date" name="fecha" ><br>
-        <input type="time" name="hora" ><br>
-        <textarea name="desc" cols="30" rows="10"></textarea><br>
+        <input type="date" name="fecha" required><br>
+        <input type="time" name="hora" required><br>
+        <textarea name="desc" cols="30" rows="10" required></textarea><br>
         <input type="submit" value="OK">
     </form>
     <input type="button" value="Ver eventos" onclick="mostrar()" >
@@ -30,7 +30,10 @@
                 html += '<ul>';
                 item.events.forEach(event => {
                     const salto = event.text.indexOf('\n')
-                    const titulo = event.text.substring(0,salto)
+                    //console.log(salto)
+                    var titulo
+                    if(salto != -1){  titulo = event.text.substring(0,salto)}
+                    else{ titulo = event.text}
                     let descrip = event.text.substring(salto+1, event.text.length)
                     descrip = descrip.replace("\r\n","<br>")
                     const texto = event.text.replace("\r\n","<br>")
@@ -57,7 +60,7 @@
             html = `<form id="form" action="./editar" method="post">
                     <input type="hidden"  name="date" value="${date}">
                     <input type="hidden" name="time" value="${time}">
-                    <textarea name="desc" cols="30" rows="10">${texto}</textarea><br>
+                    <textarea name="desc" cols="30" rows="10" required>${texto}</textarea><br>
                     <input type= "submit" value="confirmar" >
                 </form></li>`
                 document.querySelector("#editar").innerHTML = html;

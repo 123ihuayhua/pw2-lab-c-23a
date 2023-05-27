@@ -24,10 +24,11 @@ app.get('/borrar', (request, response) => {
   response.sendFile(path.resolve(__dirname, 'index.html'))
 })
 const agenda = path.join(__dirname, 'agenda');
+var diaDir
 app.post('/borrar', (request, response) => {
   console.log(request.body)
   const { date,time } = request.body;
-  const diaDir =  path.join(agenda, date);
+  diaDir =  path.join(agenda, date);
   const filePath = path.join(diaDir,`${time}.txt`);
 
   fs.unlink(filePath, (err) => {
@@ -37,14 +38,17 @@ app.post('/borrar', (request, response) => {
       response.sendFile(path.resolve(__dirname, 'index.html'))
     }
   });
-  fs.readdir(diaDir, (err, files) => {
+  eliminar(diaDir)
+});
+function eliminar(dir){
+  fs.readdir(dir, (err, files) => {
     if (err) {
       console.log(err);
     } else {
       console.log(files)
-      if (files==null||files.length == 0) {//si cumple elimina
+      if (files==''||files.length == 0) {//si cumple elimina
         console.log('La carpeta está vacía'+files.length);
-        fs.rmdir(diaDir,{ recursive: true }, (err) => {
+        fs.rmdir(dir,{ recursive: true }, (err) => {
           if (err) {
             console.error(err);
           } else {
@@ -56,7 +60,7 @@ app.post('/borrar', (request, response) => {
       }
     }
   });
-});
+}
 app.post('/editar', (request, response) => {
   console.log(request.body)
   const { date,time,desc } = request.body;
@@ -76,6 +80,7 @@ app.post('/eventos/', (request, response) => {
     const hora2 = hora.replace(':','-')
     console.log(hora2)
     const filePath = path.join(agenda, fecha,`${hora2}.txt`);
+    if(desc != ''){
     fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
           const content = desc;
@@ -100,9 +105,11 @@ app.post('/eventos/', (request, response) => {
           //res.status(409).json({ error: 'Evento ya existe' });
         }
       });
+    }else response.sendFile(path.resolve(__dirname, 'index.html'))
 })
 app.get('/eventos', (req, res) => {
     const agenda = readAgenda();
+    
     res.json(agenda);
   });
 function readAgenda() {
