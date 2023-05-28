@@ -23,7 +23,7 @@ function agregar(desc, fecha, hora){
     fetch(url, request)
     .then(response => response.json())
     .then(data2 => {
-      document.querySelector("#show").innerHTML = data2.text;
+      print(data2.text)
     })
     .catch(error => {
       console.error('Error:', error);
@@ -56,13 +56,19 @@ function mostrar() {
               <input type="hidden"  id="date${i}" value="${item.date}">
               <input type="hidden" id="time${i}" value="${event.time}">
               <input type="button" value="editar" onclick="cargarEditor('${item.date}','${event.time}','${texto}')">
-              <input type= "submit" value="eliminar">
+              <input type= "submit" value="eliminar"
+              style="background-color: red;
+              color: white;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;">
           </form>`//editar
           });
           html += '</ul>';
         });
         document.querySelector("#show").innerHTML = html;
         if(i!=0){sePuedeBorrar();}
+        else{print("No hay eventos")}
       });
   }
   function sePuedeBorrar(){
@@ -145,6 +151,7 @@ function borrar(date,time){
     fetch(url, request)
     .then(response => response.json())
     .then(data2 => {
-      document.querySelector("#show").innerHTML = data2.text;
+      //document.querySelector("#show").innerHTML = data2.text;
+      print(data2.text)
     });
 }

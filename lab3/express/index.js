@@ -33,11 +33,9 @@ app.post('/borrar', (request, response) => {
   const filePath = path.join(diaDir,`${time}.txt`);
   fs.unlink(filePath, (err) => {
     if (err) {
-      //response.sendFile(path.resolve(__dirname, index))
       response.status(500).json({ text: 'Falla al eliminar evento' });
     } else {
       response.status(200).json({ text: 'Se elimino el evento' });
-      //response.sendFile(path.resolve(__dirname, index))
     }
   });  
 });
@@ -66,22 +64,18 @@ app.post('/editar', (request, response) => {
   console.log(request.body)
   const { date,time,desc } = request.body;
   const filePath2 = path.join(agenda, date,`${time}.txt`);
-
   fs.writeFile(filePath2, desc, function (err) {
     if (err) throw err;
-    console.log('Reemplazo orrecto!');
+    response.status(200).json({ text: 'Reemplazo correcto!' });
     response.sendFile(path.resolve(__dirname, index))
   });
 });
 app.post('/eventos/', (request, res) => {
     console.log(request.body)
     const {desc,fecha,hora} = request.body
-    //console.log(hora)
     const hora2 = hora.replace(':','-')
-    //console.log(hora2)
     const filePath = path.join(agenda, fecha,`${hora2}.txt`);
     if(desc != ''){
-    //response.setHeader('Content-Type', 'application/json')
     fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
           const content = desc;
