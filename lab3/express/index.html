@@ -7,31 +7,27 @@
     <title>Agenda</title>
 </head>
 <body>
-    <form id="form">
+    <div><form id="formCrear" >
         <input type="date" name="fecha" id="fecha" required><br>
         <input type="time" name="hora" id="hora" required><br>
         <textarea name="desc" id="desc" cols="30" rows="10" required></textarea><br>
         <input type="submit" value="OK">
-    </form>
+    </form></div>
     <input type="button" value="Ver eventos" onclick="mostrar()" >
     <div id="prueba"></div>
     <div id="editar"></div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector('#form').onsubmit = () => {
+        document.querySelector('#formCrear').onsubmit = () => {
           const desc = document.getElementById('desc').value
-        const fecha = document.getElementById('fecha').value
-        const hora = document.getElementById('hora').value
-          //console.log(desc)
-            agregar(desc,fecha,hora)
-            //document.querySelector('#desc').innerText = ''
-            //document.getElementById('fecha').innerText = ''
-            //document.getElementById('hora').innerText = ''
-            
-            return false;
+          const fecha = document.getElementById('fecha').value
+          const hora = document.getElementById('hora').value
+          agregar(desc,fecha,hora)
+          //document.querySelector('#desc').innerText = ''
+          //document.getElementById('fecha').innerText = ''
+          //document.getElementById('hora').innerText = ''
+          return false;
         }
-    })
       function agregar(desc, fecha, hora){
         const url = 'http://localhost:3000/eventos'
         const data = {
@@ -47,27 +43,16 @@
             },
             body: JSON.stringify(data),
         }
-        /*http = fetch(url, request)
-        http.then(
-            response => {
-              //response.json()
-              console.log(response.json())
-            }
-        ).then(
-            data2 => {
-                document.querySelector("#prueba").innerHTML = data2.text
-            }
-          )*/
           fetch(url, request)
-    .then(response => response.json())
-    .then(data2 => {
-      document.querySelector("#prueba").innerHTML = data2.text;
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+          .then(response => response.json())
+          .then(data2 => {
+            document.querySelector("#prueba").innerHTML = data2.text;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
       }
-        function mostrar() {
+      function mostrar() {
           const url = 'http://localhost:3000/eventos';
           fetch(url, { mode: 'cors' })
             .then(response => response.json())
@@ -77,22 +62,24 @@
               agenda.forEach(item => {
                 html += `<h3>${item.date}</h3>`;
                 html += '<ul>';
+                  var i =0;
                 item.events.forEach(event => {
-                    const salto = event.text.indexOf('\n')
-                    //console.log(salto)
+                    const salto = event.text.indexOf("\n")
+                    console.log('salto '+salto)
                     var titulo
                     if(salto != -1){  titulo = event.text.substring(0,salto)}
                     else{ titulo = event.text}
                     let descrip = event.text.substring(salto+1, event.text.length)
-                    descrip = descrip.replace(/\r\n/g,"<br>")
-                    const texto = event.text.replace(/\r\n/g,"<br>")
-                    //console.log(texto)
-
-                  html += `<form id="form" action="./borrar" method="post">
+                    descrip = descrip.replace(/\n/g,"<br>")
+                    const texto = event.text.replace(/\n/g,"<br>")
+                    console.log('texto '+texto)
+                    console.log('descrip '+descrip)
+                    i += 1
+                  html += `<form id="formBorrar">
                     <input type="button" value="${titulo}" onclick="print('${descrip}')">
-                    <input type="hidden"  name="date" value="${item.date}">
-                    <input type="hidden" name="time" value="${event.time}">
-                    <input type="button" value="editar" onclick="editarFun('${item.date}','${event.time}','${texto}')">
+                    <input type="hidden"  id="date${i}" value="${item.date}">
+                    <input type="hidden" id="time${i}" value="${event.time}">
+                    <input type="button" value="editar" onclick="cargarEditor('${item.date}','${event.time}','${texto}')">
                     <input type= "submit" value="eliminar">
                 </form>`//editar
                 });
@@ -104,17 +91,83 @@
         function print(texto){
             document.querySelector("#editar").innerHTML = texto;
         }
-        function editarFun(date, time,texto){
+        function cargarEditor(date, time,texto){
             //console.log("entra aqui")
             texto = texto.replace(/<br>/g,"\r\n")
-            html = `<form id="form" action="./editar" method="post">
-                    <input type="hidden"  name="date" value="${date}">
-                    <input type="hidden" name="time" value="${time}">
-                    <textarea name="desc" cols="30" rows="10" required>${texto}</textarea><br>
-                    <input type= "submit" value="confirmar" >
-                </form></li>`
+            html = `<form id="formEditar">
+                    <input type="hidden"  id="dateE" value="${date}">
+                    <input type="hidden" id="timeE" value="${time}">
+                    <textarea id="descE" cols="30" rows="10" required>${texto}</textarea><br>
+                    <input type= "submit" value="confirmar">
+                </form>`
                 document.querySelector("#editar").innerHTML = html;
+                cargoEditor();
+                return false;
+        }//editar
+        function cargoEditor(){
+        document.querySelector('#formEditar').onsubmit = () => {
+          console.log("entra al editor")
+          const date = document.getElementById('dateE').value
+          const time = document.getElementById('timeE').value
+          const desc2 = document.getElementById('descE').value
+          editar(date,time,desc2)
+          //document.querySelector("#prueba").innerHTML = ''
+          mostrar()
+          document.querySelector("#editar").innerHTML = '';
+          return false;
+        }}//borrar
+        function eliminar(i){
+          console.log('entro aqui2')
+          const date = document.getElementById('date'+i).value
+          const time = document.getElementById('time'+i).value
+          borrar(date,time)
+          return false;
         }
+      
+      function borrar(date,time){
+        const url = 'http://localhost:3000/borrar'
+        const data = {
+          date: date,
+          time:time
+        }
+        //console.log(data)
+        const request = {
+            method: 'POST', // Podría ser GET
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }
+          fetch(url, request)/*
+          .then(response => response.json())
+          .then(data2 => {
+            document.querySelector("#prueba").innerHTML = data2.text;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });*/
+      }
+        function editar(date,time,desc){
+        const url = 'http://localhost:3000/editar'
+        const data = {
+          date: date,
+          time:time,
+          desc: desc
+        }
+        //console.log(data)
+        const request = {
+            method: 'POST', // Podría ser GET
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }
+          fetch(url, request)
+          .then(response => response.json())
+          .then(data2 => {
+            document.querySelector("#prueba").innerHTML = data2.text;
+          });
+      }
     </script>
 </body>
 </html>

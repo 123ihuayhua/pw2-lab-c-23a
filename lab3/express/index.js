@@ -27,7 +27,7 @@ app.get('/borrar', (request, response) => {
 const agenda = path.join(__dirname, 'agenda');
 var diaDir
 app.post('/borrar', (request, response) => {
-  console.log(request.body)
+  console.log('borrar '+request.body)
   const { date,time } = request.body;
   diaDir =  path.join(agenda, date);
   const filePath = path.join(diaDir,`${time}.txt`);
@@ -85,42 +85,27 @@ app.post('/eventos/', (request, res) => {
           const content = desc;
           fs.mkdir(path.join(agenda, fecha), { recursive: true }, (err) => {
             if (err) {
-              //response.sendFile(path.resolve(__dirname, index))
               res.status(500).json({ text: 'Falla al crear evento' });
-              /*response.end(JSON.stringify({
-                text: 'Falla al crear evento'
-            }))*/
             } else {
               fs.writeFile(filePath, content, (err) => {
                 if (err) {
-                  //response.sendFile(path.resolve(__dirname, index))
                   res.status(500).json({ text: 'Falla al crear evento' });
-                  /*response.end(JSON.stringify({
-                    text: 'Falla al crear evento'
-                }))*/
                 } else {
-                  //response.sendFile(path.resolve(__dirname, index))
-                  //res.status(200).json({ error: 'Se creo el evento' });
-                  //res.sendStatus(200)
-                  res.setHeader('Content-Type', 'application/json')
-                  res.json({ text: 'Se creó el evento' });
+                  res.status(200).json({ text: 'Se creó el evento' });
                 }
               });
             }
           });
         } else {
-          //response.sendFile(path.resolve(__dirname, index))
           res.status(409).json({ text: 'Evento ya existe' });
-          /*response.end(JSON.stringify({
-            text: 'Evento ya existe'
-        }))*/
         }
       });
-    }//else response.sendFile(path.resolve(__dirname, index))
+    }
 })
 app.get('/eventos', (req, res) => {
   if(diaDir){
     eliminar(diaDir)
+    diaDir = undefined
   }
   const agenda = readAgenda();
   res.json(agenda);
