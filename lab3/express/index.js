@@ -33,9 +33,11 @@ app.post('/borrar', (request, response) => {
   const filePath = path.join(diaDir,`${time}.txt`);
   fs.unlink(filePath, (err) => {
     if (err) {
-      response.sendFile(path.resolve(__dirname, index))
+      //response.sendFile(path.resolve(__dirname, index))
+      response.status(500).json({ text: 'Falla al eliminar evento' });
     } else {
-      response.sendFile(path.resolve(__dirname, index))
+      response.status(200).json({ text: 'Se elimino el evento' });
+      //response.sendFile(path.resolve(__dirname, index))
     }
   });  
 });
