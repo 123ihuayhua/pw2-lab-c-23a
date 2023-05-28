@@ -65,22 +65,22 @@
                   var i =0;
                 item.events.forEach(event => {
                     const salto = event.text.indexOf("\n")
-                    console.log('salto '+salto)
+                    //console.log('salto '+salto)
                     var titulo
                     if(salto != -1){  titulo = event.text.substring(0,salto)}
                     else{ titulo = event.text}
                     let descrip = event.text.substring(salto+1, event.text.length)
                     descrip = descrip.replace(/\n/g,"<br>")
                     const texto = event.text.replace(/\n/g,"<br>")
-                    console.log('texto '+texto)
-                    console.log('descrip '+descrip)
+                    //console.log('texto '+texto)
+                    //console.log('descrip '+descrip)
                     i += 1
                   html += `<form id="formBorrar">
                     <input type="button" value="${titulo}" onclick="print('${descrip}')">
                     <input type="hidden"  id="date${i}" value="${item.date}">
                     <input type="hidden" id="time${i}" value="${event.time}">
                     <input type="button" value="editar" onclick="cargarEditor('${item.date}','${event.time}','${texto}')">
-                    <input type= "submit" value="eliminar">
+                    <input type= "submit" value="eliminar" onclick="eliminar(${i})">
                 </form>`//editar
                 });
                 html += '</ul>';
