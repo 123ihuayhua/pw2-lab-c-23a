@@ -1,9 +1,11 @@
+var seMuestaEventos = false
 document.querySelector('#formCrear').onsubmit = () => {
   const desc = document.getElementById('desc').value
   const fecha = document.getElementById('fecha').value
   const hora = document.getElementById('hora').value
   agregar(desc,fecha,hora)
   document.querySelector('#formCrear').reset();
+  if(seMuestaEventos){mostrar()}
   return false;
 }
 function agregar(desc, fecha, hora){
@@ -32,6 +34,7 @@ function agregar(desc, fecha, hora){
 var i =0
 function mostrar() {
   i=0
+  seMuestaEventos = true
   resetear()
     const url = 'http://localhost:3000/eventos';
     fetch(url, { mode: 'cors' })
@@ -45,9 +48,14 @@ function mostrar() {
           item.events.forEach(event => {
               const salto = event.text.indexOf("\n")
               var titulo
-              if(salto != -1){  titulo = event.text.substring(0,salto)}
-              else{ titulo = event.text}
-              let descrip = event.text.substring(salto+1, event.text.length)
+              let descrip
+              if(salto != -1){  
+                titulo = event.text.substring(0,salto)
+                descrip = event.text.substring(salto+1, event.text.length)
+              }else{
+                 titulo = event.text
+                 descrip = 'No hay descripcion'
+                } 
               descrip = descrip.replace(/\n/g,"<br>")
               const texto = event.text.replace(/\n/g,"<br>")
               i++
@@ -62,7 +70,7 @@ function mostrar() {
               padding: 10px 20px;
               border: none;
               cursor: pointer;">
-          </form>`//editar
+          </form><br>`//editar
           });
           html += '</ul>';
         });
