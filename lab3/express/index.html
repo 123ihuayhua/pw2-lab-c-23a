@@ -52,7 +52,9 @@
             console.error('Error:', error);
           });
       }
+      var i =0
       function mostrar() {
+        i=0
           const url = 'http://localhost:3000/eventos';
           fetch(url, { mode: 'cors' })
             .then(response => response.json())
@@ -62,7 +64,6 @@
               agenda.forEach(item => {
                 html += `<h3>${item.date}</h3>`;
                 html += '<ul>';
-                  var i =0;
                 item.events.forEach(event => {
                     const salto = event.text.indexOf("\n")
                     //console.log('salto '+salto)
@@ -74,19 +75,33 @@
                     const texto = event.text.replace(/\n/g,"<br>")
                     //console.log('texto '+texto)
                     //console.log('descrip '+descrip)
-                    i += 1
-                  html += `<form id="formBorrar">
+                    i++
+                  html += `<form id="formBorrar${i}">
                     <input type="button" value="${titulo}" onclick="print('${descrip}')">
                     <input type="hidden"  id="date${i}" value="${item.date}">
                     <input type="hidden" id="time${i}" value="${event.time}">
                     <input type="button" value="editar" onclick="cargarEditor('${item.date}','${event.time}','${texto}')">
-                    <input type= "submit" value="eliminar" onclick="eliminar(${i})">
+                    <input type= "submit" value="eliminar">
                 </form>`//editar
                 });
                 html += '</ul>';
+                
               });
               document.querySelector("#prueba").innerHTML = html;
+              if(i!=0){sePuedeBorrar();}
             });
+            console.log(i+" es el ultimo valor de i en mostrar")
+        }
+        function sePuedeBorrar(){
+            for (let index = 1; index <= i; index++) {
+              let nombre = '#formBorrar'+index
+              console.log(nombre)
+              document.querySelector(nombre).onsubmit = () => {
+                eliminar(i)
+                return false;
+              }
+            }
+          
         }
         function print(texto){
             document.querySelector("#editar").innerHTML = texto;
@@ -121,6 +136,9 @@
           const date = document.getElementById('date'+i).value
           const time = document.getElementById('time'+i).value
           borrar(date,time)
+          i=0
+          console.log("se borro "+i)
+          mostrar()
           return false;
         }
       
