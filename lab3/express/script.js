@@ -13,7 +13,6 @@ function agregar(desc, fecha, hora){
     fecha: fecha,
     hora: hora
   }
-  //console.log(data)
   const request = {
       method: 'POST', // Podría ser GET
       headers: {
@@ -33,6 +32,7 @@ function agregar(desc, fecha, hora){
 var i =0
 function mostrar() {
   i=0
+  resetear()
     const url = 'http://localhost:3000/eventos';
     fetch(url, { mode: 'cors' })
       .then(response => response.json())
@@ -44,15 +44,12 @@ function mostrar() {
           html += '<ul>';
           item.events.forEach(event => {
               const salto = event.text.indexOf("\n")
-              //console.log('salto '+salto)
               var titulo
               if(salto != -1){  titulo = event.text.substring(0,salto)}
               else{ titulo = event.text}
               let descrip = event.text.substring(salto+1, event.text.length)
               descrip = descrip.replace(/\n/g,"<br>")
               const texto = event.text.replace(/\n/g,"<br>")
-              //console.log('texto '+texto)
-              //console.log('descrip '+descrip)
               i++
             html += `<form id="formBorrar${i}">
               <input type="button" value="${titulo}" onclick="print('${descrip}')">
@@ -67,12 +64,10 @@ function mostrar() {
         document.querySelector("#show").innerHTML = html;
         if(i!=0){sePuedeBorrar();}
       });
-      //console.log(i+" es el ultimo valor de i en mostrar")
   }
   function sePuedeBorrar(){
       for (let index = 1; index <= i; index++) {
         let nombre = '#formBorrar'+index
-        console.log(nombre)
         document.querySelector(nombre).onsubmit = () => {
           eliminar(i)
           return false;
@@ -86,7 +81,6 @@ function resetear(){
   document.querySelector("#editar").innerHTML = '';
 }
 function cargarEditor(date, time,texto){
-    //console.log("entra aqui")
     texto = texto.replace(/<br>/g,"\r\n")
     html = `<form id="formEditar">
             <input type="hidden"  id="dateE" value="${date}">
@@ -100,7 +94,6 @@ function cargarEditor(date, time,texto){
 }//editar
 function cargoEditor(){
 document.querySelector('#formEditar').onsubmit = () => {
-  console.log("entra al editor")
   const date = document.getElementById('dateE').value
   const time = document.getElementById('timeE').value
   const desc2 = document.getElementById('descE').value
@@ -110,12 +103,9 @@ document.querySelector('#formEditar').onsubmit = () => {
   return false;
 }}//borrar
 function eliminar(i){
-  console.log('entro aqui2')
   const date = document.getElementById('date'+i).value
   const time = document.getElementById('time'+i).value
   borrar(date,time)
-  //i=0
-  console.log("se borro "+i)
   mostrar()
   return false;
 }
@@ -125,7 +115,6 @@ function borrar(date,time){
     date: date,
     time:time
   }
-  //console.log(data)
   const request = {
       method: 'POST', // Podría ser GET
       headers: {
@@ -146,7 +135,6 @@ function borrar(date,time){
     time:time,
     desc: desc
   }
-  //console.log(data)
   const request = {
       method: 'POST', // Podría ser GET
       headers: {
