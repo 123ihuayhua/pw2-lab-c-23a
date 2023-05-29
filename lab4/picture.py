@@ -1,3 +1,4 @@
+import colors
 from colors import *
 class Picture:
   def __init__(self, img):
@@ -20,7 +21,8 @@ class Picture:
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
-    return Picture(None)
+    horizontal = self.img[::-1]
+    return horizontal
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
