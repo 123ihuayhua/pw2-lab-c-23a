@@ -197,6 +197,8 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Ejercicio 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%def JS
 	\lstdefinelanguage{JavaScript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch,
   switch, var, if, in, while, do, else, case, break},
@@ -210,30 +212,7 @@
   commentstyle=\color{purple}\ttfamily,
   stringstyle=\color{red}\ttfamily
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{Calculadora con funciones especiales}
-	\lstinputlisting[language=HTMl, caption={Index.html con divs para agregar los botones},numbers=left,]{src/index01.html}
-	\begin{itemize}	
-		\item El código JS hace que los números se impriman en un orden relativamente correcto
-	\end{itemize}
-	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script01.js}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc01.png}
-	\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Teclado desordenado con función JS}
-	\lstinputlisting[language=HTMl, caption={Ahora los divs tienen su respectiva función},numbers=left,]{src/index02.html}
-	\begin{itemize}	
-		\item En base al código brindado por Stackoverflow se creo la
-		 función desorden que aleatoriza el teclado
-	\end{itemize}
-	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script02.js}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
-	\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%def CSS
 \lstdefinelanguage{CSS}{
   keywords={color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width},
   sensitive=true,
@@ -244,86 +223,103 @@
   alsoletter={:},
   alsodigit={-}
 }
-\subsection{Teclado terminado con borrado implementado}
-	\lstinputlisting[language=HTMl, caption={Se implmento la función borrar},numbers=left,]{src/index03.html}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Calculadora con teclas especiales}
+	\begin{itemize}	
+		\item El código HTML muestra todos los botones que por el momento no incluyen funcionalidad
+		mas que los de los números
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{src/e1/calc01.png}
+	\end{figure}
+	\begin{itemize}	
+		\item El código JS hace que los botones se impriman en un orden correcto
+	\end{itemize}
+	\lstinputlisting[language=JavaScript, caption={Codigo Js para imprimir botones},numbers=left,]{src/e1/script01.js}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc01.png}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Teclado con botones funcionales}
+	\begin{itemize}	
+		\item Cambiaron algunos nombres de las funciones para que se hiciera mas fácil de comprender
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{src/e1/calc02.png}
+	\end{figure}
+	\begin{itemize}	
+		\item Con la función eval de JavaScript se evalúa la función de la caja de texto
+		que muestra como resultado la expresión como 5*5=25
+	\end{itemize}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/e2/script02.js}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/calc02.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/calc03.png}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Teclado con función de memorias}
+	\lstinputlisting[language=HTMl, caption={Se implmento la función borrar},numbers=left,]{src/e2/index03.html}
 	\begin{itemize}	
 		\item Para borrar se dejaba en blanco el cuadro de texto
 	\end{itemize}
-	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script03.js}
-	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/css01.css}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/e2/script03.js}
+	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/e2/css01.css}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec02.png}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc03.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec03.png}
 	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Ejercicio 1}
-	\lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch,
-  switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Ejercicio 2}
 	\subsection{Implementación de teclado en orden con for de JS}
-	\lstinputlisting[language=HTMl, caption={Index.html con divs para agregar los botones},numbers=left,]{src/index01.html}
+	\lstinputlisting[language=HTMl, caption={Index.html con divs para agregar los botones},numbers=left,]{src/e2/index01.html}
 	\begin{itemize}	
 		\item El código JS hace que los números se impriman en un orden relativamente correcto
 	\end{itemize}
-	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script01.js}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/e2/script01.js}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc01.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec01.png}
 	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Teclado desordenado con función JS}
-	\lstinputlisting[language=HTMl, caption={Ahora los divs tienen su respectiva función},numbers=left,]{src/index02.html}
+	\lstinputlisting[language=HTMl, caption={Ahora los divs tienen su respectiva función},numbers=left,]{src/e2/index02.html}
 	\begin{itemize}	
 		\item En base al código brindado por Stackoverflow se creo la
 		 función desorden que aleatoriza el teclado
 	\end{itemize}
-	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script02.js}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/e2/script02.js}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec02.png}
 	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstdefinelanguage{CSS}{
-  keywords={color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width},
-  sensitive=true,
-  morecomment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  morestring=[b]',
-  morestring=[b]",
-  alsoletter={:},
-  alsodigit={-}
-}
 \subsection{Teclado terminado con borrado implementado}
-	\lstinputlisting[language=HTMl, caption={Se implmento la función borrar},numbers=left,]{src/index03.html}
+	\lstinputlisting[language=HTMl, caption={Se implmento la función borrar},numbers=left,]{src/e2/index03.html}
 	\begin{itemize}	
 		\item Para borrar se dejaba en blanco el cuadro de texto
 	\end{itemize}
-	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script03.js}
-	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/css01.css}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/e2/script03.js}
+	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/e2/css01.css}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec02.png}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc03.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec03.png}
 	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lstlisting}[style=ascii-tree]
@@ -354,9 +350,7 @@
 		|		index01.html
 		|		index02.html
 \end{lstlisting}    
-
 	\clearpage
-	
 	\section{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
 	\begin{itemize}			
 		\item El alumno debe marcar o dejar en blanco en celdas de la columna \textbf{Checklist} si cumplio con el ítem correspondiente.
