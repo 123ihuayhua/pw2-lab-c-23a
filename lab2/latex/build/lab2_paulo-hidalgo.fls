@@ -1,7 +1,7 @@
-PWD c:\Users\paulo\pw2-lab-c-23a\lab1\latex
+PWD c:\Users\paulo\pw2-lab-c-23a\lab2\latex
 INPUT C:\Users\paulo\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\lab1_paulo-hidalgo.tex
-OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.log
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\lab2_paulo-hidalgo.tex
+OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.log
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
@@ -848,10 +848,10 @@ INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.aux
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.aux
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.aux
-OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.aux
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.aux
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.aux
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.aux
+OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -871,18 +871,18 @@ INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.pdf
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.pdf
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+OUTPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
 INPUT C:\Program Files\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pdflscape\pdflscape.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pdflscape\pdflscape.sty
@@ -922,7 +922,13 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT .\img\calc.png
+INPUT .\img\calc.png
+INPUT img\calc.png
+INPUT .\img\calc.png
+INPUT .\img\calc.png
+INPUT .\img\calc.png
+INPUT .\img\calc.png
 INPUT .\img\logo_episunsa.png
 INPUT .\img\logo_episunsa.png
 INPUT img\logo_episunsa.png
@@ -938,6 +944,7 @@ INPUT .\img\logo_abet.png
 INPUT .\img\logo_abet.png
 INPUT .\img\logo_abet.png
 INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
@@ -996,18 +1003,18 @@ INPUT .\src\index02.html
 INPUT src\index02.html
 INPUT .\src\index02.html
 INPUT src\index02.html
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_abet.png
-INPUT img\logo_abet.png
-INPUT .\img\logo_abet.png
 INPUT .\src\css01.css
 INPUT src\css01.css
 INPUT .\src\css01.css
@@ -1042,16 +1049,9 @@ INPUT .\img\logo_episunsa.png
 INPUT .\img\logo_abet.png
 INPUT img\logo_abet.png
 INPUT .\img\logo_abet.png
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_abet.png
-INPUT img\logo_abet.png
-INPUT .\img\logo_abet.png
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.aux
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
-INPUT c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.aux
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
+INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
 INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tctt0900.pk
