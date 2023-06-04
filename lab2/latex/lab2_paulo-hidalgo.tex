@@ -167,9 +167,8 @@
 			\centering
 			\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc.png}
 		\end{figure}
-		Cada vez que se presiona ENTER se guardan los datos involucrados en un pila.		
 		Con memoria y botones para recorrer la pila.
-		Agregue 4 botones:
+		Agregue 3 botones:
 		M1: memoria
 		M2: memoria
 		ANS
@@ -193,79 +192,140 @@
 		\item URL del Repositorio GitHub para clonar o recuperar.
 		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a.git}
 		\item URL para el laboratorio 01 en el Repositorio GitHub.
-		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a/tree/main/lab1}
+		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a/tree/main/lab2}
 	\end{itemize}
-	
-	\section{Actividades con el repositorio GitHub}
-	
-	\subsection{Creando e inicializando repositorio GitHub}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Ejercicio 1}
+	\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch,
+  switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Calculadora con funciones especiales}
+	\lstinputlisting[language=HTMl, caption={Index.html con divs para agregar los botones},numbers=left,]{src/index01.html}
 	\begin{itemize}	
-		\item Como es el primer laboratorio se creo el repositorio GitHub.
-		\item Se realizaron los siguientes comandos en la computadora:
-		\item Tomando en cuenta que partimos en el directorio HOME \~{}
-	\end{itemize}	
-		
-	\begin{lstlisting}[language=bash,caption={Creando directorio de trabajo}][H]
-		$ mkdir -p /paulo/
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Dirijíéndonos al directorio de trabajo}][H]
-		$ cd /paulo
-	\end{lstlisting}	
-	\begin{lstlisting}[language=bash,caption={Creando directorio para repositorio GitHub}][H]
-		$ mkdir -p /pw2-lab-c-23a/
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Inicializando directorio para repositorio GitHub}][H]
-		$ cd /pw2-lab-c-23a/
-		$ vim index.html
-		$ git init
-		$ git config --global user.name "Paulo Andre Hidalgo Chinchay"
-		$ git config --global user.email "phidalgo@unsa.edu.pe"
-		$ git add .
-		$ git commit -m "paso 1 crear index.html"
-		$ git branch -M main
-		$ git remote add origin https://github.com/PauloUNSA/pw2-lab-c-23a.git
-		$ git push -u origin main
-	\end{lstlisting}
-	
-	\subsection{Commits}
-	\begin{lstlisting}[language=bash,caption={Primer Commit Creando archivo index.html para laboratorio 01}][H]
-		$ vim index.html
-		$ git add .
-		$ git commit -m "paso 1 crear index.html"			
-		$ git push
-	\end{lstlisting}
-	\begin{itemize}	
-		\item Para el siguiente commit se implemento CSS a nuestra pagina web quedando de la siguiente forma:
+		\item El código JS hace que los números se impriman en un orden relativamente correcto
 	\end{itemize}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script01.js}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/Segundo-commit.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc01.png}
 	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Teclado desordenado con función JS}
+	\lstinputlisting[language=HTMl, caption={Ahora los divs tienen su respectiva función},numbers=left,]{src/index02.html}
 	\begin{itemize}	
-		\item El siguiente codigo no incluye ! ni ´ ya que no es reconocido por latex
+		\item En base al código brindado por Stackoverflow se creo la
+		 función desorden que aleatoriza el teclado
 	\end{itemize}
-	\lstinputlisting[language=HTMl, caption={Index.html con CSS},numbers=left,]{src/index01.html}
-	
-	\begin{itemize}	
-		\item Para el ultimo commit se implemento CSS externo a nuestra ya terminada pagina web quedando de la siguiente manera:
-	\end{itemize}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script02.js}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ultimo-commit.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
 	\end{figure}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{CSS}{
+  keywords={color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  alsoletter={:},
+  alsodigit={-}
+}
+\subsection{Teclado terminado con borrado implementado}
+	\lstinputlisting[language=HTMl, caption={Se implmento la función borrar},numbers=left,]{src/index03.html}
 	\begin{itemize}	
-		\item Al igual que el anterior código, el no incluye ! ni ´
+		\item Para borrar se dejaba en blanco el cuadro de texto
 	\end{itemize}
-	\lstinputlisting[language=HTMl, caption={Index.html terminado con CSS externo},numbers=left,]{src/index02.html}
-	
-	\lstinputlisting[language=HTML, caption={Codigo CSS externo},numbers=left,]{src/css01.css}
-	
-	\subsection{Estructura de laboratorio 01}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script03.js}
+	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/css01.css}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc03.png}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Ejercicio 1}
+	\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch,
+  switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Implementación de teclado en orden con for de JS}
+	\lstinputlisting[language=HTMl, caption={Index.html con divs para agregar los botones},numbers=left,]{src/index01.html}
 	\begin{itemize}	
-		\item El contenido que se entrega en este laboratorio es el siguiente:
+		\item El código JS hace que los números se impriman en un orden relativamente correcto
 	\end{itemize}
-	
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script01.js}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc01.png}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Teclado desordenado con función JS}
+	\lstinputlisting[language=HTMl, caption={Ahora los divs tienen su respectiva función},numbers=left,]{src/index02.html}
+	\begin{itemize}	
+		\item En base al código brindado por Stackoverflow se creo la
+		 función desorden que aleatoriza el teclado
+	\end{itemize}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script02.js}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstdefinelanguage{CSS}{
+  keywords={color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  alsoletter={:},
+  alsodigit={-}
+}
+\subsection{Teclado terminado con borrado implementado}
+	\lstinputlisting[language=HTMl, caption={Se implmento la función borrar},numbers=left,]{src/index03.html}
+	\begin{itemize}	
+		\item Para borrar se dejaba en blanco el cuadro de texto
+	\end{itemize}
+	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/script03.js}
+	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/css01.css}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc02.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc03.png}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lstlisting}[style=ascii-tree]
 	C:\USERS\PAULO\PW2-LAB-C-23A\LAB1
 	|	estilos.css

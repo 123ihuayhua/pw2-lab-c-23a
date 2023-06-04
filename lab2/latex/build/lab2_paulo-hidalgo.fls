@@ -947,38 +947,18 @@ INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT .\src\index01.html
+INPUT src\index01.html
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt9.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ts1cmtt.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ts1cmtt.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ts1cmtt.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ts1cmtt.fd
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tctt0900.tfm
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_abet.png
-INPUT img\logo_abet.png
-INPUT .\img\logo_abet.png
-INPUT .\img\Segundo-commit.png
-INPUT .\img\Segundo-commit.png
-INPUT img\Segundo-commit.png
-INPUT .\img\Segundo-commit.png
-INPUT .\img\Segundo-commit.png
-INPUT .\img\Segundo-commit.png
-INPUT .\img\Segundo-commit.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT .\src\index01.html
-INPUT src\index01.html
 INPUT .\src\index01.html
 INPUT src\index01.html
 INPUT .\src\index01.html
@@ -990,13 +970,19 @@ INPUT .\img\logo_episunsa.png
 INPUT .\img\logo_abet.png
 INPUT img\logo_abet.png
 INPUT .\img\logo_abet.png
-INPUT .\img\ultimo-commit.png
-INPUT .\img\ultimo-commit.png
-INPUT img\ultimo-commit.png
-INPUT .\img\ultimo-commit.png
-INPUT .\img\ultimo-commit.png
-INPUT .\img\ultimo-commit.png
-INPUT .\img\ultimo-commit.png
+INPUT .\src\script01.js
+INPUT src\script01.js
+INPUT .\src\script01.js
+INPUT src\script01.js
+INPUT .\src\script01.js
+INPUT src\script01.js
+INPUT .\img\calc01.png
+INPUT .\img\calc01.png
+INPUT img\calc01.png
+INPUT .\img\calc01.png
+INPUT .\img\calc01.png
+INPUT .\img\calc01.png
+INPUT .\img\calc01.png
 INPUT .\src\index02.html
 INPUT src\index02.html
 INPUT .\src\index02.html
@@ -1010,17 +996,160 @@ INPUT .\img\logo_episunsa.png
 INPUT .\img\logo_abet.png
 INPUT img\logo_abet.png
 INPUT .\img\logo_abet.png
+INPUT .\src\script02.js
+INPUT src\script02.js
+INPUT .\src\script02.js
+INPUT src\script02.js
+INPUT .\src\script02.js
+INPUT src\script02.js
+INPUT .\img\calc02.png
+INPUT .\img\calc02.png
+INPUT img\calc02.png
+INPUT .\img\calc02.png
+INPUT .\img\calc02.png
+INPUT .\img\calc02.png
+INPUT .\img\calc02.png
+INPUT .\src\index03.html
+INPUT src\index03.html
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
+INPUT .\src\index03.html
+INPUT src\index03.html
+INPUT .\src\index03.html
+INPUT src\index03.html
+INPUT .\src\script03.js
+INPUT src\script03.js
+INPUT .\src\script03.js
+INPUT src\script03.js
+INPUT .\src\script03.js
+INPUT src\script03.js
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
+INPUT .\src\css01.css
+INPUT src\css01.css
+INPUT .\src\css01.css
+INPUT src\css01.css
+INPUT .\src\css01.css
+INPUT src\css01.css
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT .\img\calc02.png
+INPUT .\img\calc02.png
+INPUT img\calc02.png
+INPUT .\img\calc02.png
+INPUT .\img\calc03.png
+INPUT .\img\calc03.png
+INPUT img\calc03.png
+INPUT .\img\calc03.png
+INPUT .\img\calc03.png
+INPUT .\img\calc03.png
+INPUT .\img\calc03.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
+INPUT .\src\index01.html
+INPUT src\index01.html
+INPUT .\src\index01.html
+INPUT src\index01.html
+INPUT .\src\index01.html
+INPUT src\index01.html
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
+INPUT .\src\script01.js
+INPUT src\script01.js
+INPUT .\src\script01.js
+INPUT src\script01.js
+INPUT .\src\script01.js
+INPUT src\script01.js
+INPUT .\img\calc01.png
+INPUT .\img\calc01.png
+INPUT img\calc01.png
+INPUT .\img\calc01.png
+INPUT .\src\index02.html
+INPUT src\index02.html
+INPUT .\src\index02.html
+INPUT src\index02.html
+INPUT .\src\index02.html
+INPUT src\index02.html
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
+INPUT .\src\script02.js
+INPUT src\script02.js
+INPUT .\src\script02.js
+INPUT src\script02.js
+INPUT .\src\script02.js
+INPUT src\script02.js
+INPUT .\img\calc02.png
+INPUT .\img\calc02.png
+INPUT img\calc02.png
+INPUT .\img\calc02.png
+INPUT .\src\index03.html
+INPUT src\index03.html
+INPUT .\src\index03.html
+INPUT src\index03.html
+INPUT .\src\index03.html
+INPUT src\index03.html
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
+INPUT .\src\script03.js
+INPUT src\script03.js
+INPUT .\src\script03.js
+INPUT src\script03.js
+INPUT .\src\script03.js
+INPUT src\script03.js
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
 INPUT .\src\css01.css
 INPUT src\css01.css
 INPUT .\src\css01.css
 INPUT src\css01.css
 INPUT .\src\css01.css
 INPUT src\css01.css
+INPUT .\img\calc02.png
+INPUT .\img\calc02.png
+INPUT img\calc02.png
+INPUT .\img\calc02.png
+INPUT .\img\calc03.png
+INPUT .\img\calc03.png
+INPUT img\calc03.png
+INPUT .\img\calc03.png
 INPUT .\img\logo_episunsa.png
 INPUT .\img\logo_episunsa.png
 INPUT img\logo_episunsa.png
@@ -1052,10 +1181,6 @@ INPUT .\img\logo_abet.png
 INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.aux
 INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
 INPUT c:\Users\paulo\pw2-lab-c-23a\lab2\latex\build\lab2_paulo-hidalgo.out
-INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
-INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
-INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tctt0900.pk
-INPUT C:\Users\paulo\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tctt0900.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
