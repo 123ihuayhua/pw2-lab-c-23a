@@ -954,38 +954,59 @@ INPUT .\img\logo_episunsa.png
 INPUT .\img\logo_abet.png
 INPUT img\logo_abet.png
 INPUT .\img\logo_abet.png
-INPUT .\img\pseudocodigo_insercion.png
-INPUT .\img\pseudocodigo_insercion.png
-INPUT img\pseudocodigo_insercion.png
-INPUT .\img\pseudocodigo_insercion.png
-INPUT .\img\pseudocodigo_insercion.png
-INPUT .\img\pseudocodigo_insercion.png
-INPUT .\img\pseudocodigo_insercion.png
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_abet.png
-INPUT img\logo_abet.png
-INPUT .\img\logo_abet.png
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT .\src\Insertion01.java
-INPUT src\Insertion01.java
-INPUT .\src\Insertion01.java
-INPUT src\Insertion01.java
-INPUT .\src\Insertion01.java
-INPUT src\Insertion01.java
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT img\logo_episunsa.png
-INPUT .\img\logo_episunsa.png
-INPUT .\img\logo_abet.png
-INPUT img\logo_abet.png
-INPUT .\img\logo_abet.png
+INPUT .\img\Segundo-commit.png
+INPUT .\img\Segundo-commit.png
+INPUT img\Segundo-commit.png
+INPUT .\img\Segundo-commit.png
+INPUT .\img\Segundo-commit.png
+INPUT .\img\Segundo-commit.png
+INPUT .\img\Segundo-commit.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT .\src\index01.html
+INPUT src\index01.html
+INPUT .\src\index01.html
+INPUT src\index01.html
+INPUT .\src\index01.html
+INPUT src\index01.html
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
+INPUT .\src\index02.html
+INPUT src\index02.html
+INPUT .\src\index02.html
+INPUT src\index02.html
+INPUT .\src\index02.html
+INPUT src\index02.html
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT .\src\css01.css
+INPUT src\css01.css
+INPUT .\src\css01.css
+INPUT src\css01.css
+INPUT .\src\css01.css
+INPUT src\css01.css
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT img\logo_episunsa.png
+INPUT .\img\logo_episunsa.png
+INPUT .\img\logo_abet.png
+INPUT img\logo_abet.png
+INPUT .\img\logo_abet.png
 INPUT .\img\logo_episunsa.png
 INPUT .\img\logo_episunsa.png
 INPUT img\logo_episunsa.png

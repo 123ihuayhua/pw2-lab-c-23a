@@ -73,7 +73,7 @@
 \fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
 \fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
 \fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
-\fancyfoot[L]{Estudiante Juan Perez Perez}
+\fancyfoot[L]{Estudiante Paulo Hidalgo Chinchay}
 \fancyfoot[C]{\itemCourse}
 \fancyfoot[R]{Página \thepage}
 
@@ -162,7 +162,7 @@
 	\begin{itemize}		
 		\item Crear una pagina propia con HTML y CSS que incluya nuestra presentación 
 		personal al igual que imágenes y links.
-		\item Utilizar Git para evidenciar subir el trabajo.
+		\item Utilizar Git para evidenciar el trabajo.
 		\item Crear un repositorio privado.
 		\item Hacer que el docente sea colaborador de este repositorio para que pueda ser revisado.
 	\end{itemize}
@@ -173,9 +173,9 @@
 		\item Sistema Operativo Windows 11 pro versión 22H2 de 64 bits.
 		\item VIM 9.0.
 		\item Git 2.39.2.
-		\item Visual Studio Code 1.78.2
+		\item Visual Studio Code 1.78.2.
 		\item Cuenta en GitHub con el correo institucional.
-		\item Tutoriales de w3c de HTMl y CSS
+		\item Tutoriales de w3c de HTMl y CSS.
 		\item \url{https://www.w3.org/Style/Examples/011/firstcss.es.html}
 	\end{itemize}
 	
@@ -193,93 +193,57 @@
 	\begin{itemize}	
 		\item Como es el primer laboratorio se creo el repositorio GitHub.
 		\item Se realizaron los siguientes comandos en la computadora:
+		\item Tomando en cuenta que partimos en el directorio HOME \~{}
 	\end{itemize}	
 		
 	\begin{lstlisting}[language=bash,caption={Creando directorio de trabajo}][H]
-		$ mkdir -p $HOME/rescobedoq/
+		$ mkdir -p /paulo/
 	\end{lstlisting}
 	\begin{lstlisting}[language=bash,caption={Dirijíéndonos al directorio de trabajo}][H]
-		$ cd $HOME/rescobedoq/
+		$ cd /paulo
 	\end{lstlisting}	
 	\begin{lstlisting}[language=bash,caption={Creando directorio para repositorio GitHub}][H]
-		$ mkdir -p $HOME/rescobedoq/programacion
+		$ mkdir -p /pw2-lab-c-23a/
 	\end{lstlisting}
 	\begin{lstlisting}[language=bash,caption={Inicializando directorio para repositorio GitHub}][H]
-		$ cd $HOME/rescobedoq/programacion
-		$ echo "# programacion" >> README.md
+		$ cd /pw2-lab-c-23a/
+		$ vim index.html
 		$ git init
-		$ git config --global user.name "Richart Smith Escobedo Quispe"
-		$ git config --global user.email rescobedoq@gmail.com
-		$ git add README.md
-		$ git commit -m "first commit"
+		$ git config --global user.name "Paulo Andre Hidalgo Chinchay"
+		$ git config --global user.email "phidalgo@unsa.edu.pe"
+		$ git add .
+		$ git commit -m "paso 1 crear index.html"
 		$ git branch -M main
-		$ git remote add origin https://github.com/rescobedoq/programacion.git
+		$ git remote add origin https://github.com/PauloUNSA/pw2-lab-c-23a.git
 		$ git push -u origin main
 	\end{lstlisting}
 	
 	\subsection{Commits}
-	\begin{lstlisting}[language=bash,caption={Primer Commit Creando carpeta/archivo para laboratorio 01}][H]
-		$ mkdir lab01
-		$ touch lab01/Insertion.java
+	\begin{lstlisting}[language=bash,caption={Primer Commit Creando archivo index.html para laboratorio 01}][H]
+		$ vim index.html
 		$ git add .
-		$ git commit -m "Creando carpeta/archivo para laboratorio 01"			
-		$ git push -u origin main
+		$ git commit -m "paso 1 crear index.html"			
+		$ git push
 	\end{lstlisting}
-	
 	\begin{itemize}	
-		\item Se creo el archivo \textbf{.gitignore} para no considerar los archivos \textbf{*.class} que son innecesarios hacer seguimiento.
+		\item Para el siguiente commit se implemento CSS a nuestra pagina web quedando de la siguiente forma:
 	\end{itemize}
-	\begin{lstlisting}[language=bash,caption={Creando .gitignore}][H]
-		$ vim lab01/.gitignore
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={lab01/.gitignore}][H]
-		*.class
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Commit: Creando .gitignore para archivos *.class}][H]
-		$ git add .
-		$ git commit -m "Creando .gitignore para archivos *.class"			
-		$ git push -u origin main
-	\end{lstlisting}
-	
-	\begin{itemize}	
-		\item Para el siguiente commit se implemento el algoritmo de ordenamiento por Inserción, se imprime el arreglo caso definido en el mismo código.
-		\item El pseudocódigo utilizado es el siguiente:
-	\end{itemize}	
-	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/pseudocodigo_insercion.png}
-		%\includesvg{img/automata.svg}
-		%\label{img:mot2}
-		%\caption{Product backlog.}
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/Segundo-commit.png}
 	\end{figure}
+	\begin{itemize}	
+		\item El siguiente codigo no incluye ! ni ´ ya que no es reconocido por latex
+	\end{itemize}
+	\lstinputlisting[language=HTMl, caption={Index.html con CSS},numbers=left,]{src/index01.html}
 	
-	\clearpage
+	\begin{itemize}	
+		\item Al igual que el anterior el no incluye ! ni ´
+	\end{itemize}
+	\lstinputlisting[language=HTMl, caption={Index.html terminado con CSS externo},numbers=left,]{src/index02.html}
 	
-	\begin{lstlisting}[language=bash,caption={Creando .gitignore}][H]
-		$ vim lab01/Insertion.java
-	\end{lstlisting}
+	\lstinputlisting[language=HTML, caption={Codigo CSS externo},numbers=left,]{src/css01.css}
 	
-	\lstinputlisting[language=Java, caption={Insertion.java},numbers=left,]{src/Insertion01.java}
-	
-	\begin{lstlisting}[language=bash,caption={Compilando y probando código}][H]
-		$ cd lab01
-		$ javac Insertion.java
-		$ java Insertion
-		5 2 4 6 1 3 
-		5 5 4 6 1 3 
-		2 5 5 6 1 3 
-		2 4 5 6 1 3 
-		2 2 4 5 6 3 
-		1 2 4 4 5 6
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Commit: Probando algoritmo de Inserción con arreglo}][H]
-		$ git add .
-		$ git commit -m "Probando algoritmo de Insercion con arreglo"			
-		$ git push -u origin main
-	\end{lstlisting}
-	
-		
 	\subsection{Estructura de laboratorio 01}
 	\begin{itemize}	
 		\item El contenido que se entrega en este laboratorio es el siguiente:
@@ -300,32 +264,6 @@ lab01/
         |--- Insertion01.java
 \end{lstlisting}    
 
-\section{Pregunta: ¿Cúal es el comportamiento del algoritmo de ordenamiento por inserción?}
-	\begin{itemize}
-		\item El algoritmo muestra un comportamiento cuadrático de O(n²).
-		\item Se trabajarón los peores casos desde una arreglo de tamaño 1 hasta N.
-		\item Para obtener un grafico ideal se utilizó N=10,000.
-	\end{itemize}		
-
-	\section{\textcolor{red}{Rúbricas}}
-	
-	\subsection{\textcolor{red}{Entregable Informe}}
-	\begin{table}[H]
-		\caption{Tipo de Informe}
-		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
-		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
-		\begin{tabular}{|p{3cm}|p{12cm}|}
-			\hline
-			\multicolumn{2}{|c|}{\textbf{\textcolor{red}{Informe}}}  \\
-			\hline 
-			\textbf{\textcolor{red}{Latex}} & \textcolor{blue}{El informe está en formato PDF desde Latex,  con un formato limpio (buena presentación) y facil de leer.}   \\ 
-			\hline 
-			
-			
-		\end{tabular}
-	}
-	\end{table}
-	
 	\clearpage
 	
 	\subsection{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
@@ -388,13 +326,6 @@ lab01/
 
 \section{Referencias}
 \begin{itemize}			
-	\item \url{https://www.w3schools.com/java/default.asp}
-	\item \url{https://www.geeksforgeeks.org/insertion-sort/}
-\end{itemize}	
-	
-%\clearpage
-%\bibliographystyle{apalike}
-%\bibliographystyle{IEEEtranN}
-%\bibliography{bibliography}
-			
+	\item \url{https://www.w3.org/Style/Examples/011/firstcss.es.html}
+\end{itemize}				
 \end{document}
