@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.4)  4 JUN 2023 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.4)  4 JUN 2023 13:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -713,19 +713,24 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.51407pt}.
 
-[3 <./img/Segundo-commit.png>]) (src/index02.html
+[3 <./img/Segundo-commit.png>])
+<img/ultimo-commit.png, id=133, 510.40688pt x 198.7425pt>
+File: img/ultimo-commit.png Graphic file (type png)
+<use img/ultimo-commit.png>
+Package pdftex.def Info: img/ultimo-commit.png  used on input line 245.
+(pdftex.def)             Requested size: 354.86412pt x 138.18475pt.
+ (src/index02.html
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 15.
-) (src/css01.css
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 6.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 29.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 6.
+Package pdftex.def Info: img/logo_abet.png  used on input line 29.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
 
 
@@ -735,14 +740,14 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.51407pt}.
 
-[4])
+[4 <./img/ultimo-commit.png>]) (src/css01.css)
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 267.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 271.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 267.
+Package pdftex.def Info: img/logo_abet.png  used on input line 271.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
 
 
@@ -753,38 +758,15 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.51407pt}.
 
 [5]
-Overfull \hbox (5.9124pt too wide) in paragraph at lines 299--299
-[]|\OT1/cmr/m/n/10 Checklist| 
- []
-
-
-Overfull \hbox (4.45987pt too wide) in paragraph at lines 299--299
-[]|\OT1/cmr/m/n/10 Estudiante| 
- []
-
-
-Overfull \hbox (4.7852pt too wide) in paragraph at lines 299--300
-[]|\OT1/cmr/m/n/10 Profesor| 
- []
-
-
-Overfull \hbox (40.32231pt too wide) in paragraph at lines 297--323
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--323
-
- []
-
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 325.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 289.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 325.
+Package pdftex.def Info: img/logo_abet.png  used on input line 289.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+
 
 Package fancyhdr Warning: \headheight is too small (30.0pt): 
 (fancyhdr)                Make it at least 40.51407pt, for example:
@@ -792,18 +774,39 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.51407pt}.
 
-[6
+[6]
+Overfull \hbox (5.9124pt too wide) in paragraph at lines 321--321
+[]|\OT1/cmr/m/n/10 Checklist| 
+ []
 
-]
+
+Overfull \hbox (4.45987pt too wide) in paragraph at lines 321--321
+[]|\OT1/cmr/m/n/10 Estudiante| 
+ []
+
+
+Overfull \hbox (4.7852pt too wide) in paragraph at lines 321--322
+[]|\OT1/cmr/m/n/10 Profesor| 
+ []
+
+
+Overfull \hbox (40.32231pt too wide) in paragraph at lines 319--345
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--345
+
+ []
+
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 331.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 347.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 331.
+Package pdftex.def Info: img/logo_abet.png  used on input line 347.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
-
 
 Package fancyhdr Warning: \headheight is too small (30.0pt): 
 (fancyhdr)                Make it at least 40.51407pt, for example:
@@ -813,6 +816,25 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 [7
 
+]
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 353.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 353.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+
+
+Package fancyhdr Warning: \headheight is too small (30.0pt): 
+(fancyhdr)                Make it at least 40.51407pt, for example:
+(fancyhdr)                \setlength{\headheight}{40.51407pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.51407pt}.
+
+[8
+
 ] (c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
@@ -820,20 +842,20 @@ LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
 Package rerunfilecheck Info: File `lab1_paulo-hidalgo.out' has not changed.
-(rerunfilecheck)             Checksum: 01F01D8F9F990CC3A1BC7CD7875F60BF;1749.
+(rerunfilecheck)             Checksum: 7EAF7E6CBC1116881D9FA5B9CB06EA9B;1735.
  ) 
 Here is how much of TeX's memory you used:
- 18169 strings out of 476331
- 303681 string characters out of 5797581
- 1946660 words of memory out of 5000000
- 38133 multiletter control sequences out of 15000+600000
+ 18211 strings out of 476331
+ 304220 string characters out of 5797581
+ 1932660 words of memory out of 5000000
+ 38158 multiletter control sequences out of 15000+600000
  517318 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,17n,92p,527b,2311s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\paulo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\paulo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.pdf (7 pages, 195446 bytes).
+Output written on c:\Users\paulo\pw2-lab-c-23a\lab1\latex\build\lab1_paulo-hidalgo.pdf (8 pages, 213869 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
- 100 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

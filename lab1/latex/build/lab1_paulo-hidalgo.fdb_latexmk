@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1685902953 "c:/Users/paulo/pw2-lab-c-23a/lab1/latex/lab1_paulo-hidalgo.tex" "build/lab1_paulo-hidalgo.pdf" "lab1_paulo-hidalgo" 1685902957 0
+["pdflatex"] 1685905158 "c:/Users/paulo/pw2-lab-c-23a/lab1/latex/lab1_paulo-hidalgo.tex" "build/lab1_paulo-hidalgo.pdf" "lab1_paulo-hidalgo" 1685905163 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tctt0900.tfm" 993062564 1284 f8b60d5840783b0ee9876d4a535f8f09 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -132,13 +132,14 @@
   "C:/Users/paulo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1685895053 11548 706c7ebd5755f061bc0ae3690aa8987b ""
   "C:/Users/paulo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt0900.pk" 1685895055 8332 97d07b5f91f08826f3a5fe70b6149d7f ""
   "C:/Users/paulo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1685894690 23169144 07271776ddda4aded45d63ace5385fa9 ""
-  "build/lab1_paulo-hidalgo.aux" 1685902957 2907 8b1f0c0dbba1c03760855684b538566e "pdflatex"
-  "build/lab1_paulo-hidalgo.out" 1685902957 1749 01f01d8f9f990cc3a1bc7cd7875f60bf "pdflatex"
-  "c:/Users/paulo/pw2-lab-c-23a/lab1/latex/lab1_paulo-hidalgo.tex" 1685902950 11866 53379a18ded9e61a7040470dbe7d50e0 ""
+  "build/lab1_paulo-hidalgo.aux" 1685905162 2897 99fdcd938be307ba75636dece91da2fb "pdflatex"
+  "build/lab1_paulo-hidalgo.out" 1685905162 1735 7eaf7e6cbc1116881d9fa5b9cb06ea9b "pdflatex"
+  "c:/Users/paulo/pw2-lab-c-23a/lab1/latex/lab1_paulo-hidalgo.tex" 1685905154 12447 68fd82cbd95cd63aeb308755883425f7 ""
   "img/Segundo-commit.png" 1685897719 23859 75ab91e887df20e5ae9627c3544efdac ""
   "img/logo_abet.png" 1685892330 6307 419a1d1911db3872e78cc7f9d6dfea5f ""
   "img/logo_episunsa.png" 1685892330 6815 2a9ee48dad6b8fd2216f86902e5e7a6f ""
-  "lab1_paulo-hidalgo.tex" 1685902950 11866 53379a18ded9e61a7040470dbe7d50e0 ""
+  "img/ultimo-commit.png" 1685904889 25067 588e6cdb84465dcf3801bc373ee03fd2 ""
+  "lab1_paulo-hidalgo.tex" 1685905154 12447 68fd82cbd95cd63aeb308755883425f7 ""
   "src/css01.css" 1685902112 537 c52c4e0b9d78eb6b0508a8d112e0f0c6 ""
   "src/index01.html" 1685900812 862 d015553b53f438174f506257c530f794 ""
   "src/index02.html" 1685902006 994 750b707537a4c8a9c57dc383cdd75733 ""
