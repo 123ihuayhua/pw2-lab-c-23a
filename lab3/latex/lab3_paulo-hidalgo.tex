@@ -49,8 +49,8 @@
 \newcommand{\itemAcademic}{2023 - A}
 \newcommand{\itemInput}{Del 2 Junio 2023}
 \newcommand{\itemOutput}{Al 5 Junio 2023}
-\newcommand{\itemPracticeNumber}{01}
-\newcommand{\itemTheme}{Git, HTML y CSS}
+\newcommand{\itemPracticeNumber}{03}
+\newcommand{\itemTheme}{NodeJS con express}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -160,11 +160,12 @@
 	
 	\section{Tarea}
 	\begin{itemize}		
-		\item Crear una pagina propia con HTML y CSS que incluya nuestra presentación 
-		personal al igual que imágenes y links.
-		\item Utilizar Git para evidenciar el trabajo.
-		\item Crear un repositorio privado.
-		\item Hacer que el docente sea colaborador de este repositorio para que pueda ser revisado.
+		\item  Cree una aplicación NodeJS con express, para administrar una agenda personal.
+		\subitem Crear evento: fecha y hora. (Si ya existe el archivo no debería ingresar el evento)(La primera línea es el título del evento, las demás líneas son la descripción del evento.)
+		\subitem Editar evento. (Se muestran el archivo  donde esta el detalle del evento)
+		\subitem Eliminar evento.
+		\subitem Ver eventos. Utilizar el formato árbol especificado anteriormente, donde debería incluirse sólo el título del evento.
+		\item Interfaz que trabaja todo un CRUD en una sola vista. (Se pueden usar ventanas emergentes)
 	\end{itemize}
 		
 	\section{Equipos, materiales y temas utilizados}
@@ -175,122 +176,191 @@
 		\item Git 2.39.2.
 		\item Visual Studio Code 1.78.2.
 		\item Cuenta en GitHub con el correo institucional.
-		\item Tutoriales de w3c de HTMl y CSS.
-		\item \url{https://www.w3.org/Style/Examples/011/firstcss.es.html}
+		\item NodeJS 18.1.0
+		\item Ejercicios resueltos.
+		\item \url{https://github.com/rescobedoq/pw2/tree/main/labs/lab03}
+		\item Saber usar File System de NodeJS.
+		\item \url{https://www.w3schools.com/nodejs/nodejs_filesystem.asp}
 	\end{itemize}
 	
 	\section{URL de Repositorio Github}
 	\begin{itemize}
 		\item URL del Repositorio GitHub para clonar o recuperar.
 		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a.git}
-		\item URL para el laboratorio 01 en el Repositorio GitHub.
-		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a/tree/main/lab1}
+		\item URL para el laboratorio 03 en el Repositorio GitHub.
+		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a/tree/main/lab3}
 	\end{itemize}
 	
-	\section{Actividades con el repositorio GitHub}
-	
-	\subsection{Creando e inicializando repositorio GitHub}
+	\section{App Agenda en NodeJS con express}
+	%def JS
+	\lstdefinelanguage{JS}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch,
+  switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily
+}
+%def CSS
+\lstdefinelanguage{CSS}{
+  keywords={color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  alsoletter={:},
+  alsodigit={-}
+}
+	\subsection{Configurar espacio de trabajo}
 	\begin{itemize}	
-		\item Como es el primer laboratorio se creo el repositorio GitHub.
-		\item Se realizaron los siguientes comandos en la computadora:
-		\item Tomando en cuenta que partimos en el directorio HOME \~{}
+		\item Con el comando npm se instalaron los siguientes frameworks:
+		\item express, body-parser, markdown-it y cors.
+		\item Ademas se crearon los archivos index.js e index.html.
+		de prueba para ver si funcionaba correctamente el entorno.
 	\end{itemize}	
-		
-	\begin{lstlisting}[language=bash,caption={Creando directorio de trabajo}][H]
-		$ mkdir -p /paulo/
+	
+	\begin{lstlisting}[language=bash,caption={Crear subcarpeta para instalar frameworks}][H]
+		$ mkdir -p /express/
 	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Dirijíéndonos al directorio de trabajo}][H]
-		$ cd /paulo
+	\begin{lstlisting}[language=bash,caption={Instalar frameworks dentro de express}][H]
+		$ cd /express
+		$ npm install express body-parser markdown-it cors
 	\end{lstlisting}	
-	\begin{lstlisting}[language=bash,caption={Creando directorio para repositorio GitHub}][H]
-		$ mkdir -p /pw2-lab-c-23a/
-	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Inicializando directorio para repositorio GitHub}][H]
-		$ cd /pw2-lab-c-23a/
-		$ vim index.html
-		$ git init
-		$ git config --global user.name "Paulo Andre Hidalgo Chinchay"
-		$ git config --global user.email "phidalgo@unsa.edu.pe"
-		$ git add .
-		$ git commit -m "paso 1 crear index.html"
-		$ git branch -M main
-		$ git remote add origin https://github.com/PauloUNSA/pw2-lab-c-23a.git
-		$ git push -u origin main
-	\end{lstlisting}
-	
-	\subsection{Commits}
-	\begin{lstlisting}[language=bash,caption={Primer Commit Creando archivo index.html para laboratorio 01}][H]
-		$ vim index.html
-		$ git add .
-		$ git commit -m "paso 1 crear index.html"			
-		$ git push
-	\end{lstlisting}
-	\begin{itemize}	
-		\item Para el siguiente commit se implemento CSS a nuestra pagina web quedando de la siguiente forma:
-	\end{itemize}
+	\lstinputlisting[language=JS, caption={Index.js de prueba},numbers=left,]{src/indexjs01.js}
+	\lstinputlisting[language=JS, caption={Index.html de prueba},numbers=left,]{src/index01.html}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/Segundo-commit.png}
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost01.png}
 	\end{figure}
-	\begin{itemize}	
-		\item El siguiente codigo no incluye ! ni ´ ya que no es reconocido por latex
-	\end{itemize}
-	\lstinputlisting[language=HTMl, caption={Index.html con CSS},numbers=left,]{src/index01.html}
-	
-	\begin{itemize}	
-		\item Para el ultimo commit se implemento CSS externo a nuestra ya terminada pagina web quedando de la siguiente manera:
-	\end{itemize}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ultimo-commit.png}
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost_agenda.png}
 	\end{figure}
+	\begin{itemize}	
+		\item Como se observa funciona correctamente
+	\end{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Terminado con redireccion}
+	\begin{itemize}	
+		\item La página web estaba completa, sin embargo redireccionaba a otras paginas como eventos
+		o borrar al completar un form o pedir datos como se muestra a continuación.
+	\end{itemize}
+	\lstinputlisting[language=JS, caption={Index.js},numbers=left,]{src/indexjs02.js}
+	\lstinputlisting[language=HTMl, caption={Index.html terminado con redireccionamiento y js incrustado},numbers=left,]{src/index02.html}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost02.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/l-eventos.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ver-eventos01.png}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Terminado completamente}
+	\begin{itemize}	
+		\item Se borraron los console.log() en index.js.
+		\item Se externalizo el script del html.
+		\item Index.html completamente terminado y con estilo a parte.
+	\end{itemize}
+	\lstinputlisting[language=JS, caption={Index.js limpio},numbers=left,]{src/indexjs03.js}
+	\lstinputlisting[language=HTMl, caption={Index.html terminado sin redireccionamiento con CSS y script externos},numbers=left,]{src/index03.html}
+	\lstinputlisting[language=JS, caption={script.js script de funciones para realizar acciondes con el servidor NodeJS},numbers=left,]{src/script.js}
+	\lstinputlisting[language=HTMl, caption={Hoja de estilos },numbers=left,]{src/css01.css}
 
-	\begin{itemize}	
-		\item Al igual que el anterior código, el no incluye ! ni ´
-	\end{itemize}
-	\lstinputlisting[language=HTMl, caption={Index.html terminado con CSS externo},numbers=left,]{src/index02.html}
-	
-	\lstinputlisting[language=HTML, caption={Codigo CSS externo},numbers=left,]{src/css01.css}
-	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost03.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/crea-evento.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ver-eventos02.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/eliminar.png}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Estructura de laboratorio 01}
 	\begin{itemize}	
 		\item El contenido que se entrega en este laboratorio es el siguiente:
 	\end{itemize}
 	
 \begin{lstlisting}[style=ascii-tree]
-	C:\USERS\PAULO\PW2-LAB-C-23A\LAB1
-	|	estilos.css
-	|	index.html
-	|---fotos
-	|		BusterYYo.jpg
-	|---latex
-		|	lab1_paulo-hidalgo.tex
-		|   lab1_paulo-hidalgo.pdf
-		|---build
-		|		lab1_paulo-hidalgo.aux
-		|       lab1_paulo-hidalgo.fdb_latexmk
-		|       lab1_paulo-hidalgo.fls
-		|       lab1_paulo-hidalgo.log
-		|       lab1_paulo-hidalgo.out
-		|       lab1_paulo-hidalgo.pdf
-		|       lab1_paulo-hidalgo.synctex.gz
-		|---img
-		|		logo_abet.png
+	//se omitieron las subcarpetas y archivos de node_modules al ocupar las de 500 lineas de espacio
+	C:\USERS\PAULO\PW2-LAB-C-23A\LAB3
+	|	├───express
+	|   |   estilo.css
+	|   |   index.html
+	|   |   index.js
+	|   |   package-lock.json
+	|   |   package.json
+	|   |   script.js
+	|   |   
+	|   ├───agenda
+	|   ├───eventos
+	|   ├───node_modules
+	|   |   |   *
+	|   |
+	|   └───priv
+	|           poema.txt
+	|
+	└───latex
+		|   lab3_paulo-hidalgo.tex
+		|	lab3_paulo-hidalgo.pdf
+		|
+		├───build
+		|       lab3_paulo-hidalgo.aux
+		|       lab3_paulo-hidalgo.fdb_latexmk
+		|       lab3_paulo-hidalgo.fls
+		|       lab3_paulo-hidalgo.log
+		|       lab3_paulo-hidalgo.out
+		|       lab3_paulo-hidalgo.pdf
+		|       lab3_paulo-hidalgo.synctex(busy)
+		|
+		├───img
+		|       crea-evento.png
+		|       eliminar.png
+		|       l-eventos.png
+		|       localhost01.png
+		|       localhost02.png
+		|       localhost03.png
+		|       localhost_agenda.png
+		|       logo_abet.png
 		|       logo_episunsa.png
 		|       logo_unsa.jpg
 		|       Segundo-commit.png
 		|       ultimo-commit.png
-		|---src
-		|		css01.css
-		|		index01.html
-		|		index02.html
+		|       ver-eventos01.png
+		|       ver-eventos02.png
+		|
+		└───src
+				css01.css
+				index01.html
+				index02.html
+				index03.html
+				indexjs01.js
+				indexjs02.js
+				indexjs03.js
+				script.js
 \end{lstlisting}
-\subsection{Pregunta: ¿Por qué Git y GitHub son herramientas importantes para el curso?}
+\subsection{Pregunta: En el Ejemplo Hola Mundo con NodeJS. ¿Qué pasó con la línea: Content type ...?}
 \begin{itemize}
-	\item Porque en el caso de Git nos permite controlar versiones localmente, 
-	crear ramas y regresar a una versión especifica si fuese necesario.
-	\item En el caso de GitHub viene incorporado con Git con la gran diferencias que nos permite
-	subir proyectos completos a la nube dando acceso público o privado; al igual que el trabajo colaborativo.
+	\item No esta debido a que no es necesario ya que devuelve una respuesta en JSON, que después
+	es tomada por el cliente e insertada en un div de html ya existente.
 \end{itemize}
 	\clearpage
 	\section{\textcolor{red}{Rúbricas}}
@@ -355,6 +425,7 @@
 
 \section{Referencias}
 \begin{itemize}			
-	\item \url{https://www.w3.org/Style/Examples/011/firstcss.es.html}
+	\item \url{https://github.com/rescobedoq/pw2/tree/main/labs/lab03}
+	\item \url{https://www.w3schools.com/nodejs/nodejs_filesystem.asp}
 \end{itemize}				
 \end{document}
