@@ -167,8 +167,7 @@
 			\centering
 			\includegraphics[width=0.3\textwidth,keepaspectratio]{img/calc.png}
 		\end{figure}
-		Con memoria y botones para recorrer la pila.
-		Agregue 3 botones:
+		Con memoria y agregue 3 botones:
 		M1: memoria
 		M2: memoria
 		ANS
@@ -184,7 +183,8 @@
 		\item Cuenta en GitHub con el correo institucional.
 		\item Stackoverflow para desordenar un arreglo
 		\item \url{https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array}
-		\item 
+		\item Tutorial de w3schools para la funcion eval de JavaScript
+		\item \url{https://www.w3schools.com/jsref/jsref_eval.asp}
 	\end{itemize}
 	
 	\section{URL de Repositorio Github}
@@ -264,23 +264,50 @@
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/calc03.png}
 	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Teclado con función de memorias}
-	\lstinputlisting[language=HTMl, caption={Se implmento la función borrar},numbers=left,]{src/e2/index03.html}
+\subsection{Teclado con memorias y ANS}
 	\begin{itemize}	
-		\item Para borrar se dejaba en blanco el cuadro de texto
+		\item Se implemento las 2 memorias y en ANS que devuelve la ultima respuesta
+	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{src/e1/calc03.png}
+	\end{figure}
+	\begin{itemize}	
+		\item Se agrego un arreglo y un auxiliar boolean que permite saber si estamos o no guardando, 
+		al igual que la variable answer que se modifica cada vez que se hace click en el igual.
 	\end{itemize}
 	\lstinputlisting[language=JavaScript, caption={Codigo JavaScript},numbers=left,]{src/e2/script03.js}
-	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/e2/css01.css}
+	\begin{itemize}	
+		\item Se guarda la expresión 8*9 en la memoria 1, también se pueden guardar resultados, seguidamente
+		se presiona igual que arroja el resultado. Después de ello se presiona M1 de nuevo por lo cual cambia 
+		el texto. Después se presiona ans que muestra 72 al ser la ultima respuesta guardada.
+	\end{itemize}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec02.png}
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/calc04.png}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec03.png}
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/calc05.png}
 	\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/calc06.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/calc07.png}
+	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Teclado con memorias y ANS}
+	\begin{itemize}	
+		\item Se agrego estilo
+	\end{itemize}
+	\lstinputlisting[language=CSS, caption={Se agregro estilo con CSS},numbers=left,]{src/e1/css.css}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/cacl-final.png}
+	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Ejercicio 2}
 	\subsection{Implementación de teclado en orden con for de JS}
@@ -315,41 +342,79 @@
 	\lstinputlisting[language=CSS, caption={Codigo CSS},numbers=left,]{src/e2/css01.css}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec02.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
 		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/tec03.png}
 	\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Arbol}
 \begin{lstlisting}[style=ascii-tree]
-	C:\USERS\PAULO\PW2-LAB-C-23A\LAB1
-	|	estilos.css
-	|	index.html
-	|---fotos
-	|		BusterYYo.jpg
-	|---latex
-		|	lab1_paulo-hidalgo.tex
-		|   lab1_paulo-hidalgo.pdf
-		|---build
-		|		lab1_paulo-hidalgo.aux
-		|       lab1_paulo-hidalgo.fdb_latexmk
-		|       lab1_paulo-hidalgo.fls
-		|       lab1_paulo-hidalgo.log
-		|       lab1_paulo-hidalgo.out
-		|       lab1_paulo-hidalgo.pdf
-		|       lab1_paulo-hidalgo.synctex.gz
-		|---img
-		|		logo_abet.png
+	C:\USERS\PAULO\PW2-LAB-C-23A\LAB2
+	├───2ejercicio
+	|       calc.js
+	|       estilo.css
+	|       index.html
+	|
+	├───ejercicio1
+	|       index.html
+	|       script.js
+	|       style.css
+	|
+	└───latex
+		|   lab2_paulo-hidalgo.tex
+		|	lab2_paulo-hidalgo.pdf
+		|
+		├───build
+		|       lab2_paulo-hidalgo.aux
+		|       lab2_paulo-hidalgo.fdb_latexmk
+		|       lab2_paulo-hidalgo.fls
+		|       lab2_paulo-hidalgo.log
+		|       lab2_paulo-hidalgo.out
+		|       lab2_paulo-hidalgo.pdf
+		|       lab2_paulo-hidalgo.synctex.gz
+		|
+		├───img
+		|       cacl-final.png
+		|       calc.png
+		|       calc01.png
+		|       calc02.png
+		|       calc03.png
+		|       calc04.png
+		|       calc05.png
+		|       calc06.png
+		|       calc07.png
+		|       logo_abet.png
 		|       logo_episunsa.png
 		|       logo_unsa.jpg
-		|       Segundo-commit.png
-		|       ultimo-commit.png
-		|---src
-		|		css01.css
-		|		index01.html
-		|		index02.html
-\end{lstlisting}    
+		|       tec01.png
+		|       tec02.png
+		|       tec03.png
+		|
+		└───src
+			├───e1
+			|       calc01.png
+			|       calc02.png
+			|       calc03.png
+			|       css.css
+			|       script01.js
+			|       script02.js
+			|       script03.js
+			|
+			└───e2
+					css01.css
+					index01.html
+					index02.html
+					index03.html
+					script01.js
+					script02.js
+					script03.js
+
+\end{lstlisting} 
+\subsection{Pregunta: ¿Por qué Git y GitHub son herramientas importantes para el curso?}
+\begin{itemize}
+	\item Porque en el caso de Git nos permite controlar versiones localmente, 
+	crear ramas y regresar a una versión especifica si fuese necesario.
+	\item En el caso de GitHub viene incorporado con Git con la gran diferencias que nos permite
+	subir proyectos completos a la nube dando acceso público o privado; al igual que el trabajo colaborativo.
+\end{itemize}   
 	\clearpage
 	\section{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
 	\begin{itemize}			
