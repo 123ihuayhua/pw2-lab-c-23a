@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Estilos del formulario */
+#formCrear {
+  margin-bottom: 20px;
+}
+
+#formCrear input[type="date"],
+#formCrear input[type="time"],
+#formCrear textarea {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+}
+#formEditar textarea {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+}
+#formEditar input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#formCrear input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#formCrear input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Estilos del boton "Ver eventos" */
+input[type="button"] {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #0077A7;
+}
+
+#show {
+  margin-bottom: 20px;
+}
+
+#editar {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+li span {
+  font-weight: bold;
+  margin-right: 10px;
+}
