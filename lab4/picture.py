@@ -26,12 +26,22 @@ class Picture:
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
-    return Picture(None)
+    neg = []
+    for fila in self.img:
+    	cadena = ""
+    	for color in fila:
+    		cadena += self._invColor(color)
+    	neg.append(cadena)
+    return Picture(neg)
 
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento 
         al lado derecho de la figura actual """
-    return Picture(None)
+    juntos = []
+    for i in self.img:
+        juntos.append(self.img[i]+p.img[i])
+    return Picture(juntos)
+
 
   def up(self, p):
     return Picture(None)
@@ -39,7 +49,8 @@ class Picture:
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
-    return Picture(None)
+        return Picture(None)
+        
   
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
