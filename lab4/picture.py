@@ -56,10 +56,13 @@ class Picture:
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    return  Picture(self*n)
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    repet = []
+    for i in range(len(self.img)):
+      repet.append(self.img[i]*n)
+    return Picture(repet)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
