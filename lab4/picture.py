@@ -28,10 +28,10 @@ class Picture:
     """ Devuelve un negativo de la imagen """
     neg = []
     for fila in self.img:
-    	cadena = ""
-    	for color in fila:
-    		cadena += self._invColor(color)
-    	neg.append(cadena)
+      cadena = ""
+      for color in fila:
+          cadena += self._invColor(color)
+      neg.append(cadena)
     return Picture(neg)
 
   def join(self, p):
@@ -49,7 +49,7 @@ class Picture:
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
-        return Picture(None)
+    return Picture(None)
         
   
   def horizontalRepeat(self, n):
