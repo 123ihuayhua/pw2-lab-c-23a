@@ -44,12 +44,20 @@ class Picture:
 
 
   def up(self, p):
-    return Picture(None)
+    sobre = []
+    for i in range(len(self.img)):
+      linea = []
+      for j in range(len(self.img[i])):
+        if p.img[i][j] != ' ':
+          linea.append(p.img[i][j])
+        else:
+          linea.append(self.img[i][j])
+      sobre.append(linea)
+    return Picture(sobre)
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
-
     return Picture(self.img[::]+p.img[::])
         
   
