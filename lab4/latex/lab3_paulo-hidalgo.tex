@@ -1,0 +1,431 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{phidalgo@unsa.edu.pe}
+\newcommand{\itemStudent}{Paulo Andre Hidalgo Chinchay}
+\newcommand{\itemCourse}{Programación web 2}
+\newcommand{\itemCourseCode}{20223011}
+\newcommand{\itemSemester}{III}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - A}
+\newcommand{\itemInput}{Del 2 Junio 2023}
+\newcommand{\itemOutput}{Al 5 Junio 2023}
+\newcommand{\itemPracticeNumber}{03}
+\newcommand{\itemTheme}{NodeJS con express}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Estudiante Paulo Hidalgo Chinchay}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\section{Tarea}
+	\begin{itemize}		
+		\item  Cree una aplicación NodeJS con express, para administrar una agenda personal.
+		\subitem Crear evento: fecha y hora. (Si ya existe el archivo no debería ingresar el evento)(La primera línea es el título del evento, las demás líneas son la descripción del evento.)
+		\subitem Editar evento. (Se muestran el archivo  donde esta el detalle del evento)
+		\subitem Eliminar evento.
+		\subitem Ver eventos. Utilizar el formato árbol especificado anteriormente, donde debería incluirse sólo el título del evento.
+		\item Interfaz que trabaja todo un CRUD en una sola vista. (Se pueden usar ventanas emergentes)
+	\end{itemize}
+		
+	\section{Equipos, materiales y temas utilizados}
+	\begin{itemize}
+		\item Sistema Operativo Ubuntu GNU Linux 23 lunar 64 bits Kernell 6.2.
+		\item Sistema Operativo Windows 11 pro versión 22H2 de 64 bits.
+		\item VIM 9.0.
+		\item Git 2.39.2.
+		\item Visual Studio Code 1.78.2.
+		\item Cuenta en GitHub con el correo institucional.
+		\item NodeJS 18.1.0
+		\item Ejercicios resueltos.
+		\item \url{https://github.com/rescobedoq/pw2/tree/main/labs/lab03}
+		\item Saber usar File System de NodeJS.
+		\item \url{https://www.w3schools.com/nodejs/nodejs_filesystem.asp}
+	\end{itemize}
+	
+	\section{URL de Repositorio Github}
+	\begin{itemize}
+		\item URL del Repositorio GitHub para clonar o recuperar.
+		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a.git}
+		\item URL para el laboratorio 03 en el Repositorio GitHub.
+		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a/tree/main/lab3}
+	\end{itemize}
+	
+	\section{App Agenda en NodeJS con express}
+	%def JS
+	\lstdefinelanguage{JS}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch,
+  switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily
+}
+%def CSS
+\lstdefinelanguage{CSS}{
+  keywords={color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  alsoletter={:},
+  alsodigit={-}
+}
+	\subsection{Configurar espacio de trabajo}
+	\begin{itemize}	
+		\item Con el comando npm se instalaron los siguientes frameworks:
+		\item express, body-parser, markdown-it y cors.
+		\item Ademas se crearon los archivos index.js e index.html.
+		de prueba para ver si funcionaba correctamente el entorno.
+	\end{itemize}	
+	
+	\begin{lstlisting}[language=bash,caption={Crear subcarpeta para instalar frameworks}][H]
+		$ mkdir -p /express/
+	\end{lstlisting}
+	\begin{lstlisting}[language=bash,caption={Instalar frameworks dentro de express}][H]
+		$ cd /express
+		$ npm install express body-parser markdown-it cors
+	\end{lstlisting}	
+	\lstinputlisting[language=JS, caption={Index.js de prueba},numbers=left,]{src/indexjs01.js}
+	\lstinputlisting[language=JS, caption={Index.html de prueba},numbers=left,]{src/index01.html}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost01.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost_agenda.png}
+	\end{figure}
+	\begin{itemize}	
+		\item Como se observa funciona correctamente
+	\end{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Terminado con redireccion}
+	\begin{itemize}	
+		\item La página web estaba completa, sin embargo redireccionaba a otras paginas como eventos
+		o borrar al completar un form o pedir datos como se muestra a continuación.
+	\end{itemize}
+	\lstinputlisting[language=JS, caption={Index.js},numbers=left,]{src/indexjs02.js}
+	\lstinputlisting[language=HTMl, caption={Index.html terminado con redireccionamiento y js incrustado},numbers=left,]{src/index02.html}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost02.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/l-eventos.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ver-eventos01.png}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Terminado completamente}
+	\begin{itemize}	
+		\item Se borraron los console.log() en index.js.
+		\item Se externalizo el script del html.
+		\item Index.html completamente terminado y con estilo a parte.
+	\end{itemize}
+	\lstinputlisting[language=JS, caption={Index.js limpio},numbers=left,]{src/indexjs03.js}
+	\lstinputlisting[language=HTMl, caption={Index.html terminado sin redireccionamiento con CSS y script externos},numbers=left,]{src/index03.html}
+	\lstinputlisting[language=JS, caption={script.js script de funciones para realizar acciondes con el servidor NodeJS},numbers=left,]{src/script.js}
+	\lstinputlisting[language=HTMl, caption={Hoja de estilos },numbers=left,]{src/css01.css}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost03.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/crea-evento.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ver-eventos02.png}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/eliminar.png}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Estructura de laboratorio 01}
+	\begin{itemize}	
+		\item El contenido que se entrega en este laboratorio es el siguiente:
+	\end{itemize}
+	
+\begin{lstlisting}[style=ascii-tree]
+	//se omitieron las subcarpetas y archivos de node_modules al ocupar las de 500 lineas de espacio
+	C:\USERS\PAULO\PW2-LAB-C-23A\LAB3
+	|	├───express
+	|   |   estilo.css
+	|   |   index.html
+	|   |   index.js
+	|   |   package-lock.json
+	|   |   package.json
+	|   |   script.js
+	|   |   
+	|   ├───agenda
+	|   ├───eventos
+	|   ├───node_modules
+	|   |   |   *
+	|   |
+	|   └───priv
+	|           poema.txt
+	|
+	└───latex
+		|   lab3_paulo-hidalgo.tex
+		|	lab3_paulo-hidalgo.pdf
+		|
+		├───build
+		|       lab3_paulo-hidalgo.aux
+		|       lab3_paulo-hidalgo.fdb_latexmk
+		|       lab3_paulo-hidalgo.fls
+		|       lab3_paulo-hidalgo.log
+		|       lab3_paulo-hidalgo.out
+		|       lab3_paulo-hidalgo.pdf
+		|       lab3_paulo-hidalgo.synctex(busy)
+		|
+		├───img
+		|       crea-evento.png
+		|       eliminar.png
+		|       l-eventos.png
+		|       localhost01.png
+		|       localhost02.png
+		|       localhost03.png
+		|       localhost_agenda.png
+		|       logo_abet.png
+		|       logo_episunsa.png
+		|       logo_unsa.jpg
+		|       Segundo-commit.png
+		|       ultimo-commit.png
+		|       ver-eventos01.png
+		|       ver-eventos02.png
+		|
+		└───src
+				css01.css
+				index01.html
+				index02.html
+				index03.html
+				indexjs01.js
+				indexjs02.js
+				indexjs03.js
+				script.js
+\end{lstlisting}
+\subsection{Pregunta: En el Ejemplo Hola Mundo con NodeJS. ¿Qué pasó con la línea: Content type ...?}
+\begin{itemize}
+	\item No esta debido a que no es necesario ya que devuelve una respuesta en JSON, que después
+	es tomada por el cliente e insertada en un div de html ya existente.
+\end{itemize}
+	\clearpage
+	\section{\textcolor{red}{Rúbricas}}
+
+	\subsection{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
+	\begin{itemize}			
+		\item El alumno debe marcar o dejar en blanco en celdas de la columna \textbf{Checklist} si cumplio con el ítem correspondiente.
+		\item Si un alumno supera la fecha de entrega,  su calificación será sobre la nota mínima aprobada, siempre y cuando cumpla con todos lo items.
+		\item El alumno debe autocalificarse en la columna \textbf{Estudiante} de acuerdo a la siguiente tabla:
+	
+		\begin{table}[ht]
+			\caption{Niveles de desempeño}
+			\begin{center}
+			\begin{tabular}{ccccc}
+    			\hline
+    			 & \multicolumn{4}{c}{Nivel}\\
+    			\cline{1-5}
+    			\textbf{Puntos} & Insatisfactorio 25\%& En Proceso 50\% & Satisfactorio 75\% & Sobresaliente 100\%\\
+    			\textbf{2.0}&0.5&1.0&1.5&2.0\\
+    			\textbf{4.0}&1.0&2.0&3.0&4.0\\
+    		\hline
+			\end{tabular}
+		\end{center}
+	\end{table}	
+	
+	\end{itemize}
+	
+	\begin{table}[H]
+		\caption{Rúbrica para contenido del Informe y demostración}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		%\begin{center}
+		\begin{tabular}{|p{2.7cm}|p{7cm}|x{1.3cm}|p{1.2cm}|p{1.5cm}|p{1.1cm}|}
+			\hline
+    		\multicolumn{2}{|c|}{Contenido y demostración} & Puntos & Checklist & Estudiante & Profesor\\
+			\hline
+			\textbf{1. GitHub} & Hay enlace URL activo del directorio para el  laboratorio hacia su repositorio GitHub con código fuente terminado y fácil de revisar. &2 &X &2 & \\ 
+			\hline
+			\textbf{2. Commits} &  Hay capturas de pantalla de los commits más importantes con sus explicaciones detalladas. (El profesor puede preguntar para refrendar calificación). &4 &X &4 & \\ 
+			\hline 
+			\textbf{3. Código fuente} &  Hay porciones de código fuente importantes con numeración y explicaciones detalladas de sus funciones. &2 &X &2 & \\ 
+			\hline 
+			\textbf{4. Ejecución} & Se incluyen ejecuciones/pruebas del código fuente  explicadas gradualmente. &2 &X &2 & \\ 
+			\hline			
+			\textbf{5. Pregunta} & Se responde con completitud a la pregunta formulada en la tarea.  (El profesor puede preguntar para refrendar calificación).  &2 &X &2 & \\ 
+			\hline	
+			\textbf{6. Fechas} & Las fechas de modificación del código fuente estan dentro de los plazos de fecha de entrega establecidos. &2 &X &2 & \\ 
+			\hline 
+			\textbf{7. Ortografía} & El documento no muestra errores ortográficos. &2 &X &2 & \\ 
+			\hline 
+			\textbf{8. Madurez} & El Informe muestra de manera general una evolución de la madurez del código fuente,  explicaciones puntuales pero precisas y un acabado impecable.   (El profesor puede preguntar para refrendar calificación).  &4 &X &4 & \\ 
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Total}} &20 & &20 & \\ 
+			\hline
+		\end{tabular}
+		%\end{center}
+		%\label{tab:multicol}
+		}
+	\end{table}
+	
+\clearpage
+
+\section{Referencias}
+\begin{itemize}			
+	\item \url{https://github.com/rescobedoq/pw2/tree/main/labs/lab03}
+	\item \url{https://www.w3schools.com/nodejs/nodejs_filesystem.asp}
+\end{itemize}				
+\end{document}
