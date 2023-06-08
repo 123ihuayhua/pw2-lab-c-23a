@@ -509,7 +509,12 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box109
-) (c:\Users\paulo\pw2-lab-c-23a\lab4\latex\build\lab4_paulo-hidalgo.aux)
+) (c:\Users\paulo\pw2-lab-c-23a\lab4\latex\build\lab4_paulo-hidalgo.aux
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+)
 \openout1 = `lab4_paulo-hidalgo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
@@ -585,6 +590,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 107.
+ (c:\Users\paulo\pw2-lab-c-23a\lab4\latex\build\lab4_paulo-hidalgo.out) (c:\Users\paulo\pw2-lab-c-23a\lab4\latex\build\lab4_paulo-hidalgo.out)
 \@outlinefile=\write4
 \openout4 = `lab4_paulo-hidalgo.out'.
 
@@ -624,12 +630,12 @@ Overfull \hbox (0.89597pt too wide) in paragraph at lines 151--159
 [][] 
  []
 
-<img/logo_episunsa.png, id=7, 195.73125pt x 58.2175pt>
+<img/logo_episunsa.png, id=55, 195.73125pt x 58.2175pt>
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
 Package pdftex.def Info: img/logo_episunsa.png  used on input line 182.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
-<img/logo_abet.png, id=8, 58.2175pt x 65.24374pt>
+<img/logo_abet.png, id=56, 58.2175pt x 65.24374pt>
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
 Package pdftex.def Info: img/logo_abet.png  used on input line 182.
@@ -656,12 +662,12 @@ File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 
 Package Listings Warning: Text dropped after begin of listing on input line 231.
 
-<img/localhost01.png, id=30, 214.55156pt x 90.3375pt>
+<img/localhost01.png, id=76, 214.55156pt x 90.3375pt>
 File: img/localhost01.png Graphic file (type png)
 <use img/localhost01.png>
 Package pdftex.def Info: img/localhost01.png  used on input line 239.
 (pdftex.def)             Requested size: 354.86412pt x 149.42949pt.
-<img/localhost_agenda.png, id=31, 1264.725pt x 94.85437pt>
+<img/localhost_agenda.png, id=77, 1264.725pt x 94.85437pt>
 File: img/localhost_agenda.png Graphic file (type png)
 <use img/localhost_agenda.png>
 Package pdftex.def Info: img/localhost_agenda.png  used on input line 243.
@@ -682,17 +688,17 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.51407pt}.
 
 [2 <./img/localhost01.png>]
-<img/localhost02.png, id=49, 236.38312pt x 252.19218pt>
+<img/localhost02.png, id=92, 236.38312pt x 252.19218pt>
 File: img/localhost02.png Graphic file (type png)
 <use img/localhost02.png>
 Package pdftex.def Info: img/localhost02.png  used on input line 258.
 (pdftex.def)             Requested size: 354.86412pt x 378.60672pt.
-<img/l-eventos.png, id=50, 233.37187pt x 252.19218pt>
+<img/l-eventos.png, id=93, 233.37187pt x 252.19218pt>
 File: img/l-eventos.png Graphic file (type png)
 <use img/l-eventos.png>
 Package pdftex.def Info: img/l-eventos.png  used on input line 262.
 (pdftex.def)             Requested size: 354.86412pt x 383.52464pt.
-<img/ver-eventos01.png, id=51, 204.01219pt x 324.46219pt>
+<img/ver-eventos01.png, id=94, 204.01219pt x 324.46219pt>
 File: img/ver-eventos01.png Graphic file (type png)
 <use img/ver-eventos01.png>
 Package pdftex.def Info: img/ver-eventos01.png  used on input line 266.
@@ -748,22 +754,22 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.51407pt}.
 
 [5 <./img/ver-eventos01.png>]
-<img/localhost03.png, id=74, 630.10406pt x 390.70969pt>
+<img/localhost03.png, id=115, 630.10406pt x 390.70969pt>
 File: img/localhost03.png Graphic file (type png)
 <use img/localhost03.png>
 Package pdftex.def Info: img/localhost03.png  used on input line 282.
 (pdftex.def)             Requested size: 354.86412pt x 220.04193pt.
-<img/crea-evento.png, id=75, 617.30624pt x 334.24875pt>
+<img/crea-evento.png, id=116, 617.30624pt x 334.24875pt>
 File: img/crea-evento.png Graphic file (type png)
 <use img/crea-evento.png>
 Package pdftex.def Info: img/crea-evento.png  used on input line 286.
 (pdftex.def)             Requested size: 354.86412pt x 192.15073pt.
-<img/ver-eventos02.png, id=76, 618.05907pt x 164.11313pt>
+<img/ver-eventos02.png, id=117, 618.05907pt x 164.11313pt>
 File: img/ver-eventos02.png Graphic file (type png)
 <use img/ver-eventos02.png>
 Package pdftex.def Info: img/ver-eventos02.png  used on input line 290.
 (pdftex.def)             Requested size: 354.86412pt x 94.22908pt.
-<img/eliminar.png, id=77, 617.30624pt x 101.62968pt>
+<img/eliminar.png, id=118, 617.30624pt x 101.62968pt>
 File: img/eliminar.png Graphic file (type png)
 <use img/eliminar.png>
 Package pdftex.def Info: img/eliminar.png  used on input line 294.
@@ -902,27 +908,21 @@ LaTeX Info: Redefining \% on input line 23.
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-
-Package rerunfilecheck Warning: File `lab4_paulo-hidalgo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `lab4_paulo-hidalgo.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  F08B5A5E0D8D78214F0567F5F8980365;2573.
+Package rerunfilecheck Info: File `lab4_paulo-hidalgo.out' has not changed.
+(rerunfilecheck)             Checksum: F08B5A5E0D8D78214F0567F5F8980365;2573.
  ) 
 Here is how much of TeX's memory you used:
- 17927 strings out of 476331
- 301020 string characters out of 5797581
+ 17944 strings out of 476331
+ 301456 string characters out of 5797581
  1944660 words of memory out of 5000000
- 37971 multiletter control sequences out of 15000+600000
+ 37984 multiletter control sequences out of 15000+600000
  515459 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,17n,92p,434b,2015s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,17n,92p,652b,2015s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\paulo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on c:\Users\paulo\pw2-lab-c-23a\lab4\latex\build\lab4_paulo-hidalgo.pdf (11 pages, 230970 bytes).
+Output written on c:\Users\paulo\pw2-lab-c-23a\lab4\latex\build\lab4_paulo-hidalgo.pdf (11 pages, 235891 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
+ 270 PDF objects out of 1000 (max. 8388607)
  100 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 
