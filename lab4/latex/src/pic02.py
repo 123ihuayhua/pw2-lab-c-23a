@@ -6,14 +6,9 @@ def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
     horizontal = self.img[::-1]
     return Picture(horizontal)
-
-
-def negative(self):
-    """ Devuelve un negativo de la imagen """
-    neg = []
-    for fila in self.img:
-        cadena = ""
-        for color in fila:
-            cadena += self._invColor(color)
-        neg.append(cadena)
-    return Picture(neg)
+def verticalMirror(self):
+    """ Devuelve el espejo vertical de la imagen """
+    vertical = []
+    for value in self.img:
+      vertical.append(value[::-1])
+    return Picture(vertical)

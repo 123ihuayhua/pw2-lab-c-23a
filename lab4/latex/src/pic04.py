@@ -2,13 +2,14 @@ from colors import *
 class Picture:
   def __init__(self, img):
     self.img = img;
-  def horizontalRepeat(self, n):
-    """ Devuelve una nueva figura repitiendo la figura actual al costado
-        la cantidad de veces que indique el valor de n """
-    return  Picture(self*n)
-
-  def verticalRepeat(self, n):
-    repet = []
+  def up(self, p):
+    sobre = []
     for i in range(len(self.img)):
-      repet.append(self.img[i]*n)
-    return Picture(repet)
+      linea = []
+      for j in range(len(self.img[i])):
+        if p.img[i][j] != ' ':
+          linea.append(p.img[i][j])
+        else:
+          linea.append(self.img[i][j])
+      sobre.append(linea)
+    return Picture(sobre)

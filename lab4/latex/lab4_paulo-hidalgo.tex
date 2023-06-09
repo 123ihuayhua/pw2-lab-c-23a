@@ -48,9 +48,9 @@
 \newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
 \newcommand{\itemAcademic}{2023 - A}
 \newcommand{\itemInput}{Del 2 Junio 2023}
-\newcommand{\itemOutput}{Al 5 Junio 2023}
-\newcommand{\itemPracticeNumber}{03}
-\newcommand{\itemTheme}{NodeJS con express}
+\newcommand{\itemOutput}{Al 9 Junio 2023}
+\newcommand{\itemPracticeNumber}{04}
+\newcommand{\itemTheme}{Python}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -160,12 +160,12 @@
 	
 	\section{Tarea}
 	\begin{itemize}		
-		\item  Cree una aplicación NodeJS con express, para administrar una agenda personal.
-		\subitem Crear evento: fecha y hora. (Si ya existe el archivo no debería ingresar el evento)(La primera línea es el título del evento, las demás líneas son la descripción del evento.)
-		\subitem Editar evento. (Se muestran el archivo  donde esta el detalle del evento)
-		\subitem Eliminar evento.
-		\subitem Ver eventos. Utilizar el formato árbol especificado anteriormente, donde debería incluirse sólo el título del evento.
-		\item Interfaz que trabaja todo un CRUD en una sola vista. (Se pueden usar ventanas emergentes)
+		\item  Implemente los métodos de la clase Picture. Se recomienda que implemente la clase picture
+		por etapas, probando realizar los dibujos que se muestran en la siguiente preguntas.
+		\subitem Usando  únicamente los métodos de los objetos de la clase Picture dibuje las siguientes
+		figuras (invoque a draw):
+		\subitem Para resolver los siguientes ejercicios solo está permitido usar ciclos, condicionales, definición
+		de listas por comprensión, sublistas, map, join, (+), lambda, zip, append, pop, range.
 	\end{itemize}
 		
 	\section{Equipos, materiales y temas utilizados}
@@ -177,10 +177,10 @@
 		\item Visual Studio Code 1.78.2.
 		\item Cuenta en GitHub con el correo institucional.
 		\item NodeJS 18.1.0
-		\item Ejercicios resueltos.
-		\item \url{https://github.com/rescobedoq/pw2/tree/main/labs/lab03}
-		\item Saber usar File System de NodeJS.
-		\item \url{https://www.w3schools.com/nodejs/nodejs_filesystem.asp}
+		\item Clases de 1 a 31 del curso de Udemy "Python Practicando. Desde 0 hasta Desarrollador en Python"
+		\item \url{https://www.udemy.com/share/101sJC3@xod_U1pjR_efxIhsxPzAUuEnE3ok_9rlPTHMowoqaob1g4YfN7M-j7alvT0_tbf4Vw==/}
+		\item Uso de append por w3schools
+		\item \item \url{https://www.w3schools.com/python/ref_list_append.asp}
 	\end{itemize}
 	
 	\section{URL de Repositorio Github}
@@ -188,113 +188,138 @@
 		\item URL del Repositorio GitHub para clonar o recuperar.
 		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a.git}
 		\item URL para el laboratorio 03 en el Repositorio GitHub.
-		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a/tree/main/lab3}
+		\item \url{https://github.com/PauloUNSA/pw2-lab-c-23a/tree/main/lab4}
 	\end{itemize}
 	
-	\section{App Agenda en NodeJS con express}
-	%def JS
-	\lstdefinelanguage{JS}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch,
-  switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily
-}
-%def CSS
-\lstdefinelanguage{CSS}{
-  keywords={color,background,margin,padding,font,weight,display,position,top,left,right,bottom,list,style,border,size,white,space,min,width},
-  sensitive=true,
-  morecomment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  morestring=[b]',
-  morestring=[b]",
-  alsoletter={:},
-  alsodigit={-}
-}
-	\subsection{Configurar espacio de trabajo}
+	\section{Configurar espacio de trabajo}
 	\begin{itemize}	
-		\item Con el comando npm se instalaron los siguientes frameworks:
-		\item express, body-parser, markdown-it y cors.
-		\item Ademas se crearon los archivos index.js e index.html.
-		de prueba para ver si funcionaba correctamente el entorno.
+		\item El archivo picture.py es la clase picture que contiene algunos metodos ya desarrollados
+		los otros se desarrollaran en y explicaran aqui.
+		\item Para poder ejecutar todos los ejercicios se tuvo que instalar la liberia Pygame
+		con el siguiente comando.
 	\end{itemize}	
-	
-	\begin{lstlisting}[language=bash,caption={Crear subcarpeta para instalar frameworks}][H]
-		$ mkdir -p /express/
+	\begin{lstlisting}[language=bash,caption={Instalar libreria Pygame}][H]
+		$ pip install pygame
 	\end{lstlisting}
-	\begin{lstlisting}[language=bash,caption={Instalar frameworks dentro de express}][H]
-		$ cd /express
-		$ npm install express body-parser markdown-it cors
-	\end{lstlisting}	
-	%%\lstinputlisting[language=JS, caption={Index.js de prueba},numbers=left,]{src/indexjs01.js}
-	%%\lstinputlisting[language=JS, caption={Index.html de prueba},numbers=left,]{src/index01.html}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost01.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost_agenda.png}
-	\end{figure}
-	\begin{itemize}	
-		\item Como se observa funciona correctamente
-	\end{itemize}
+	\section{Ejercicios}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{Terminado con redireccion}
+	\subsection{Primer ejercicio}
 	\begin{itemize}	
-		\item La página web estaba completa, sin embargo redireccionaba a otras paginas como eventos
-		o borrar al completar un form o pedir datos como se muestra a continuación.
+		\item Se tuvieron que implementar las funciones negative, join y under. 
+		En el codigo se detalla lo que hacen.
 	\end{itemize}
-	%\lstinputlisting[language=JS, caption={Index.js},numbers=left,]{src/indexjs02.js}
-	%\lstinputlisting[language=HTMl, caption={Index.html terminado con redireccionamiento y js incrustado},numbers=left,]{src/index02.html}
+	\lstinputlisting[language=Python, caption={Picture version 1},numbers=left,]{src/pic01.py}
+	Para implementar el negativo se cambia el color de cada carácter, a excepción del espacio
+	ya que este no tiene inverso con doble for(1 anidado). Juntando estos caracteres
+	por medio en una cadena y despues juntando esta cadena al nuevo arreglo 
+	con el metodo append.
+	\lstinputlisting[language=Python, caption={Ejercicio 2 a},numbers=left,]{src/e2a.py}
+	Para poder hacer que se dibuje como se mostrara el la figura de abajo se tuvo de juntar un caballo
+	blanco con uno negro en la primera fila; para ello se utilizo join y negative. Para la segunda
+	fila se necesito saltar a la siguiente fila por lo que se utilizo el metodo under.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost02.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/l-eventos.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ver-eventos01.png}
+		\includegraphics[width=0.4\textwidth,keepaspectratio]{img/e2a.png}
+		\caption{Ejecución exitosa ejercicio 2 a}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{Terminado completamente}
+	\subsection{Segundo ejercicio}
 	\begin{itemize}	
-		\item Se borraron los console.log() en index.js.
-		\item Se externalizo el script del html.
-		\item Index.html completamente terminado y con estilo a parte.
+		\item Se tuvieron que implementar la función horizontalMirror Y verticalMirror. 
+		Se detalla lo que hace a continuación.
 	\end{itemize}
-	%\lstinputlisting[language=JS, caption={Index.js limpio},numbers=left,]{src/indexjs03.js}
-	%\lstinputlisting[language=HTMl, caption={Index.html terminado sin redireccionamiento con CSS y script externos},numbers=left,]{src/index03.html}
-	%\lstinputlisting[language=JS, caption={script.js script de funciones para realizar acciondes con el servidor NodeJS},numbers=left,]{src/script.js}
-	%\lstinputlisting[language=HTMl, caption={Hoja de estilos },numbers=left,]{src/css01.css}
-
+	\lstinputlisting[language=Python, caption={Picture version 2},numbers=left,]{src/pic02.py}
+	Para no gastar espacio de más a partir de aqui solo se coloco las funciones las funciones de clase
+	y el métodos horizontalMirror y verticalMirror. El método horizontalMirror solo 
+	devuelve el arreglo al revés, el 1er elemento al ultimo y el ultimo al 1ro. verticalMirror
+	tiene que entrar en cadena y ordenarla al revés, juntándola en el arreglo vertical y 
+	retornándola como Picture.
+	\lstinputlisting[language=Python, caption={Ejercicio 2 b},numbers=left,]{src/e2b.py}
+	La 1ra fila se hace de igual forma que en el 1er ejercicio sin embargo para la fila de abajo 
+	se agregar .verticalMirror a ambos caballos para invertir verticalmente las figuras.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/localhost03.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/crea-evento.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/ver-eventos02.png}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/eliminar.png}
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/e2b.png}
+		\caption{Ejecución exitosa ejercicio 2 b}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\subsection{Estructura de laboratorio 01}
+	\subsection{Tercer ejercicio}
+	\begin{itemize}	
+		\item No se tuvo que implementar método adicionar
+	\end{itemize}
+	\lstinputlisting[language=Python, caption={Ejercicio 2 c},numbers=left,]{src/e2c.py}
+	Una sola final de 4 reinas del mismo color con el método join.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.4\textwidth,keepaspectratio]{img/e2c.png}
+		\caption{Ejecución exitosa ejercicio 2 c}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Cuarto ejercicio}
+	\begin{itemize}	
+		\item Se tuvieron que implementar la función horizontalRepeat Y verticalRepeat. 
+		Se detalla lo que hace a continuación.
+	\end{itemize}
+	\lstinputlisting[language=Python, caption={Picture version 3},numbers=left,]{src/pic03.py}
+	El método horizontalRepeat multiplica n veces abajo el arreglo y verticalMirror
+	tiene la misma lógica pero en este caso hacia la derecha.
+	\lstinputlisting[language=Python, caption={Ejercicio 2 d},numbers=left,]{src/e2d.py}
+	1 sola fila de 8 casillas intercaladas, primero clara y después oscura. Para ello se referecian 2 y despues con 
+	el método verticalRepeat se repite 4 veces.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/e2d.png}
+		\caption{Ejecución exitosa ejercicio 2 d}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Quinto ejercicio}
+	\begin{itemize}	
+		\item No se implemento método adicional.
+	\end{itemize}
+	\lstinputlisting[language=Python, caption={Ejercicio 2 e},numbers=left,]{src/e2e.py}
+	Igual que el 4to sino que las casillas van al revés, oscuras después claras
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/e2e.png}
+		\caption{Ejecución exitosa ejercicio 2 e}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Sexto ejercicio}
+	\begin{itemize}	
+		\item No se implemento método adicional.
+	\end{itemize}
+	\lstinputlisting[language=Python, caption={Ejercicio 2 f},numbers=left,]{src/e2f.py}
+	Se baso en el 4to y 5to ejercicio donde se juntaron ambos con el método under 
+	y se duplico con el método horizontalRepeat.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth,keepaspectratio]{img/e2f.png}
+		\caption{Ejecución exitosa ejercicio 2 f}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Ultimo ejercicio}
+	\begin{itemize}	
+		\item Se implemento el método up.
+	\end{itemize}
+	\lstinputlisting[language=Python, caption={Picture version 4},numbers=left,]{src/pic04.py}
+	El método up hace que se sobreponga la figura recibida como argumento. Donde primero se 
+	valida si el carácter de la figura que ira encima no sea un espacio, en caso se cumpla
+	ira el carácter de la figura de encima sino ira el de la figura de abajo.
+	\lstinputlisting[language=Python, caption={Ejercicio 2 d},numbers=left,]{src/e2g.py}
+	Se reutilizo el codigo del 6to ejercicio para medio. y de subdividio en derecha, izquiera y centro
+	para la fila principal, donde van las torres alfiles, caballos, reina y rey. 
+	Se junto todo esto en filaAbajo ya que era donde iban los blancos. Y para filaArriba
+	se añadio negative. Los peones solo eran una fila de casilla clara y oscura con peones encima.
+	Quedando las partes superior que era igual a filaArriba concatenada con pNegros
+	(los peones neegros) y para la parte inferior, filaAbajo concatenada con peonesBlancos.
+	finalmente al draw se le paso el argumento superio.under(medio).under(inferior) quedando asi.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/e2g.png}
+		\caption{Ejecución exitosa ejercicio 2 g}
+	\end{figure}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Estructura de laboratorio 04}
 	\begin{itemize}	
 		\item El contenido que se entrega en este laboratorio es el siguiente:
 	\end{itemize}
