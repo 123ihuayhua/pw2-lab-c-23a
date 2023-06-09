@@ -175,12 +175,12 @@
 		\item VIM 9.0.
 		\item Git 2.39.2.
 		\item Visual Studio Code 1.78.2.
+		\item Pycharm 2023.1.2
 		\item Cuenta en GitHub con el correo institucional.
-		\item NodeJS 18.1.0
 		\item Clases de 1 a 31 del curso de Udemy "Python Practicando. Desde 0 hasta Desarrollador en Python"
 		\item \url{https://www.udemy.com/share/101sJC3@xod_U1pjR_efxIhsxPzAUuEnE3ok_9rlPTHMowoqaob1g4YfN7M-j7alvT0_tbf4Vw==/}
 		\item Uso de append por w3schools
-		\item \item \url{https://www.w3schools.com/python/ref_list_append.asp}
+		\item \url{https://www.w3schools.com/python/ref_list_append.asp}
 	\end{itemize}
 	
 	\section{URL de Repositorio Github}
@@ -321,81 +321,91 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Estructura de laboratorio 04}
 	\begin{itemize}	
+		\item Gracias al .gitignore no se suben la carpeta pycache ni .idea, del editor pycahrm
 		\item El contenido que se entrega en este laboratorio es el siguiente:
 	\end{itemize}
 	
 \begin{lstlisting}[style=ascii-tree]
-	C:\USERS\PAULO\PW2-LAB-C-23A\LAB4
-	|   .gitignore
-	|   chessPictures.py
-	|   colors.py
-	|   Ejercicio2a.py
-	|   Ejercicio2b.py
-	|   Ejercicio2c.py
-	|   Ejercicio2d.py
-	|   Ejercicio2e.py
-	|   Ejercicio2f.py
-	|   Ejercicio2g.py
-	|   interpreter.py
-	|   picture.py
-	|   pieces.py
-	|   prueba.py
-	|   
-	├───.idea
-	|   |   lab4.iml
-	|   |   misc.xml
-	|   |   vcs.xml
-	|   |   workspace.xml
-	|   |   
-	|   └───inspectionProfiles
-	|           profiles_settings.xml
-	|
-	├───latex
-	|   |   lab4_paulo-hidalgo.tex
-	|   |   
-	|   ├───build
-	|   |       lab4_paulo-hidalgo.aux
-	|   |       e2c.png
-	|   |       e2d.png
-	|   |       e2e.png
-	|   |       e2f.png
-	|   |       e2g.png
-	|   |       eliminar.png
-	|   |       l-eventos.png
-	|   |       localhost01.png
-	|   |       localhost02.png
-	|   |       localhost03.png
-	|   |       localhost_agenda.png
-	|   |       logo_abet.png
-	|   |       logo_episunsa.png
-	|   |       logo_unsa.jpg
-	|   |       ver-eventos01.png
-	|   |       ver-eventos02.png
-	|   |
-	|   └───src
-	|           e2a.py
-	|           e2b.py
-	|           e2c.py
-	|           e2d.py
-	|           e2e.py
-	|           e2f.py
-	|           e2g.py
-	|           pic01.py
-	|           pic02.py
-	|           pic03.py
-	|           pic04.py
-	|
-	└───__pycache__
-			chessPictures.cpython-311.pyc
-			colors.cpython-311.pyc
-			interpreter.cpython-311.pyc
-			picture.cpython-311.pyc
-			pieces.cpython-311.pyc
+C:\USERS\PAULO\PW2-LAB-C-23A\LAB4
+|   .gitignore
+|   chessPictures.py
+|   colors.py
+|   Ejercicio2a.py
+|   Ejercicio2b.py
+|   Ejercicio2c.py
+|   Ejercicio2d.py
+|   Ejercicio2e.py
+|   Ejercicio2f.py
+|   Ejercicio2g.py
+|   interpreter.py
+|   picture.py
+|   pieces.py
+|   prueba.py
+|
+├───.idea
+|   |   lab4.iml
+|   |   misc.xml
+|   |   vcs.xml
+|   |   workspace.xml
+|   |
+|   └───inspectionProfiles
+|           profiles_settings.xml
+|
+├───latex
+|   |   lab4_paulo-hidalgo.tex
+|	|	lab4_paulo-hidalgo.pdf
+|   |
+|   ├───build
+|   |       lab4_paulo-hidalgo.aux
+|   |       lab4_paulo-hidalgo.fdb_latexmk
+|   |       lab4_paulo-hidalgo.fls
+|   |       lab4_paulo-hidalgo.log
+|   |       lab4_paulo-hidalgo.out
+|   |       lab4_paulo-hidalgo.pdf
+|   |       lab4_paulo-hidalgo.synctex.gz
+|   |
+|   ├───img
+|   |       crea-evento.png
+|   |       e2a.png
+|   |       e2b.png
+|   |       e2c.png
+|   |       e2d.png
+|   |       e2e.png
+|   |       e2f.png
+|   |       e2g.png
+|   |       eliminar.png
+|   |       l-eventos.png
+|   |       localhost01.png
+|   |       localhost02.png
+|   |       localhost03.png
+|   |       localhost_agenda.png
+|   |       logo_abet.png
+|   |       logo_episunsa.png
+|   |       logo_unsa.jpg
+|   |       ver-eventos01.png
+|   |       ver-eventos02.png
+|   |
+|   └───src
+|           e2a.py
+|           e2b.py
+|           e2c.py
+|           e2d.py
+|           e2e.py
+|           e2f.py
+|           e2g.py
+|           pic01.py
+|           pic02.py
+|           pic03.py
+|           pic04.py
+|
+└───__pycache__
+        *
 \end{lstlisting}
-\subsection{Pregunta: En el Ejemplo Hola Mundo con NodeJS. ¿Qué pasó con la línea: Content type ...?}
+\subsection{Pregunta: Explique: ¿Para qué sirve el directorio pycache?}
 \begin{itemize}
-	\item No esta debido a que no es necesario ya que devuelve una respuesta en JSON, que después
-	es tomada por el cliente e insertada en un div de html ya existente.
+	\item Sirve para guardar los compilados de python, asi como en java al ejecutarlos se crean
+	los .class en python se crean los .pyc. Esto se hace automaticamente ya que se importan 
+	modulos de otras clases como se da en este caso.
 \end{itemize}
 	\clearpage
 	\section{\textcolor{red}{Rúbricas}}
@@ -460,7 +470,7 @@
 
 \section{Referencias}
 \begin{itemize}			
-	\item \url{https://github.com/rescobedoq/pw2/tree/main/labs/lab03}
-	\item \url{https://www.w3schools.com/nodejs/nodejs_filesystem.asp}
+	\item \url{https://www.udemy.com/share/101sJC3@xod_U1pjR_efxIhsxPzAUuEnE3ok_9rlPTHMowoqaob1g4YfN7M-j7alvT0_tbf4Vw==/}
+	\item \url{https://www.w3schools.com/python/ref_list_append.asp}
 \end{itemize}				
 \end{document}

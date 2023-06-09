@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1686280569 "c:/Users/paulo/pw2-lab-c-23a/lab4/latex/lab4_paulo-hidalgo.tex" "build/lab4_paulo-hidalgo.pdf" "lab4_paulo-hidalgo" 1686280575 0
+["pdflatex"] 1686281559 "c:/Users/paulo/pw2-lab-c-23a/lab4/latex/lab4_paulo-hidalgo.tex" "build/lab4_paulo-hidalgo.pdf" "lab4_paulo-hidalgo" 1686281563 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tctt0900.tfm" 993062564 1284 f8b60d5840783b0ee9876d4a535f8f09 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -125,9 +125,9 @@
   "C:/Users/paulo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1685894610 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/paulo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt0900.pk" 1685895055 8332 97d07b5f91f08826f3a5fe70b6149d7f ""
   "C:/Users/paulo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1685894690 23169144 07271776ddda4aded45d63ace5385fa9 ""
-  "build/lab4_paulo-hidalgo.aux" 1686280574 6082 a7ed7410063217b0939839474860f206 "pdflatex"
-  "build/lab4_paulo-hidalgo.out" 1686280574 3056 d191c03cb04ec1990c4076e5af0d5876 "pdflatex"
-  "c:/Users/paulo/pw2-lab-c-23a/lab4/latex/lab4_paulo-hidalgo.tex" 1686280568 18494 23226a9476c0a66b1d1289d2877f7a58 ""
+  "build/lab4_paulo-hidalgo.aux" 1686281562 6050 10b318e31820a5dfbd53809a168bcf1d "pdflatex"
+  "build/lab4_paulo-hidalgo.out" 1686281562 2876 6c53e52549eea2a526834920810a8176 "pdflatex"
+  "c:/Users/paulo/pw2-lab-c-23a/lab4/latex/lab4_paulo-hidalgo.tex" 1686281553 18818 87c7bc99f21e86ae8b69e11818449da5 ""
   "img/e2a.png" 1686105070 11220 40ed4201544715384289c4abe3f5c295 ""
   "img/e2b.png" 1686105070 11246 d186d0ff9d7376640a55b27c635727f4 ""
   "img/e2c.png" 1686105070 9336 fa1f84d00dc1baf406e0040fec64b720 ""
@@ -137,7 +137,7 @@
   "img/e2g.png" 1686152678 16546 edafe3b29f5b2f3f02da5d9071f89555 ""
   "img/logo_abet.png" 1686105070 6307 419a1d1911db3872e78cc7f9d6dfea5f ""
   "img/logo_episunsa.png" 1686105070 6815 2a9ee48dad6b8fd2216f86902e5e7a6f ""
-  "lab4_paulo-hidalgo.tex" 1686280568 18494 23226a9476c0a66b1d1289d2877f7a58 ""
+  "lab4_paulo-hidalgo.tex" 1686281553 18818 87c7bc99f21e86ae8b69e11818449da5 ""
   "src/e2a.py" 1686105070 135 92873582f98c7f45b889b3fcc539d5e7 ""
   "src/e2b.py" 1686105070 169 edfa1e05bd2855a90fac93c0b47c21c6 ""
   "src/e2c.py" 1686105070 108 e701c85b46f71dc6361dd7587e038401 ""
