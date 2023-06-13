@@ -1,4 +1,4 @@
-my_env/bin/*
-my_env/lib/*
-my_env/src/__pycache__/*
+venv/bin/*
+venv/lib/*
+venv/src/__pycache__/*
 *.pyc
