@@ -1,0 +1,1 @@
+"C:\Users\paulo\OneDrive\labs\pw2-lab-c-23a\lab5\venv\Scripts\activate.bat"
