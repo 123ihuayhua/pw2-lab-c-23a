@@ -18,10 +18,13 @@ class Cliente(models.Model):
     CliApePat = models.CharField(max_length=20)
     CliNom = models.CharField(max_length=20)
     CliEstReg = models.BooleanField(default=True)
-
+    password = models.CharField(max_length=128, null=True)
+    username = models.CharField(max_length=150, unique=True, null=True)
     # Mostrar DNI del cliente
     def __str__(self):
         return self.CliNom + ' ' + self.CliApePat
+
+
 
 
 # Marca

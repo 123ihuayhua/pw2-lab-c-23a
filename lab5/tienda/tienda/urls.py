@@ -20,7 +20,7 @@ from tiendaapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',myHomeView,name='PAgina inicio'),
-    path('sec/',second,name='Pagina de inicio'),
+    path('',Home,name='Home'),
+    path('signup/',Signup,name='SignUp'),
     path('otro/',otro,name='otro'),
 ]

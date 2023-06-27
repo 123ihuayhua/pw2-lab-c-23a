@@ -2,13 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Codigo para estudiantes desde DJango</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
 </head>
 <body>
-<img src="https://falabella.scene7.com/is/image/FalabellaPE/19769337_1?wid=800&hei=800&qlt=70">
-{%include 'nav.html'%}
-<h1>Este es un texto base</h1>
-{% block content %}
-{% endblock %}
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/index">Index</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="/index">Pedidos</a>
+            </li>
+            <li>
+                <a href="/index/crear_pedido/">Crear Pedido</a>
+            </li>
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="/signup">Signup</a>
+            </li>
+            <li>
+                <a href="/signin">Signin</a>
+            </li>
+            {% endif %}
+            
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

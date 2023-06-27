@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Template base</title>
-</head>
-<body>
 {% extends 'base.html' %}
-{%block content%}
-<h2>Hola mundo desde DJango</h2>
-<h3>Con templates</h3>
-<!--{{request.user}}
-<br>
-{{request.user.is_authenticated}}--->
-<p>
-    {{myText|upper|truncatechars:"16"}},
-    {{myNumber}}
-</p>
-<ul>
-    {%for myItem in myList%}
-    <!---<li>{{myItem}}</li>-->
-    <li>{{forloop.counter}}-{{myItem|add:2}}
-    {%if myItem|divisibleby:2%}
-        -Este es un num magico
-    {%elif myItem > 50%}
-        -Este es un num mayor a 50
-    {%endif%}
-    </li>
-    {%endfor%}
-</ul>
+
+{% block content %}
+    <h1>Home</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, accusantium. Itaque, eaque velit exercitationem quisquam dolore eum quas facere praesentium! Consequatur deleniti totam dolorem quas porro, vero et commodi! Perspiciatis.</p>   
 {% endblock %}
-</body>
-</html>
+    

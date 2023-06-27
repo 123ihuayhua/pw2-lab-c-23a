@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Mis Pedidos</h1>
+    
+    <ul>
+        {% for pedido in pedidos %}
+            <li>
+                <a href="{% url 'pedido_detalle' pedido.id %}">Ver detalle del pedido</a>
+                <h1>
+                    {{ pedido.PedCabFec }}
+                </h1>
+                <p>{{ pedido.PedCabCodCli }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+        
+{% endblock %}
+    

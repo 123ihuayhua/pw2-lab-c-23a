@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Detalles del Pedido</h1>
+    {{error}}
+    <h2>Pedido Cabecera:</h2>
+    <p>Código: {{ pedido_cabecera.id }}</p>
+    <p>Fecha: {{ pedido_cabecera.PedCabFec }}</p>
+    <!-- Mostrar más información de PedidoCabecera si es necesario -->
+    
+    <h2>Detalles:</h2>
+    <ul>
+        {% for detalle in detalles_pedido %}
+            <li>
+                Producto: {{ detalle.PedDetArtCod }}
+                Cantidad: {{ detalle.PedDetCantidad }}
+                <!-- Mostrar más información de PedidoDetalle si es necesario -->
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button>
+                        Actualizar
+                    </button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

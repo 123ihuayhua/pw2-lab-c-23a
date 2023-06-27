@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hacer Pedido</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form action="/index/crear_pedido/" method="POST">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+            {{ form }}
+        {% endfor %}
+        {{ form2 }}
+        <button type="submit">Guardar pedido</button>
+    </form>
+{% endblock %}
+
+    
+ 

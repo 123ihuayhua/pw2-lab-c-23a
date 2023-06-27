@@ -1,17 +1,40 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from .models import *
-# Create your views here.
-def myHomeView(request,*args,**kwargs):
-    '''print(args,kwargs)
-    print(request.user)'''
-    myContext = {
-        'myText':'Esto es un texto sobre nosotros',
-        'myNumber':7,
-        'myList':[33,44,55],
-    }
-    #return render(request,'home.html',{})#{} ES EL CONTEXTO
-    return render(request,'home.html',myContext)
+from .forms import *
+#Vista principal
+def Home(request):
+    return render(request, 'home.html')
+
+
+def Signup(request):
+    if request.method == 'GET':
+        return render(request, 'signup.html', {'form': RegistroForm})
+
+    else:
+        if request.POST['password1'] == request.POST['password2']:
+            try:
+                # Registrar usuario
+                user = Cliente.objects.create_user(username=request.POST['username'],
+                                                   password=request.POST['password1'])
+                # Guardar usuario
+                user.CliDNI = request.POST['CliDNI']
+                user.CliApePat = request.POST['CliApePat']
+                user.CliNom = request.POST['CliNom']
+                user.CliEstReg = True
+                user.save()
+                login(request, user)
+                return redirect('index')
+            except IntegrityError:
+                return render(request, 'signup.html', {
+                    'form': RegistroForm,
+                    'error': 'El usuario ya existe'
+                })
+
+        return render(request, 'signup.html', {
+            'form': RegistroForm,
+            'error': 'Las contraseñas no coinciden'
+        })
 def otro(request):
     marcas = Marca.objects.all()
     articulos = Articulo.objects.all()
