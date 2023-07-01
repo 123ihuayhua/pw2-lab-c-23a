@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center mt-5 mb-4">Detalles del Pedido</h1>
+{{error}}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="2" class="bg-secondary text-white">Pedido Cabecera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Código Pedido:</td>
+                        <td>{{ pedido_cabecera.id }}</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha:</td>
+                        <td>{{ pedido_cabecera.PedCabFec }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cliente:</td>
+                        <td>{{ pedido_cabecera.PedCabCodCli }}</td>
+                    </tr>
+                    <!-- Mostrar más información de PedidoCabecera si es necesario -->
+                </tbody>
+            </table>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="2" class="bg-secondary text-white">Pedido Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Artículo:</td>
+                        <td>{{ detalle.PedDetArtCod }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cantidad:</td>
+                        <td>{{ detalle.PedDetCantidad }}</td>
+                    </tr>
+                    <tr>
+                        <td>Precio Unitario:</td>
+                        <td>S/. {{detalle.PedDetPreUniArt}}</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td>S/. {{detalle.PedDetSubtotal}}</td>
+                    </tr>-
+                    <!-- Mostrar más información de PedidoDetalle si es necesario -->
+                </tbody>
+            </table>
+            <button onclick="mostrarFormulario()" type="button" class="btn btn-primary">Actualizar</button>
+        </div>
+    </div>
+</div>
+<script>
+    function mostrarFormulario() {
+        window.open("{% url 'actualizar_pedido' pedido_cabecera.id %}", "_self");
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="vh-130" style="background-color: #eee;">
+    <div class="container h-80">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+              <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+    
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Register Order</p>
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+                    <form action="{% url 'crear_pedido' %}" method="POST" class="mx-auto">
+                        {% csrf_token %}
+                        {{ formset.management_form }}
+                      
+                        <!-- Vendedor  -->
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label for="id_pedidos-0-PedCabCodVen" class="form-label">Vendedor</label>
+                            <select class="form-control" name="pedidos-0-PedCabCodVen" id="id_pedidos-0-PedCabCodVen">
+                                {% for vendedor in vendedores %}
+                                    <option value="{{ vendedor.id }}">{{ vendedor.VenNom}} {{vendedor.VenApePat}}</option>
+                                {% endfor %}
+                            </select>
+                            <!-- <input type="text" name="CliNom" id="id_CliNom" class="form-control" placeholder="Write your Name"/> -->
+                        </div>
+                      </div>
+                      <!-- Fecha -->
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" id="id_CliApePat">Fecha</label>
+                            <input type="date" name="pedidos-0-PedCabFec" format="YY-MM-DD" id="id_pedidos-0-PedCabFec" class="form-control" placeholder="Write your Surname"/>
+                        </div>
+                      </div>
+                      <!-- Articulo  -->
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" id="id_CliDNI">Artículo</label>
+                            <!-- <input type="number" maxlength="8" name="CliDNI" id="id_CliDNI" class="form-control" placeholder="Write your Surname"/> -->
+                            <select class="form-control" name="pedido_det-PedDetArtCod" required id="id_pedido_det-PedDetArtCod">
+                                <option value selected>-----------</option>
+                                {% for articulo in articulos %}
+                                    <option value="{{ articulo.id }}">{{ articulo.ArtNom }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                      </div>
+                      <!-- Cantidad  -->
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="id_pedido_det-PedDetCantidad">Cantidad</label>
+                            <input type="number" class="form-control" name="pedido_det-PedDetCantidad" value="1" required="" id="id_pedido_det-PedDetCantidad">
+                        </div>
+                      </div>
+
+                      <!-- Boton Register  -->
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                    <img src="{% static '/img/order.svg' %}"
+                      class="img-fluid" alt="Sample image">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                event.preventDefault();
+                var form = $(this);
+                var formData = form.serialize();
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: formData,
+                    success: function(response) {
+                        var order = JSON.parse(response);
+                        var confirmation = confirm('Su pedido ha sido registrado con éxito. ¿Desea revisar su pedido?');
+                        if (confirmation) {
+                            window.location.href = '/index/'
+                        } else {
+                            window.location.href = '/';
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

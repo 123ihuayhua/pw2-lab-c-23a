@@ -1,0 +1,960 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{jperez@unsa.edu.pe}
+\newcommand{\itemStudent}{García, Hidalgo, Huayhua, Jaita}
+\newcommand{\itemCourse}{Programación Web 2}
+\newcommand{\itemCourseCode}{1702122}
+\newcommand{\itemSemester}{III}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2023 - A}
+\newcommand{\itemInput}{Del 16 Junio 2023}
+\newcommand{\itemOutput}{Al 30 Junio 2023}
+\newcommand{\itemPracticeNumber}{06}
+\newcommand{\itemTheme}{Django Proyecto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet}}}
+\fancyfoot[L]{Estudiante: García, Hidalgo, Huayhua, Jaita}
+\fancyfoot[C]{PW2}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{Hidalgo Chinchay, Paulo Andre \par phidalgo@unsa.edu.pe \par Huayhua Mayta, Iván Rodrigo \par ihuayhuam@unsa.edu.pe \par Jaita Chura, José Manuel \par jjaitac@unsa.edu.pe \par Garcia Valdivia, Ronald Pablo\par rgarciava@unsa.edu.pe} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\section{Competencias del curso}
+	\begin{itemize}		
+		\item General: C.c. Diseña responsablemente aplicaciones web, sus componentes o procesos para
+            satisfacer necesidades dentro de restricciones realistas: económicas, medio ambientales, sociales,
+            políticas, éticas, de salud, de seguridad, manufacturación y sostenibilidad.
+		\item Específica: C.m. Construye responsablemente soluciones con tecnología web siguiendo un pro-
+            ceso adecuado llevando a cabo las pruebas ajustada a los recursos disponibles del cliente.
+		\item Específica: C.p. Aplica de forma flexible técnicas, métodos, principios, normas, estándares y
+            herramientas del desarrollo web necesarias para la construcción de aplicaciones web e implemen-
+            tación de estos sistemas en una organización.
+	\end{itemize}
+ 
+    \section{Resultado del estudiante}
+    \begin{itemize}
+        \item RE. 2 La capacidad de aplicar diseño de ingeniería para producir soluciones a problemas y diseñar
+            sistemas, componentes o procesos para satisfacer necesidades específicas dentro de consideracio-
+            nes realistas en los aspectos de salud pública, seguridad y bienestar; factores globales, culturales,
+            sociales, económicos y ambientales.
+        \item RE. 8 La capacidad de crear, seleccionar y utilizar técnicas, habilidades, recursos y herramientas
+            modernas de ingeniería y tecnologías de la información, incluyendo la predicción y el modela-
+            miento, con una comprensión de las limitaciones.
+    \end{itemize}
+		
+	\section{Equipos, materiales y temas}
+	\begin{itemize}
+		\item Sistema Operativo (GNU/Linux de preferencia).
+		\item GNU Vim.
+		\item Python 3.
+		\item Git.
+		\item Cuenta en GitHub con el correo institucional.
+		\item Entorno virtual.
+		\item Django 4.	
+	\end{itemize}
+	
+	\section{URL de Repositorio Github}
+	\begin{itemize}
+		\item URL del Repositorio GitHub para clonar o recuperar.
+		\item \url{https://github.com/123ihuayhua/pweb2-lab-c-23a.git}
+		\item URL para el laboratorio 05 en el Repositorio GitHub.
+		\item \url{https://github.com/123ihuayhua/pweb2-lab-c-23a/tree/main/Lab6-Pweb2}
+	\end{itemize}
+
+    
+    \section{Tarea}
+    \begin{itemize}
+        \item Elabore un primer informe grupal de la aplicación que desarrollará durante este semestre.
+        \item Utilicen todas las recomendaciones dadas en la aplicación library.
+        \item Acuerdos :
+        \begin{itemize}
+            \item Los grupos pueden estar conformado por 1 a 4 integrantes.
+            \item Sólo se presenta un informe grupal.
+            \item Sólo se revisa un repositorio. (El único que esté en el informe grupal).
+            \item Todos los integrantes del grupo tienen una copia del laboratorio e informe en su repositorio privado.
+            \item Todos los integrantes deben pertenecer al mismo grupo de laboratorio.
+            \item El docente preguntará en cualquier momento a un integrante sobre el proyecto, codigo fuente, avance.
+        \end{itemize}
+    \end{itemize}
+
+    \section{Pregunta}
+    \begin{itemize}
+        \item Por cada integrante del equipo, resalte un aprendizaje que adquirió al momento de estudiar
+        Django. No se reprima de ser detallista. Coloque su nombre entre parentesis para saber que es
+        su aporte.
+        \item Django sigue el patrón de diseño MVC, lo que te permite organizar tu código de una manera estructurada y modular. (Hidalgo Chinchay, Paulo Andre)
+        \item La ventaja de utilizar Django junto con el modelo entidad-relación es que puedes diseñar tu base de datos utilizando el modelo entidad-relación tradicional, y luego utilizar el ORM de Django para crear automáticamente la estructura de la base de datos y manipular los datos utilizando objetos de Python. El ORM se encarga de traducir las operaciones en objetos a consultas SQL que se ejecutan en la base de datos subyacente. (Huayhua Mayta, Iván Rodrigo) 
+        \item En relación al modelo entidad-relación (MER), es un modelo conceptual utilizado en el diseño de bases de datos para representar y describir las entidades, atributos y relaciones entre ellas. El MER es independiente de cualquier implementación específica de base de datos, como MySQL o PostgreSQL. (Jaita Chura, José Manuel)
+        \item La facilidad con la que es posible crear una base de datos gracias a Django, gracias a esto al conocer el lenguaje Python es más fácil el administar la base de datos. (Garcia Valdivia, Ronald Pablo)
+    \end{itemize}
+    
+    \section{Entregables}
+    \begin{itemize}
+        \item El informe debe tener un enlace al directorio específico del laboratorio en su repositorio GitHub
+        privado donde esté todo el código fuente y otros que sean necesarios. Evitar la presencia de archi-
+        vos: binarios, objetos, archivos temporales, cache, librerias, entornos virtuales. Si hay configura-
+        ciones particulares puede incluir archivos de especificación como: requirements.txt, o leeme.txt.
+        \item No olvide que el profesor debe ser siempre colaborador a su repositorio (Usuario del profesor
+        @rescobedoq).
+        \item Para ser considerado con la calificación de máxima nota, el informe debe estar elaborado en
+        LATEX
+        \item Usted debe describir sólo los commits más importantes que marcaron hitos en su trabajo,
+        adjutando capturas de pantalla, del commit, del código fuente, de sus ejecuciones y pruebas.
+        \item En el informe siempre se debe explicar las imágenes (codigo fuente, capturas de pantalla, commits,
+        ejecuciones, pruebas, etc.) con descripciones puntuales pero precisas.
+        \item Partes de entrega:
+        \begin{itemize}
+        
+            \item Modelo de datos. (Diagrama Entidad-Relación)
+            \begin{itemize}
+                \item En el siguiente diagrama se muestran 6 clases: "Vendedor, Marcas, Artículo, Pedido Detalle, Pedido Cabecera y Cliente"
+            \end{itemize}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/Diagrama.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Diagrama}
+	   \end{figure}
+ 
+            \item Modelos Python.
+            \begin{itemize}
+                \item La clase "Vendedor" define un modelo de Django que representa a un vendedor en el sistema o aplicación que estás desarrollando.
+
+                Este modelo tiene varios campos que representan diferentes atributos de un vendedor, como su DNI (Documento Nacional de Identidad), apellido paterno, nombre y estado de registro.
+                \item El modelo "Cliente" hereda de la clase AbstractUser, que es una clase de modelo proporcionada por Django para la autenticación de usuarios. Esto significa que el modelo "Cliente" obtiene todos los campos y funcionalidades de AbstractUser, como nombre de usuario, contraseña, correo electrónico, etc.
+
+                Además de los campos heredados, el modelo "Cliente" también tiene campos personalizados para representar atributos específicos del cliente, como su DNI, apellido paterno, nombre y estado de registro.
+                
+                \item Modelo marca: Este modelo permite almacenar información sobre diferentes marcas en tu sistema o aplicación.
+                \item El modelo "TipoArticulo" define una entidad de tipo de artículo con dos campos:
+
+                TipArtNom: Un campo de tipo CharField con una longitud máxima de 20 caracteres, que representa el nombre del tipo de artículo.
+                TipArtEstReg: Un campo de tipo BooleanField que representa el estado de registro del tipo de artículo, con un valor predeterminado de True.
+                Este modelo te permite almacenar información sobre diferentes tipos de artículos en tu sistema o aplicación.
+                \item Clase "Articulo": Esta clase representa un artículo en el sistema o aplicación.
+                Tiene los siguientes campos:
+                ArtMarCod: Un campo de clave externa (ForeignKey) que referencia a la clase Marca y se utiliza para almacenar el código de marca del artículo.
+                ArtTipCod: Un campo de clave externa (ForeignKey) que referencia a la clase TipoArticulo y se utiliza para almacenar el código de tipo de artículo.
+                ArtNom: Un campo de tipo CharField con una longitud máxima de 50 caracteres, que representa el nombre del artículo.
+                ArtDes: Un campo de tipo TextField que permite ingresar una descripción del artículo con un máximo de 1000 caracteres.
+                ArtSto: Un campo de tipo IntegerField que representa el stock (cantidad disponible) del artículo.
+                ArtPreUni: Un campo de tipo FloatField que representa el precio unitario del artículo.
+                ArtEstReg: Un campo de tipo BooleanField que representa el estado de registro del artículo.
+                Tiene una función str() que devuelve el nombre del artículo como representación legible cuando se convierte en una cadena.
+                \item Clase "PedidoCabecera":Esta clase representa la cabecera de un pedido en el sistema o aplicación.
+                Tiene los siguientes campos:
+                PedCabCodCli: Un campo de clave externa (ForeignKey) que referencia a la clase Cliente y se utiliza para almacenar el código de cliente relacionado con el pedido.
+                PedCabCodVen: Un campo de clave externa (ForeignKey) que referencia a la clase Vendedor y se utiliza para almacenar el código de vendedor relacionado con el pedido.
+                PedCabFec: Un campo de tipo DateField que representa la fecha del pedido.
+                PedCabEstReg: Un campo de tipo BooleanField que representa el estado de registro de la cabecera del pedido.
+                Tiene una función str() que devuelve el código de cliente como representación legible cuando se convierte en una cadena.
+                \item Clase "PedidoDetalle": Esta clase representa los detalles de un pedido en el sistema o aplicación.
+                Tiene los siguientes campos:
+                PedDetCodCab: Un campo de clave externa (ForeignKey) que referencia a la clase PedidoCabecera y se utiliza para almacenar el código de cabecera del pedido al que pertenece este detalle.
+                PedDetArtCod: Un campo de clave externa (ForeignKey) que referencia a la clase Articulo y se utiliza para almacenar el código de artículo relacionado con este detalle.
+                PedDetCantidad: Un campo de tipo IntegerField que representa la cantidad de artículos en este detalle del pedido.
+                PedDetPreUniArt: Un campo de tipo FloatField que representa el precio unitario del artículo en este detalle del pedido.
+                PedDetSubtotal: Un campo de tipo FloatField que representa el subtotal calculado para este detalle (cantidad * precio unitario).
+                PedDetTot: Un campo de tipo FloatField que representa el total calculado para este detalle (igual al subtotal en este caso).
+                PedDetEstReg: Un campo de tipo BooleanField que representa el estado de registro del detalle del pedido.
+                Tiene una función save() personal.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={models.py},numbers=left,]{src/models.py}
+        \begin{itemize}
+                \item A continuación se muestra forms.py:
+                \item RegistroForm: Esta clase define un formulario personalizado para el registro de nuevos clientes. Está basado en el formulario UserCreationForm, que es provisto por Django para la creación de usuarios. Se configura para el modelo Cliente, que probablemente sea un modelo personalizado que extienda el modelo de usuario de Django. Los campos incluidos son 'username', 'password1', 'password2', 'CliDNI', 'CliApePat' y 'CliNom'. Además, se proporcionan etiquetas personalizadas para algunos campos.
+                \item PedidoForm: Esta clase define un formulario para la creación de pedidos. Hereda de ModelForm, que es un formulario de Django generado automáticamente a partir de un modelo. Está configurado para el modelo PedidoCabecera. Los campos incluidos son 'PedCabCodCli', 'PedCabCodVen' y 'PedCabFec'. El campo 'PedCabCodCli' se excluye explícitamente utilizando el atributo exclude. Además, se proporcionan etiquetas personalizadas para los campos y se utiliza un widget para dar formato a la fecha.
+                \item PedidoDetForm: Esta clase define un formulario para la creación de detalles de pedidos. También hereda de ModelForm y está configurado para el modelo PedidoDetalle. Los campos incluidos son 'PedDetArtCod' y 'PedDetCantidad'. Se proporcionan etiquetas personalizadas para los campos. Además, se define un método clean() en el formulario que realiza una validación personalizada. Verifica que la cantidad solicitada no supere el stock disponible del artículo seleccionado. Si la validación es exitosa, se actualiza el stock en la base de datos y se devuelve el conjunto de datos validados.
+                \item La función update.stock.quantity es un receptor de señales (@receiver) que se ejecuta después de guardar un objeto de tipo PedidoDetalle. Obtiene el artículo relacionado con el detalle del pedido (PedDetArtCod) y guarda la instancia del artículo, lo que probablemente actualiza el stock en la base de datos.
+        \end{itemize}
+            \lstinputlisting[language=Python, caption={forms.py},numbers=left,]{src/forms.py}
+            \begin{itemize}
+                    \item admin.py muestra cómo personalizar la interfaz de administración de Django para los modelos Vendedor, Cliente y Articulo. Aquí hay una descripción de cada clase y su funcionalidad:
+                    \item VendedorAdmin: Esta clase personaliza la interfaz de administración para el modelo Vendedor. Se define la variable list-display para especificar los campos que se mostrarán en la lista de registros de vendedores. Luego, se definen métodos para mostrar los valores de los campos personalizados en la lista. En este caso, se definen métodos como nombre, apellido y dni para mostrar los valores correspondientes de los campos del modelo Vendedor. También se proporcionan etiquetas personalizadas para los campos.
+                    \item ClienteAdmin: Similar a VendedorAdmin, esta clase personaliza la interfaz de administración para el modelo Cliente. Se define list-display y métodos para mostrar los valores de los campos personalizados en la lista de registros de clientes.
+                    \item ArticuloAdmin: Esta clase personaliza la interfaz de administración para el modelo Articulo. Se define list-display y métodos para mostrar los valores de los campos personalizados en la lista de registros de artículos. Además, se realiza un formato especial para el campo precio-unitario para mostrar el precio con un símbolo de moneda y formato decimal.
+                    \item Luego, se registran las clases personalizadas en el administrador de Django utilizando admin.site.register para que las personalizaciones se apliquen a los modelos correspondientes.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={admin.py},numbers=left,]{src/admin.py}
+            \begin{itemize}
+
+                    \item A continuación se muestra el código de apps.py:
+
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={apps.py},numbers=left,]{src/apps.py}
+
+            \begin{itemize}
+
+                    \item En views.py podemos ver que existe una variedad de métodos que nos permiten: tener la vista principal, registrarnos con el usuario, ver pedidos, crear pedidos, detalles del pedido, actualizar el pedido, salir de la sesión, logearse y las diferentes marcas de los productos.
+
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={views.py},numbers=left,]{src/views.py}
+
+            \begin{itemize}
+                    \item Ahora pasaremos con los templates que se usaron:
+                    \item Para comenzar está signup.html que sirve para un registro de formulario, en este se usa  csrf-token que se utiliza en formularios de Django para protegerlos contra ataques de falsificación de solicitudes entre sitios (CSRF, por sus siglas en inglés). Usado para verificar además que al repetir la contraseña para la creación del usuario sea la misma que la primera.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={signup.html},numbers=left,]{src/signup.html}
+            \begin{itemize}
+                    \item Continuamos con signin.html que es un formulario para logearse, este lleva usuario y contraseña, en caso de no encontrarse el susuario se mostrará un mensaje.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={signin.html},numbers=left,]{src/signin.html}
+            \begin{itemize}
+                    \item base.html, es la estructura que acompañará a todas nuestras páginas, en esta se encontrarán varios enlaces como a index.html, logout.html, signup.html, signin.html.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={base.html},numbers=left,]{src/base.html}
+            
+            \begin{itemize}
+                    \item  marca-msi nos permitirá ver la descripción, nombre, precio unitario de nuestros productos, esta será utilizada por todas las páginas de los productos de las diferentes marcas.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={marca_msi.html},numbers=left,]{src/marca_msi.html}
+            \begin{itemize}
+                \item Se muestran las marcas de los productos: acer, apple, asus, dell, hp, lenovo 
+                \item El código que cada una tiene:   
+            \end{itemize}
+            \begin{lstlisting}[language=bash,caption={Código de las marcas}][H]
+		  {% load static %}
+            {% include 'marca_msi.html' %}
+	       \end{lstlisting}
+
+            
+            \begin{itemize}
+                    \item {extends 'base.html'}: Esta línea indica que la plantilla actual (base.html) hereda el contenido de otra plantilla llamada 'base.html'. La plantilla base suele contener la estructura general de la página, como el encabezado, el menú de navegación y el pie de página, y se puede personalizar utilizando bloques.
+
+                    { block content } y { endblock }: Estas etiquetas delimitan un bloque de contenido llamado 'content'. El contenido dentro de estas etiquetas se reemplazará en la plantilla base donde se defina el bloque content. Permite insertar contenido específico en esa área de la plantilla base sin modificarla directamente.
+
+                    Dentro del bloque content, se encuentra el contenido específico de la plantilla actual. En este caso, se muestra una tabla que lista los pedidos. Los pedidos se obtienen del contexto de la vista y se iteran utilizando la etiqueta { for pedido in pedidos } y { endfor }. Para cada pedido, se muestra la información del cliente, la fecha del pedido y un enlace para ver los detalles del pedido.
+
+                    En resumen, este código extiende una plantilla base, define un bloque de contenido llamado 'content' y muestra una tabla con información de pedidos. El contenido de esta plantilla se insertará en el área correspondiente de la plantilla base al renderizar la página.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={index.html},numbers=left,]{src/index.html}
+            \begin{itemize}
+                \item home.html 
+                    \item Dentro del bloque content, se encuentra el contenido específico de la plantilla actual. En este caso, el código verifica si el usuario está autenticado ({ if user.is-authenticated }) y muestra un mensaje de bienvenida si es así. Luego, se muestra un carrusel de imágenes utilizando el componente Carousel de Bootstrap. Las imágenes se cargan desde rutas específicas y se muestran en forma de carrusel.
+
+                    A continuación, se muestra una lista de marcas. Se itera sobre la variable marcas y se muestra cada marca en una tarjeta. Cada tarjeta contiene un enlace a la página de detalles de la marca ({ url 'marca-detail' marca-id=marc.pk }) y muestra la imagen de la marca.
+
+                    El código también incluye un fragmento JavaScript al final para cargar el script de Bootstrap necesario para el funcionamiento del carrusel.
+
+                    En resumen, este código extiende una plantilla base, define un bloque de contenido llamado 'content' y muestra un mensaje de bienvenida, un carrusel de imágenes y una lista de marcas. El contenido de esta plantilla se insertará en el área correspondiente de la plantilla base al renderizar la página.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={home.html},numbers=left,]{src/home.html}
+            \begin{itemize}
+                \item En encabezado.html se carga la etiqueta { load static } al comienzo de la plantilla. A continuación, se utiliza la función { static } para referenciar archivos estáticos en los atributos src de las etiquetas img. Estas etiquetas img muestran imágenes de marcas, como Acer, Apple, Asus, Dell, HP, Lenovo y MSI, en el menú de navegación de la barra superior.
+
+                Al utilizar la función { static }, se genera la URL correcta para el archivo estático, tomando en cuenta la configuración de archivos estáticos del proyecto Django. Esto asegura que las imágenes se carguen correctamente desde la carpeta de archivos estáticos definida en el proyecto.
+
+                En resumen, la etiqueta { load static } permite cargar archivos estáticos, y la función { static } se utiliza para referenciar archivos estáticos, como las imágenes de las marcas, en la plantilla.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={encabezado.html},numbers=left,]{src/encabezado.html}
+            \begin{itemize}
+                \item El código representa una sección de pie de página (footer) en una plantilla Django. Aquí se explica qué hace cada parte:
+
+                { load static }: Esta línea carga los archivos estáticos en la plantilla, lo cual permite acceder a ellos en la sección de CSS, JavaScript o imágenes.
+
+                El código HTML representa el contenido del pie de página. Aquí se encuentran varios elementos como información sobre la empresa, enlaces a las marcas, detalles de contacto y el logotipo de la empresa.
+
+                Los enlaces a las marcas se generan utilizando etiquetas <a> con la sintaxis { url 'marca-detail' marca-id=1 }. Estos enlaces hacen uso de la función url de Django y se espera que exista una vista llamada 'marca-detail' que reciba un parámetro marca-id.
+
+                La imagen del logotipo se muestra utilizando la etiqueta <img> y el atributo src con la sintaxis { static '/img/logo.png' }. Aquí se espera que exista una imagen llamada 'logo.png' en la carpeta img dentro de la carpeta de archivos estáticos.
+
+                En resumen, este código representa la estructura y el contenido de un pie de página en una plantilla Django, incluyendo información de la empresa, enlaces a marcas, detalles de contacto y un logotipo.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={footer.html},numbers=left,]{src/footer.html}
+
+            \begin{itemize}
+                \item pedido-det.html es capaz de llarmar a vendedores, llamando su id, nombre, epellido paterno
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={pedido-det.html},numbers=left,]{src/pedido-det.html}
+
+            \begin{itemize}
+                \item Actualización del pedido.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={actualizar_pedido.html},numbers=left,]{src/actualizar_pedido.html}
+
+            \begin{itemize}
+                \item el código representa el contenido específico de la plantilla. Aquí se encuentra un formulario de registro de pedido con diferentes campos como vendedor, fecha, artículo y cantidad. También hay un botón de registro.
+
+                La parte final del código incluye un script JavaScript que se ejecuta cuando se envía el formulario. Este script utiliza AJAX para enviar los datos del formulario al servidor de forma asíncrona. Luego, maneja la respuesta del servidor y realiza acciones dependiendo de la respuesta. Por ejemplo, si el pedido se registra con éxito, muestra un mensaje de confirmación y redirige al usuario a la página principal.
+            \end{itemize}
+            \lstinputlisting[language=Python, caption={pedido.html},numbers=left,]{src/pedido.html}
+
+            \item Implementación del Django Administrador. (CRUD para todas las tablas)
+            \begin{itemize}
+                \item A continuación se muestran imágenes de la creación exitosa de la Base de datos.
+            \end{itemize}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/V11.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Administración Django.}
+	   \end{figure}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/V12.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Administración Django Artículos.}
+	   \end{figure}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/V13.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Administración Django Clientes.}
+	   \end{figure}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/V14.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Administración Django Pedido cabeceras.}
+	   \end{figure}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/V15.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Administración Django Pedido detalles.}
+	   \end{figure}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/V16.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Administración Django Tipo artículos.}
+	   \end{figure}
+            \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/V17.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Administración Django Vendedores.}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.6\textwidth,keepaspectratio]{img/Home.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Vista principal - Home 1}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/marca.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Vista principal - Home 2}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/footer.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Footer}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/signup1.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Formulario de Registro de Usuario}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/signup2.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{ Registro de Usuario Ejemplo}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/signin.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Login}
+	   \end{figure}
+  \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/hom1.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Pagína Bienvenida al Usuario}
+	   \end{figure}
+  \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/det3.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Mis pedidos}
+	   \end{figure}
+  \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/orden1.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Crear pedido}
+	   \end{figure}
+  \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/det2.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Vista Pedidos Realizados}
+	   \end{figure}
+  \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/det1.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Detalle Pedido}
+	   \end{figure}
+  \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/lap2.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Verificación Stock - Antes de pedido}
+	   \end{figure}
+    \item   \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/lap4.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Verificación Stock - Después de pedido}
+	   \end{figure}
+    \item   \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/lap3.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Verificación Stock - Después Eliminar pedido}
+	   \end{figure}
+    \item   \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/apple.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Visualización Artículos Apple - Tarjetas}
+	   \end{figure}
+    \item   \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/asus.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Visualización Artículos Asus - Tarjetas}
+	   \end{figure}
+    \item   \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/msi.png}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      \caption{Visualización Artículos MSI - Tarjetas Desplegadas}
+	   \end{figure}
+            \item Considerar: atributos adecuados, relaciones necesarias, visualización de datos adecuadas,
+            restricciones en el modelo importantes.
+        \end{itemize}
+    \end{itemize}
+
+    \section{Commits}
+    \begin{itemize}
+        \item Correción detección usuario y crear pedido: En esta parte se logró la mejora del usuario, para así poder modficar sus adtos dentro de un formulario.
+        \item Mejorando registro de pedido: Se logró que una orden de pedidos no pueda sobrepasar el stock de un producto.
+        \item Proyecto Fin: Se completó la funcionalidad del código, todo se ejecuta con la perfección, sin errores.
+        \item Los commits son los siguientes:
+    \end{itemize}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/N1.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      %\caption{Product backlog.}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/N2.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      %\caption{Product backlog.}
+	   \end{figure}
+    \begin{figure}[H]
+		      \centering
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{img/N3.jpeg}
+		      %\includesvg{img/automata.svg}
+		      %\label{img:mot2}
+		      %\caption{Product backlog.}
+	   \end{figure}
+\clearpage
+\section{Estructura del Laboratorio}
+\begin{document}
+\begin{verbatim}
+├── db.sqlite3
+├── Latex_InformeLab06_Pweb
+│   ├── img
+│   │   ├── apple.png
+│   │   ├── asus.png
+│   │   ├── C1.jpeg
+│   │   ├── C2.jpeg
+│   │   ├── det1.png
+│   │   ├── det2.png
+│   │   ├── det3.png
+│   │   ├── Diagrama.jpeg
+│   │   ├── footer.png
+│   │   ├── hom1.png
+│   │   ├── Home.png
+│   │   ├── lap2.png
+│   │   ├── lap3.png
+│   │   ├── lap4.png
+│   │   ├── logo_abet.png
+│   │   ├── logo_episunsa.png
+│   │   ├── logo_unsa.jpg
+│   │   ├── marca.png
+│   │   ├── msi.png
+│   │   ├── N1.jpeg
+│   │   ├── N2.jpeg
+│   │   ├── N3.jpeg
+│   │   ├── orden1.png
+│   │   ├── pedidos1.png
+│   │   ├── pedidos.png
+│   │   ├── signin.png
+│   │   ├── signup1.png
+│   │   ├── signup2.png
+│   │   ├── V11.jpeg
+│   │   ├── V12.jpeg
+│   │   ├── V13.jpeg
+│   │   ├── V14.jpeg
+│   │   ├── V15.jpeg
+│   │   ├── V16.jpeg
+│   │   └── V17.jpeg
+│   ├── Latex_InformeLab06_Pweb.pdf
+│   ├── Latex_InformeLab06_Pweb.tex
+│   └── src
+│       ├── actualizar_pedido.html
+│       ├── admin.py
+│       ├── apps.py
+│       ├── base.html
+│       ├── encabezado.html
+│       ├── footer.html
+│       ├── forms.py
+│       ├── home.html
+│       ├── index.html
+│       ├── marca_acer.html
+│       ├── marca_apple.html
+│       ├── marca_asus.html
+│       ├── marca_dell.html
+│       ├── marca_hp.html
+│       ├── marca_lenovo.html
+│       ├── marca_msi.html
+│       ├── models.py
+│       ├── pedido-det.html
+│       ├── pedido.html
+│       ├── signin.html
+│       ├── signup.html
+│       └── views.py
+├── localstore
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   └── wsgi.cpython-310.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── media
+│   └── imagenes
+│       └── imgs
+│           ├── acer_4MLZE6r.png
+│           ├── acer.png
+│           ├── acer_U4hti2q.png
+│           ├── apple_DbtnB42.png
+│           ├── apple.jpeg
+│           ├── apple.png
+│           ├── apple_ro0SnVu.png
+│           ├── asus_d42I5yc.png
+│           ├── asus.png
+│           ├── asus_qN5gi3G.png
+│           ├── carrusel1.svg
+│           ├── carrusel2.svg
+│           ├── carrusel3.svg
+│           ├── dell_ID9dR59.png
+│           ├── dell_NPG46q3.png
+│           ├── dell.png
+│           ├── hp_d7yjRCD.png
+│           ├── hp_gfoGiQ3.png
+│           ├── hp.png
+│           ├── Laptoop_ASUS_TUF_Gaming_A15.jpeg
+│           ├── Laptoop_ASUS_TUF_Gaming_A15_Vgzi50p.jpeg
+│           ├── Laptop_Acer_Enduro_N3_dnjhoud.jpg
+│           ├── Laptop_Acer_Enduro_N3.jpeg
+│           ├── Laptop_Acer_Enduro_N3.jpg
+│           ├── Laptop_Acer_Enduro_Urban_N3.jpeg
+│           ├── Laptop_Acer_Enduro_Urban_N3_K8mzXmD.jpeg
+│           ├── Laptop_ASUS_ROG_Zephyrus_G14_DuOzM45.jpeg
+│           ├── Laptop_ASUS_ROG_Zephyrus_G14.jpeg
+│           ├── Laptop_ASUS_Vivabook_15X_OLED_f4o9ELg.jpeg
+│           ├── Laptop_ASUS_Vivabook_15X_OLED.jpeg
+│           ├── Laptop_ASUS_Zenbook_14X_OLED.jpeg
+│           ├── Laptop_ASUS_Zenbook_14X_OLED_sCKOhxw.jpeg
+│           ├── Laptop_ASUS_Zenbook_Pro_16X_OLED.jpg
+│           ├── Laptop_ASUS_Zenbook_Pro_16X_OLED_mJizIqd.jpg
+│           ├── Laptop_Dell_Inspiron_14_G1iX4ck.jpg
+│           ├── Laptop_Dell_Inspiron_14.jpg
+│           ├── Laptop_Dell_Inspiron_15.jpeg
+│           ├── Laptop_Dell_Inspiron_15_v2ikqVz.jpeg
+│           ├── Laptop_Dell_Latitude_3190_8YvKruk.jpg
+│           ├── Laptop_Dell_Latitude_3190.jpg
+│           ├── Laptop_Gamer_Acer_17-3_fXiPSlH.jpg
+│           ├── Laptop_Gamer_Acer_17-3.jpg
+│           ├── Laptop_Gamer_Acer_AN515-57-5323_15-6_fcXOkVi.jpeg
+│           ├── Laptop_Gamer_Acer_AN515-57-5323_15-6.jpeg
+│           ├── Laptop_Gamer_Acer_Nitro_5_15-6.jpeg
+│           ├── Laptop_Gamer_Acer_Nitro_5_15-6_SG03wGO.jpeg
+│           ├── Laptop_HP_14.jpeg
+│           ├── Laptop_HP_14_z8aF7Ms.jpeg
+│           ├── Laptop_HP_Pavilion_15_ah27WLx.jpeg
+│           ├── Laptop_HP_Pavilion_15.jpeg
+│           ├── Laptop_HP_Victus_16.jpeg
+│           ├── Laptop_HP_Victus_16_mDdM8wf.jpeg
+│           ├── Laptop_Lenovo_Legion_5i_Pro.jpg
+│           ├── Laptop_Lenovo_Legion_5i_Pro_tFkrRyG.jpg
+│           ├── Laptop_Lenovo_ThinkPad_L13.jpeg
+│           ├── Laptop_Lenovo_ThinkPad_L13_nYQxn2s.jpeg
+│           ├── Laptop_Lenovo_ThinkPad_L14_20D6B4o.jpg
+│           ├── Laptop_Lenovo_ThinkPad_L14.jpg
+│           ├── Laptop_Lenovo_ThinkPad_X1_Titanium_Yoga_gPbjFBV.jpeg
+│           ├── Laptop_Lenovo_ThinkPad_X1_Titanium_Yoga.jpeg
+│           ├── Laptop_MSI_Katana_17_B13V_pHV8UUc.png
+│           ├── Laptop_MSI_Katana_17_B13V.png
+│           ├── Laptop_MSI_Raider_GE78_HX_13V_EFv97Lj.png
+│           ├── Laptop_MSI_Raider_GE78_HX_13V.png
+│           ├── Laptop_MSI_Stealth_17_Studio_A13V_7MdHpeV.jpeg
+│           ├── Laptop_MSI_Stealth_17_Studio_A13V.jpeg
+│           ├── lenovo_8UB7dlv.png
+│           ├── lenovo.png
+│           ├── lenovo_zWe4l8d.png
+│           ├── logo.png
+│           ├── MackBook_Air_M1_2Zj7C3v.jpeg
+│           ├── MackBook_Air_M1.jpeg
+│           ├── MackBook_Air_M2.jpeg
+│           ├── MackBook_Air_M2_s8VDzG6.jpeg
+│           ├── MackBook_Pro_13.jpeg
+│           ├── MackBook_Pro_13_ZyofE0q.jpeg
+│           ├── msi_0OitKl2.png
+│           ├── msi_n4PeYby.png
+│           └── msi.png
+├── package.json
+├── package-lock.json
+├── requirements.txt
+tienda
+    ├── admin.py
+    ├── apps.py
+    ├── forms.py
+    ├── __init__.py
+    ├── migrations
+    │   ├── 0001_initial.py
+    │   ├── 0002_alter_cliente_clidni.py
+    │   ├── __init__.py
+    │   └── __pycache__
+    │       ├── 0001_initial.cpython-310.pyc
+    │       ├── 0002_alter_cliente_clidni.cpython-310.pyc
+    │       └── __init__.cpython-310.pyc
+    ├── models.py
+    ├── __pycache__
+    │   ├── admin.cpython-310.pyc
+    │   ├── apps.cpython-310.pyc
+    │   ├── forms.cpython-310.pyc
+    │   ├── __init__.cpython-310.pyc
+    │   ├── models.cpython-310.pyc
+    │   └── views.cpython-310.pyc
+    ├── static
+    │   └── img
+    │       ├── acer.svg
+    │       ├── apple.svg
+    │       ├── asus.svg
+    │       ├── carrusel1.svg
+    │       ├── carrusel2.svg
+    │       ├── carrusel3.svg
+    │       ├── dell.svg
+    │       ├── hp.svg
+    │       ├── lenovo.svg
+    │       ├── login.svg
+    │       ├── logo.png
+    │       ├── msi.svg
+    │       ├── order.svg
+    │       └── register.svg
+    ├── templates
+    │   ├── actualizar_pedido.html
+    │   ├── base.html
+    │   ├── encabezado.html
+    │   ├── footer.html
+    │   ├── home.html
+    │   ├── index.html
+    │   ├── marca_acer.html
+    │   ├── marca_apple.html
+    │   ├── marca_asus.html
+    │   ├── marca_dell.html
+    │   ├── marca_hp.html
+    │   ├── marca_lenovo.html
+    │   ├── marca_msi.html
+    │   ├── pedido_det.html
+    │   ├── pedido.html
+    │   ├── signin.html
+    │   └── signup.html
+    ├── tests.py
+    └── views.py
+
+\end{verbatim}
+\clearpage
+
+		
+
+	\section{\textcolor{red}{Rúbricas}}
+	
+	\subsection{\textcolor{red}{Entregable Informe}}
+	\begin{table}[H]
+		\caption{Tipo de Informe}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		\begin{tabular}{|p{3cm}|p{12cm}|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{\textcolor{red}{Informe}}}  \\
+			\hline 
+			\textbf{\textcolor{red}{Latex}} & \textcolor{blue}{El informe está en formato PDF desde Latex,  con un formato limpio (buena presentación) y facil de leer.}   \\ 
+			\hline 
+			
+			
+		\end{tabular}
+	}
+	\end{table}
+	
+	\clearpage
+	
+	\subsection{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
+	\begin{itemize}			
+		\item El alumno debe marcar o dejar en blanco en celdas de la columna \textbf{Checklist} si cumplio con el ítem correspondiente.
+		\item Si un alumno supera la fecha de entrega,  su calificación será sobre la nota mínima aprobada, siempre y cuando cumpla con todos lo items.
+		\item El alumno debe autocalificarse en la columna \textbf{Estudiante} de acuerdo a la siguiente tabla:
+	
+		\begin{table}[ht]
+			\caption{Niveles de desempeño}
+			\begin{center}
+			\begin{tabular}{ccccc}
+    			\hline
+    			 & \multicolumn{4}{c}{Nivel}\\
+    			\cline{1-5}
+    			\textbf{Puntos} & Insatisfactorio 25\%& En Proceso 50\% & Satisfactorio 75\% & Sobresaliente 100\%\\
+    			\textbf{2.0}&0.5&1.0&1.5&2.0\\
+    			\textbf{4.0}&1.0&2.0&3.0&4.0\\
+    		\hline
+			\end{tabular}
+		\end{center}
+	\end{table}	
+	
+	\end{itemize}
+	
+	\begin{table}[H]
+		\caption{Rúbrica para contenido del Informe y demostración}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		%\begin{center}
+		\begin{tabular}{|p{2.7cm}|p{7cm}|x{1.3cm}|p{1.2cm}|p{1.5cm}|p{1.1cm}|}
+			\hline
+    		\multicolumn{2}{|c|}{Contenido y demostración} & Puntos & Checklist & Estudiante & Profesor\\
+			\hline
+			\textbf{1. GitHub} & Hay enlace URL activo del directorio para el  laboratorio hacia su repositorio GitHub con código fuente terminado y fácil de revisar. &2 &X &2 & \\ 
+			\hline
+			\textbf{2. Commits} &  Hay capturas de pantalla de los commits más importantes con sus explicaciones detalladas. (El profesor puede preguntar para refrendar calificación). &4 &X &4 & \\ 
+			\hline 
+			\textbf{3. Código fuente} &  Hay porciones de código fuente importantes con numeración y explicaciones detalladas de sus funciones. &2 &X &2 & \\ 
+			\hline 
+			\textbf{4. Ejecución} & Se incluyen ejecuciones/pruebas del código fuente  explicadas gradualmente. &2 &X &2 & \\ 
+			\hline			
+			\textbf{5. Pregunta} & Se responde con completitud a la pregunta formulada en la tarea.  (El profesor puede preguntar para refrendar calificación).  &2 &X &2 & \\ 
+			\hline	
+			\textbf{6. Fechas} & Las fechas de modificación del código fuente estan dentro de los plazos de fecha de entrega establecidos. &2 &X &2 & \\ 
+			\hline 
+			\textbf{7. Ortografía} & El documento no muestra errores ortográficos. &2 &X &2 & \\ 
+			\hline 
+			\textbf{8. Madurez} & El Informe muestra de manera general una evolución de la madurez del código fuente,  explicaciones puntuales pero precisas y un acabado impecable.   (El profesor puede preguntar para refrendar calificación).  &4 &X &4 & \\ 
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Total}} &20 & &20 & \\ 
+			\hline
+		\end{tabular}
+		%\end{center}
+		%\label{tab:multicol}
+		}
+	\end{table}
+	
+\clearpage
+
+\section{Referencias}
+\begin{itemize}			
+    \item {https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Tutorial_local_
+library_website}
+    \item \url{https://github.com/mdn/django-locallibrary-tutorial}
+    \item \url{https://github.com/rescobedoq/pw2/tree/main/labs/lab05}
+    \item William S. Vincent. (2022). Django for Beginners: Build websites with Python. Django 4.0.
+leanpub.com. [URL]
+    \item \url{https://docs.djangoproject.com/en/4.1/ref/models/fields/}
+    \item \url{https://docs.djangoproject.com/en/4.0/topics/db/examples/many_to_many/}
+    \item \url{https://docs.djangoproject.com/en/4.0/topics/db/examples/many_to_one/}
+    \item \url{https://blog.hackajob.co/djangos-new-database-constraints/}
+    \item \url{https://stackoverflow.com/questions/3330435/is-there-an-sqlite-equivalent-to-mysqls-describe-table}
+    \item \url{https://docs.djangoproject.com/en/4.1/ref/validators/#how-validators-are-run}
+    \item \url{https://docs.djangoproject.com/en/4.1/ref/models/instances/}
+    \item \url{https://www.youtube.com/watch?v=rHux0gMZ3Eg}
+    \item \url{https://www.youtube.com/watch?v=OTmQOjsl0eg}
+    \item \url{https://tex.stackexchange.com/questions/34580/escape-character-in-latex}
+    \item \url{https://www.sqlitetutorial.net/sqlite-show-tables/}
+    \item \url{https://www.wplogout.com/export-database-diagrams-erd-from-django/}
+\end{itemize}	
+	
+%\clearpage
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+			
+\end{document}

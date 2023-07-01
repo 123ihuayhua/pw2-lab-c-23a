@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'encabezado.html' %}
+</section>
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-4 text-center mb-4 fw-bold">{{ marca.MarNom }}</h1>
+    </section>
+</main>
+<div class="d-flex flex-wrap justify-content-center">
+    {% for art in arts %}
+    {% if art.ArtMarCod == marca %}
+    <div class="card m-3" style="width: 250px;">
+        <img src="{{ art.ArtImg.url }}" class="card-img-top img-fluid" alt="{{ art.ArtNom }}">
+        <div class="card-body">
+            <h2 class="card-title h5 fw-bold" >{{ art.ArtNom }}</h2>
+            <p class="card-text fw-bold">S/.{{ art.ArtPreUni }}</p>
+            <p class="card-text fw-bold">Stock: {{ art.ArtSto }}</p>
+            <p class="card-text description" style="display: none;">{{ art.ArtDes }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-center bg-dark">
+            <button class="btn btn-warning" onclick="toggleDescription(this)">Mostrar Descripción</button>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<script>
+    function toggleDescription(button) {
+        var cardBody = button.parentNode.parentNode.querySelector('.card-body');
+        var description = cardBody.querySelector('.description');
+
+        if (description.style.display === 'none') {
+            description.style.display = 'block';
+            button.textContent = 'Ocultar Descripción';
+        } else {
+            description.style.display = 'none';
+            button.textContent = 'Mostrar Descripción';
+        }
+    }
+</script>
+{% endblock %}

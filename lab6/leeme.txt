@@ -1,0 +1,4 @@
+Si hay error de módulos:
+ModuleNotFoundError: No module named 'fontawesomefree'
+Instale manualmente: 
+pip install fontawesomefree 
