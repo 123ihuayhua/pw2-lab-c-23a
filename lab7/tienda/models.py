@@ -51,13 +51,13 @@ class TipoArticulo(models.Model):
 
 #Articulo 
 class Articulo(models.Model):
-    ArtMarCod = models.ForeignKey(Marca, on_delete=models.CASCADE, null=True)
-    ArtTipCod = models.ForeignKey(TipoArticulo, on_delete=models.CASCADE, null=True)
+    ArtMarCod = models.ForeignKey(Marca, on_delete=models.CASCADE, null=True,default=11)
+    ArtTipCod = models.ForeignKey(TipoArticulo, on_delete=models.CASCADE, null=True,default=3)
     ArtNom = models.CharField(max_length=50, null=True)
     ArtDes = models.TextField(max_length=1000, help_text='Ingresa la descripción del artículo', null=True)
     ArtImg = models.ImageField(upload_to='imagenes/imgs', null=True)
-    ArtSto = models.PositiveSmallIntegerField()
-    ArtPreUni = models.FloatField()
+    ArtSto = models.PositiveSmallIntegerField(default=10)
+    ArtPreUni = models.FloatField(default=1000)
     ArtEstReg = models.BooleanField(default=True)
     #Mostrar nombre del Artículo
     def __str__(self):
