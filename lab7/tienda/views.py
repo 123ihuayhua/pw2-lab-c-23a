@@ -130,6 +130,12 @@ def marca_detail(request, marca_id):
         'HP': 'marca_hp.html',
         'Lenovo': 'marca_lenovo.html',
         'MSI': 'marca_msi.html',
+        'Corsair': 'marca_corsair.html',
+        'Teros': 'marca_teros.html',
+        'Thermaltake': 'marca_thermaltake.html',
+        'Microsoft': 'marca_microsoft.html',
+        'Logitech': 'marca_logitech.html',
+        'JBL': 'marca_jbl.html',
     }
     templates = templates.get(marca.MarNom, 'marca_default.html')
     context = {'marca': marca, 'arts': arts}
