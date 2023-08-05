@@ -52,7 +52,7 @@ class TipoArticulo(models.Model):
 #Articulo 
 class Articulo(models.Model):
     ArtMarCod = models.ForeignKey(Marca, on_delete=models.CASCADE, null=True,default=11)
-    ArtTipCod = models.ForeignKey(TipoArticulo, on_delete=models.CASCADE, null=True,default=3)
+    ArtTipCod = models.ForeignKey(TipoArticulo, on_delete=models.CASCADE, null=True,default=6)
     ArtNom = models.CharField(max_length=50, null=True)
     ArtDes = models.TextField(max_length=1000, help_text='Ingresa la descripción del artículo', null=True)
     ArtImg = models.ImageField(upload_to='imagenes/imgs', null=True)
