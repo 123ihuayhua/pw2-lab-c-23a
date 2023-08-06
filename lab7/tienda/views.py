@@ -14,6 +14,8 @@ from rest_framework.response import Response
 
 # Create your views here.
 #Vista principal
+def Signin2(request):
+    return render(request,'sigin2.html')
 def Home(request):
     marcas = Marca.objects.all()
     arts = Articulo.objects.all()

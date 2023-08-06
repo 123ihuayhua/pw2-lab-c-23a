@@ -31,11 +31,16 @@
                             <label class="form-check-label" for="form1Example3"> Remember me </label>
                             </div>
                             <a href="/signup">Don't have an account?</a>
+
                         </div>
                         <!-- Boton  -->
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                        {% load socialaccount %}
+    <h2>Google login</h2>
+    <a href="{% provider_login_url 'google' %}?next=/">Login with google</a>
                     </form>
             </div>
+        </div>
         </div>
     </section>
 {% endblock  %}

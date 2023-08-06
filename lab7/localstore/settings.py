@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-tu2ymog3e$qw$xdw**88g4$2pb+xqb&(6bp6^nz70#((qew62y
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+SITE_ID = 3
 
 # Application definition
 
@@ -46,7 +46,23 @@ INSTALLED_APPS = [
     'django_extensions',
     'corsheaders',
     'django_filters',
+    #google
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email"
+        ],
+        "AUTH_PARAMS": {"access_tyoe": "online"}
+    }
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -146,3 +162,10 @@ MEDIA_URL = '/public/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'tienda.Cliente'
 LOGIN_URL = '/signin'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

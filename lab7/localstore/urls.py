@@ -15,7 +15,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 from tienda import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -34,6 +33,7 @@ urlpatterns = [
     path('index/eliminar/<int:pedidoID>/', views.eliminar_pedido, name='eliminar_pedido'),
     path('logout/', views.Signout, name='logout'),
     path('signin/', views.Signin, name='signin'),
+    path('signin2/', views.Signin2, name='signin2'),
     path('agregar_al_carrito/<int:articulo_id>/', views.agregar_al_carrito, name='agregar_al_carrito'),
     path('carrito/', views.carrito, name='carrito'),
     path('actualizar_cantidad/<int:item_pk>/<int:cantidad>/', views.actualizar_cantidad, name='actualizar_cantidad'),
@@ -45,6 +45,7 @@ urlpatterns = [
     path('cancelar_carrito/', views.cancelar_carrito, name='cancelar_carrito'),
     path('', include('tienda.urls')),
     path('api-token-auth/', views.generar_token),
+    path('accounts/',include('allauth.urls'))
     # path('api-token-auth/', views.obtain_auth_token),
 ]
 
