@@ -30,33 +30,39 @@
           </li>
           <li class="nav-item">
             <a href="/productos/" class="nav-link">
+              Productos
               <i class="bi bi-laptop" style="font-size: 2rem; color: green"></i>
             </a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
             <a href="/index/" class="nav-link">
+              Pedidos
               <i class="bi bi-list-ul" style="font-size: 2rem; color: white;"></i>
             </a>
           </li>
           <li class="nav-item">
             <a href="/carrito/" class="nav-link">
+              Carrito
               <i class="bi bi-cart-fill" style="font-size: 2rem; color: orange;"></i>
             </a>
           </li>
           <li class="nav-item">
             <a href="/logout/" class="nav-link">
+              Logout
               <i class="bi bi-power" style="font-size: 2rem; color: red;"></i>
             </a>
           </li>
           {% else %}
           <li class="nav-item">
             <a href="/signup/" class="nav-link">
+              Signup
               <i class="bi bi-person-lines-fill" style="font-size: 2rem; color: skyblue;"></i>
             </a>
           </li>
           <li class="nav-item">
             <a href="/signin/" class="nav-link">
+              Signin
               <i class="bi bi-box-arrow-right" style="font-size: 2rem; color: white;"></i>
             </a>
           </li>

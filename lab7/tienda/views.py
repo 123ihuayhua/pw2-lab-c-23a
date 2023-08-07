@@ -1,241 +1,306 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import  AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from .forms import PedidoForm, RegistroForm
 from .models import Carrito, Pedido, Cliente, Marca, Articulo
-from django.contrib.auth.decorators import login_required 
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.views.generic import View
+from django.utils.decorators import method_decorator
 
-# Create your views here.
-#Vista principal
-def Signin2(request):
-    return render(request,'sigin2.html')
-def Home(request):
-    marcas = Marca.objects.all()
-    arts = Articulo.objects.all()
-    context = {'marcas': marcas, 'arts': arts}
-    return render(request, 'home.html', context)
 
-#Registrarse (usuario)
-def Signup(request):
-    if request.method == 'GET':
-        return render(request, 'signup.html', {'form': RegistroForm})
+# Vista principal
 
-    else: 
-        if request.POST['password1'] == request.POST['password2']:
-            try:
-                # Registrar usuario
-                user = Cliente.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
-                # Guardar usuario 
-                user.CliDNI = request.POST['CliDNI']
-                user.CliApePat = request.POST['CliApePat']
-                user.CliNom = request.POST['CliNom']
-                user.CliEstReg = True
-                user.save()
-                login(request, user)
-                return redirect('index')
-            except IntegrityError:
-                return render(request, 'signup.html', {
-                    'form': RegistroForm,
-                    'error': 'El usuario ya existe'
-                })
-            
+class Home(View):
+    def get(self, request, *args, **kwargs):
+        marcas = Marca.objects.all()
+        arts = Articulo.objects.all()
+        context = {'marcas': marcas, 'arts': arts}
+        return render(request, 'home.html', context)
+
+
+# Registrarse (usuario)
+class Signup(View):
+    def get(self, request, *args, **kwargs):
+        form = RegistroForm()
+        return render(request, 'signup.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        print(request.POST)
+        form = RegistroForm(request.POST)
+        if form.is_valid():
+            if request.POST['password1'] == request.POST['password2']:
+                try:
+                    # Crear usuario
+                    user = Cliente.objects.create_user(
+                        username=request.POST['username'],
+                        password=request.POST['password1'],
+                        CliDNI=request.POST['CliDNI'],
+                        CliApePat=request.POST['CliApePat'],
+                        CliNom=request.POST['CliNom'],
+                        CliEstReg=True
+                    )
+                    login(request, user, 'django.contrib.auth.backends.ModelBackend')
+                    return redirect('home')
+                except IntegrityError:
+                    return render(request, 'signup.html', {
+                        'form': RegistroForm,
+                        'error': 'El usuario ya existe'
+                    })
+        print(form.errors)
         return render(request, 'signup.html', {
-            'form': RegistroForm,
-            'error': 'Las contraseñas no coinciden'
+            'form': form,
         })
-    
-@login_required
-#Ver pedidos
-def Index(request):
-    pedido = Pedido.objects.filter(PedCabCodCli=request.user)
-    return render(request, 'index.html', {'pedidos' : pedido})
 
-#Detalle pedido
-@login_required
-def DetallePedido(request, pedidoID):
-    pedido_cabecera = get_object_or_404(Pedido, pk=pedidoID, PedCabCodCli=request.user)
-    detalles_pedido = Pedido.objects.filter(PedDetCodCab=pedido_cabecera)
 
-    if detalles_pedido.exists():
-        detalle = detalles_pedido.first()
-    else:
-        detalle = Pedido(PedDetCodCab=pedido_cabecera)
+# Logearse
+class Signin(View):
+    def get(self, request, *args, **kwargs):
+        form = AuthenticationForm()
+        return render(request, 'signin.html', {'form': form})
 
-    if request.method == 'GET':
+    def post(self, request, *args, **kwargs):
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = authenticate(
+                request, username=request.POST['username'], password=request.POST['password'])
+            if user is not None:
+                login(request, user, 'django.contrib.auth.backends.ModelBackend')
+                return redirect('home')
+        return render(request, 'signin.html', {'form': form, 'error': 'Usuario o contraseña incorrecta'})
+
+
+# Salir de la sesión
+class Signout(View):
+    def get(self, request):
+        logout(request)
+        return redirect('home')
+
+
+# Ver pedidos
+@method_decorator(login_required, name='dispatch')
+class Index(View):
+    def get(self, request, *args, **kwargs):
+        pedido = Pedido.objects.filter(PedCabCodCli=request.user)
+        return render(request, 'index.html', {'pedidos': pedido})
+
+
+# Detalle pedido
+@method_decorator(login_required, name='dispatch')
+class DetallePedido(View):
+    def get(self, request, pedidoID, *args, **kwargs):
+        pedido_cabecera = get_object_or_404(
+            Pedido, pk=pedidoID, PedCabCodCli=request.user)
+        detalles_pedido = Pedido.objects.filter(PedDetCodCab=pedido_cabecera)
+
+        if detalles_pedido.exists():
+            detalle = detalles_pedido.first()
+        else:
+            detalle = Pedido(PedDetCodCab=pedido_cabecera)
+
         form = PedidoForm(instance=detalle)
         carrito = request.session.get('carrito', {})
         articulos = Articulo.objects.filter(pk__in=carrito.keys())
         detalles = []
-        for articulo in articulos:
-            cantidad = carrito[str(articulo.pk)]['cantidad']
-            subtotal = cantidad * articulo.ArtPreUni
+        for carrito in pedido_cabecera.PedDetArtCod.all():
+            # cantidad = carrito[str(articulo.pk)]['cantidad']
+            # subtotal = cantidad * articulo.ArtPreUni
             detalles.append({
-                'articulo': articulo,
-                'cantidad': cantidad,
-                'subtotal': subtotal
+                'articulo': carrito.articulo,
+                'cantidad': carrito.cantidad,
+                'subtotal': carrito.subtotal,
+                'precio_uni': carrito.articulo.ArtPreUni,
             })
+            print("Se ha registrado productos")
         return render(request, 'pedido_detalle.html', {
             'pedido_cabecera': pedido_cabecera,
             'detalle': detalle,
             'form': form,
             'detalles': detalles
         })
-    else:
+
+    def post(self, request, pedidoID, *args, **kwargs):
+        pedido_cabecera = get_object_or_404(
+            Pedido, pk=pedidoID, PedCabCodCli=request.user)
+        detalles_pedido = Pedido.objects.filter(PedDetCodCab=pedido_cabecera)
+
+        if detalles_pedido.exists():
+            detalle = detalles_pedido.first()
+        else:
+            detalle = Pedido(PedDetCodCab=pedido_cabecera)
+
         form = PedidoForm(request.POST, instance=detalle)
         if form.is_valid():
             form.save()
             return JsonResponse({'success': True})
         else:
             return JsonResponse({'success': False})
-        
 
-#Salir de la sesión
-def Signout(request):
-    logout(request)
-    return redirect('home')
 
-#Logearse
-def Signin(request):
-    if request.method == 'GET':
-        return render(request, 'signin.html', {
-        'form' : AuthenticationForm
-        })
-    else:
-        user = authenticate(
-            request, username = request.POST['username'], password = request.POST['password']
-        )
-        if user is None:
-            return render(request, 'signin.html', {
-            'form' : AuthenticationForm, 
-            'error': 'Usuario o contraseña incorrecta'
-            })
-        else:
-            login(request, user)
-            return redirect('index')
+# Elimininar pedido
+@method_decorator(login_required, name='dispatch')
+class EliminarPedido(View):
+    def get(self, request, pedidoID, *args, **kwargs):
+        pedido_cabecera = get_object_or_404(
+            Pedido, pk=pedidoID, PedCabCodCli=request.user)
+        detalles_pedido = Pedido.objects.filter(pk=pedidoID)
 
-#Marcas
-def marca_detail(request, marca_id):
-    marca = get_object_or_404(Marca, pk=marca_id)
-    arts = Articulo.objects.filter(ArtMarCod=marca)
-    templates = {
-        'Acer': 'marca_acer.html',
-        'Apple': 'marca_apple.html',
-        'Asus': 'marca_asus.html',
-        'Dell': 'marca_dell.html',
-        'HP': 'marca_hp.html',
-        'Lenovo': 'marca_lenovo.html',
-        'MSI': 'marca_msi.html',
-        'Corsair': 'marca_corsair.html',
-        'Teros': 'marca_teros.html',
-        'Thermaltake': 'marca_thermaltake.html',
-        'Microsoft': 'marca_microsoft.html',
-        'Logitech': 'marca_logitech.html',
-        'JBL': 'marca_jbl.html',
-    }
-    templates = templates.get(marca.MarNom, 'marca_default.html')
-    context = {'marca': marca, 'arts': arts}
-    return render(request, f'{templates}', context)
+        for carrito in pedido_cabecera.PedDetArtCod.all():
+            carrito.setstatus(True)
+            # articulo = detalle.PedDetArtCod
+            # articulo.ArtSto += detalle.PedDetCantidad
+            # articulo.save()
+        pedido_cabecera.delete()
 
-#Elimininar pedido
-@login_required
-def eliminar_pedido(request, pedidoID):
-    pedido_cabecera = get_object_or_404(Pedido, pk=pedidoID, PedCabCodCli=request.user)
-    detalles_pedido = Pedido.objects.filter(pk=pedidoID)
-
-    for detalle in detalles_pedido:
-        articulo = detalle.PedDetArtCod
-        articulo.ArtSto += detalle.PedDetCantidad 
-        articulo.save()
-
-    pedido_cabecera.delete()
-
-    return redirect('index')
-
-#Carrito de compras
-@login_required
-def agregar_al_carrito(request, articulo_id):
-    articulo = get_object_or_404(Articulo, pk=articulo_id)
-    carrito, created = Carrito.objects.get_or_create(usuario=request.user, articulo=articulo)
-    if not created:
-        carrito.cantidad += 1
-        carrito.save()
-    return redirect('carrito')
-
-@login_required
-def eliminar_del_carrito(request, carrito_id):
-    carrito = get_object_or_404(Carrito, pk=carrito_id, usuario=request.user)
-    carrito.delete()
-    return redirect('carrito')
-
-@login_required
-def carrito(request):
-    carrito = Carrito.objects.filter(usuario=request.user)
-    total = sum(item.subtotal() for item in carrito)
-    return render(request, 'carrito.html', {'carrito': carrito, 'total': total})
-
-def actualizar_cantidad(request, item_pk, cantidad):
-    carrito_item = get_object_or_404(Carrito, pk=item_pk)
-    carrito_item.cantidad = cantidad
-    carrito_item.save()
-    return JsonResponse({'status': 'ok'})
-
-def cancelar_carrito(request):
-    carrito = get_object_or_404(Carrito, usuario=request.user)
-    request.session['carrito'] = []
-    request.session.modified = True
-    carrito.delete()
-    return redirect('carrito')
-
-@login_required
-def guardar_pedido(request):
-    carrito = Carrito.objects.filter(usuario=request.user)
-    if carrito.exists():
-        pedido_cabecera = Pedido(PedCabCodCli=request.user)
-        # pedido_cabecera.save()
-        for item in carrito:
-            articulo = item.articulo
-            cantidad = item.cantidad
-            if cantidad > articulo.ArtSto:
-                messages.error(request, f'La cantidad de "{articulo.ArtNom}" en el carrito supera el stock disponible.')
-                return redirect('carrito')
-            subtotal = cantidad * articulo.ArtPreUni
-            pedido_cabecera.PedDetArtCod = articulo
-            pedido_cabecera.PedDetCantidad = cantidad
-            pedido_cabecera.PedDetPreUniArt = articulo.ArtPreUni
-            pedido_cabecera.PedDetSubtotal = subtotal
-            pedido_cabecera.PedDetTot += subtotal
-            articulo.ArtSto -= cantidad 
-            articulo.save()
-            pedido_cabecera.save()
-            item.pedido = pedido_cabecera
-            item.save()
-        carrito.delete()
-        # request.session['carrito'] = {}
-        return redirect('pedido_detalle', pedidoID=pedido_cabecera.pk)
-    
-    else:
-        messages.warning(request, 'No hay artículos en el carrito.')
         return redirect('index')
 
-#Pedido detalle
-def pedido_detalle(request, pedidoID):
-    pedido = get_object_or_404(Pedido, pk=pedidoID)
-    detalles = Pedido.objects.filter(pk=pedidoID, PedCabCodCli=request.user, PedCabFec=pedido.PedCabFec)
-    return render(request, 'pedido_detalle.html', {'pedido': pedido, 'detalles': detalles})
 
-#Productos
-def productos(request):
-    productos = Articulo.objects.all()
-    return render(request, 'productos.html', {'productos': productos})
+# Marcas
+class MarcaDetail(View):
+    def get(self, request, marca_id, *args, **kwargs):
+        marca = get_object_or_404(Marca, pk=marca_id)
+        arts = Articulo.objects.filter(ArtMarCod=marca)
+        '''
+        templates = {
+            'Acer': 'marca_acer.html',
+            'Apple': 'marca_apple.html',
+            'Asus': 'marca_asus.html',
+            'Dell': 'marca_dell.html',
+            'HP': 'marca_hp.html',
+            'Lenovo': 'marca_lenovo.html',
+            'MSI': 'marca_msi.html',
+        }
+        templates = templates.get(marca.MarNom, 'marca_default.html')
+        '''
+        context = {'marca': marca, 'arts': arts}
+        return render(request, 'marca_msi.html', context)
 
-#Token 
+
+# Carrito de compras
+@method_decorator(login_required, name='dispatch')
+class CarritoView(View):
+    def get(self, request, *args, **kwargs):
+        carrito = Carrito.objects.filter(usuario=request.user, status=True)
+        total = sum(item.subtotal for item in carrito)
+        return render(request, 'carrito.html', {'carrito': carrito, 'total': total})
+
+
+# Agregar al carrito
+@method_decorator(login_required, name='dispatch')
+class AgregarAlCarrito(View):
+    def post(self, request, articulo_id, *args, **kwargs):
+        articulo = get_object_or_404(Articulo, pk=articulo_id)
+        carrito, created = Carrito.objects.get_or_create(
+            usuario=request.user, articulo=articulo)
+        if not created:
+            carrito.cantidad += 1
+            carrito.save()
+        return render(request, 'carrito.html')
+
+
+# Eliminar Producto
+@method_decorator(login_required, name='dispatch')
+class EliminarDelCarrito(View):
+    def post(self, request, carrito_id, *args, **kwargs):
+        carrito = get_object_or_404(
+            Carrito, pk=carrito_id, usuario=request.user)
+        carrito.delete()
+        return redirect('carrito')
+
+
+# Carrito cantidad actualizar
+class ActualizarCantidad(View):
+    def post(self, request, item_pk, cantidad, *args, **kwargs):
+        try:
+            carrito_item = get_object_or_404(Carrito, pk=item_pk)
+            carrito_item.cantidad = cantidad
+            carrito_item.save()
+            return JsonResponse({'status': 'ok'})
+        except Exception as e:
+            return JsonResponse({'status': 'not ok', 'message': str(e)})
+
+
+# Cancelar carrito
+class CancelarCarrito(View):
+    def post(self, request, *args, **kwargs):
+        carrito = Carrito.objects.filter(usuario=request.user, status=True)
+        # Se cancela si hay 1 producto pero mas de 1 no
+        # request.session['carrito'] = []
+        # request.session.modified = True
+        carrito.delete()
+        return redirect('carrito')
+
+
+# Guardar pedido
+@method_decorator(login_required, name='dispatch')
+class GuardarPedido(View):
+    def get(self, request, *args, **kwargs):
+        # messages.warning(request, 'No se permiten solicitudes GET.')
+        return redirect('index')
+
+    def post(self, request, *args, **kwargs):
+        carrito = Carrito.objects.filter(usuario=request.user)
+        if carrito.exists():
+            pedido_cabecera = Pedido(PedCabCodCli=request.user)
+            pedido_cabecera.save()
+            for item in carrito:
+                articulo = item.articulo
+                cantidad = item.cantidad
+                # if cantidad > articulo.ArtSto:
+                #     messages.error(
+                #         request, f'La cantidad de "{articulo.ArtNom}" en el carrito supera el stock disponible.')
+                #     return redirect('carrito')
+                # subtotal = cantidad * articulo.ArtPreUni
+                pedido_cabecera.PedDetArtCod.add(item)
+                # pedido_cabecera.PedDetCantidad = cantidad
+                # pedido_cabecera.PedDetPreUniArt = articulo.ArtPreUni
+                # pedido_cabecera.PedDetSubtotal = subtotal
+                # pedido_cabecera.PedDetTot += subtotal
+                # articulo.ArtSto -= cantidad
+                # articulo.save()
+                item.setstatus(False)
+                item.save()
+            pedido_cabecera.save()
+            # carrito.delete()
+            return redirect('pedido_detalle', pedidoID=pedido_cabecera.pk)
+        else:
+            messages.warning(request, 'No hay artículos en el carrito.')
+            return redirect('index')
+
+
+# Pedido detalle
+@method_decorator(login_required, name='dispatch')
+class PedidoDetalle(View):
+    def get(self, request, pedidoID, *args, **kwargs):
+        pedido = get_object_or_404(
+            Pedido, pk=pedidoID, PedCabCodCli=request.user)
+        detalles = []
+        for carrito in pedido.PedDetArtCod.all():
+            detalles.append({
+                'articulo': carrito.articulo,
+                'cantidad': carrito.cantidad,
+                'precio_uni': carrito.articulo.ArtPreUni,
+                'subtotal': carrito.subtotal,
+            })
+        return render(request, 'pedido_detalle.html', {'pedido': pedido, 'detalles': detalles})
+
+
+# Productos
+class Productos(View):
+    def get(self, request, *args, **kwargs):
+        marcas = Marca.objects.all()
+        arts = Articulo.objects.all()
+        context = {'marcas': marcas, 'arts': arts}
+        return render(request, 'productos.html', context)
+
+
+# Token
 @api_view(['POST'])
 def generar_token(request):
     username = request.data.get('username')
@@ -246,5 +311,3 @@ def generar_token(request):
         return Response({'token': token})
     else:
         return Response({'error': 'Credenciales inválidas'})
-
-
