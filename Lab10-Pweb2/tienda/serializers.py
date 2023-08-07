@@ -34,7 +34,7 @@ class ArticuloSerializer(serializers.ModelSerializer):
 class PedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
-        fields = ('id', 'PedCabCodCli', 'PedCabFec', 'PedDetArtCod', 'PedDetCantidad', 'PedDetPreUniArt', 'PedDetSubtotal', 'PedDetTot', 'PedDetEstReg')
+        fields = ('id', 'PedCabCodCli', 'PedCabFec', 'PedDetArtCod', 'PedDetEstReg')
         read_only_fields = ('id','PedCabFec',)
 
     def create_pedido(self, data):
