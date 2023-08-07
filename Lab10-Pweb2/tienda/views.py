@@ -70,7 +70,8 @@ class Signin(View):
                 request, username=request.POST['username'], password=request.POST['password'])
             if user is not None:
                 login(request, user)
-                redirect(request, 'home.html')
+                print("usuario correcto")
+                return redirect('home')
         return render(request, 'signin.html', {'form': form, 'error': 'Usuario o contraseña incorrecta'})
 
 # Salir de la sesión

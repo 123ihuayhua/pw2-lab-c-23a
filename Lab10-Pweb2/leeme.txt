@@ -1,7 +1,2 @@
-Si hay error de módulos:
-ModuleNotFoundError: No module named 'fontawesomefree'
-Instale manualmente: 
-pip install fontawesomefree 
-
-- El avance de nuestro trabajo se ve desarrollado en el siguiente drive: 
-https://drive.google.com/drive/folders/19-ZGuaArevS4Tv03ZsLQGA06LVxDCAhz?usp=sharing 
+Lista de reproduccion:
+https://www.youtube.com/playlist?list=PLqpc4icYhNjMFlxjw30bwmhtoYpsd0jaa
